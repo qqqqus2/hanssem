@@ -1,4 +1,355 @@
 <!-- ==================== 싱단 시작 ==================== -->
+<style type="text/css">
+  @import url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css');
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumSquareNeo';
+  }
+  li {
+    list-style: none;
+  }
+  .relti {position:relative;}
+  .cont-wraps {}
+  .dateTxt {position:absolute;top:250px;left:0px;font-size:25px;line-height:140%;color:#7c5137;width:100%;text-align:center;font-family:arial;}
+
+  .fix-nv-obj {margin-top:0px;z-index:15;}
+
+  .event_wrap {
+  }
+  .evt_section {
+    width: 1920px;
+    position: relative;
+  }
+  /* [Common] - Layer */
+  .evt_common_layer {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    min-width: 498px;
+    box-shadow: 10px 10px 35px -10px #888;
+    z-index: 100;
+    transform: translateX(-50%);
+  }
+  .evt_common_layer_in {
+    padding: 20px 60px;
+    border: 1px solid #2d2d2d;
+    background: #fff;
+  }
+  .evt_common_layer .msg {
+    margin-top: 50px;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+  }
+  .evt_common_layer .app_qr {
+    margin-top: 40px;
+  }
+  .evt_common_layer .app_qr .txt {
+    font-weight: bold;
+    font-size: 23px;
+    color: #000000;
+    text-align: center;
+  }
+  .evt_common_layer .app_qr .img {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .evt_common_layer .app_qr .img img {
+    padding: 12px;
+    border: 2px solid #000;
+  }
+  .evt_common_layer .layer_tit {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+  }
+  .evt_common_layer .layer_tit:first-child {
+    margin-top: 0;
+  }
+  .evt_common_layer .layer_stit {
+    font-size: 16px;
+  }
+  .evt_common_layer .layer_list {
+    margin-top: 12px;
+  }
+  .evt_common_layer .layer_list li {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #000000;
+  }
+  .evt_common_layer .button {
+    margin-top: 50px;
+  }
+  .evt_common_layer .button a {
+    margin: 0 5px;
+  }
+  .evt_common_layer .layer_btn_close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .evt_common_layer .layer_btn_close a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_layer_btn_close.gif') 0 0 no-repeat;
+  }
+  /* 플로팅 배너 */
+    .layer_bnnr_form {
+    position: absolute;
+    top: 0;
+    width: 1440px;
+    margin: 0 auto;
+    z-index: 120;
+  }
+  .layer_bnnr_form .layer_bnnr {
+    position: absolute;
+    top: 250px;
+    margin-left: -145px;
+    z-index: 101;
+  }
+  .layer_bnnr_form .layer_bnnr .quick_bnnr_live {
+    display: none;
+  }
+  .layer_bnnr_form_active {
+    position: fixed;
+  }
+  /* [Event] - 탭메뉴 */
+  .benefit_event_tab {
+    height: 162px;
+    width: 1920px;
+    background: #000;
+  }
+  .benefit_event_tab .section_in {
+    padding: 0;
+  }
+  .fixed_top_layer .benefit_event_fixed {
+    position: fixed;
+    top: 92px;
+    left: 0;
+    width: 1920px;
+    background: #000;
+    z-index: 99;
+  }
+  .tablist {
+    width: 1220px;
+    margin: auto;
+    background-color: #fff;
+    border-left: 1px #fff solid;
+  }
+  .tablist:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .tablist li {
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+    background-color: #000;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .tablist li:nth-child(1){border-bottom-right-radius: 15px;}
+  .tablist li:nth-child(2),
+  .tablist li:nth-child(3){border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;}
+  .tablist li:nth-child(4){border-bottom-left-radius: 15px;}
+  .tablist li:nth-child(5){border-top-right-radius: 15px;border-bottom: 0;}
+  .tablist li:nth-child(6),
+  .tablist li:nth-child(7){border-top-left-radius: 15px;border-top-right-radius: 15px;border-bottom: 0;}
+  .tablist li:nth-child(8){border-top-left-radius: 15px;border-bottom: 0;}
+  .tablist li a {
+    display: block;
+    height: 81px;
+    padding-top: 27px;
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: 500;
+  }
+
+  .tablist li.on {
+    background: #fff;
+  }
+  .tablist li.on a {
+    color: #000;
+  }
+  .evt_section{
+    width:1920px;
+  }
+  .evt_section .evt_section_title{
+    margin: 0 0 60px;
+    text-align: center;
+    font-size: 0;
+  }
+  .evt_section .evt_section_content{
+    width: 1220px;
+    margin: auto;
+  }
+  .evt_section .evt_section_care {
+    margin-top: 45px;
+    text-align: center;
+  }
+  .evt_section .evt_section_care .btn {
+    display: inline-block;
+    position: relative;
+    text-decoration: underline;
+  }
+  .evt_section .evt_section_care .btn a {
+    display: inline-block;
+    position: relative;
+    font-size: 24px;
+    color: #656565;
+    text-decoration: none;
+  }
+  .evt_section .evt_section_care .btn a:before,
+  .evt_section .evt_section_care .btn a:after {
+    content: '';
+    display: inline-block;
+  }
+  .evt_section .evt_section_care .btn a:before {
+    width: 22px;
+    height: 22px;
+    margin: 0 5px -3px 0;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_icon_care_big.png') 0 0 no-repeat;
+  }
+  .evt_section .evt_section_care .btn a:after {
+    width: 11px;
+    height: 22px;
+    margin: 0 0 -3px 8px;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_icon_arrow_big.png') 0 0 no-repeat;
+  }
+  .evt_section .evt_section_care .btn:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #666666;
+  }
+  /* [Event] - 쿠폰팩 */
+  .benefit_coupon {
+    position: relative;
+    background: #f3ede8;
+    background-image: url('/20231113/11/semfesta_couponpack_bg.png');
+    background-repeat: no-repeat;
+    background-position: center 60px;
+  }
+  .benefit_coupon .evt_section_in{
+    padding: 125px 0 139px;
+  }
+  .benefit_coupon .evt_qr_img {
+    display: none;
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    box-shadow: 10px 10px 1px 1px rgba(50, 50, 50, 0.3);
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+  .benefit_coupon .evt_qr_img h4 {
+    padding: 30px 0 0 0;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    font-weight: 700;
+  }
+  .benefit_coupon .evt_qr_img .btn_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .benefit_coupon .evt_qr_img .btn_close a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_layer_btn_close.gif') 0 0 no-repeat;
+  }
+  .benefit_coupon .layer_btn_top {
+    display: none;
+    position: absolute;
+    right: 15px;
+    bottom: 30px;
+  }
+  /* 타임 특가 */
+  .benefit_time_event{
+    background-color:#fc6d6e;
+    background-position: center 53px;
+    background-repeat: no-repeat;
+    background-image: url('/20231113/11/semfesta_time_event_bg.png');
+  }
+  .benefit_time_event .evt_section_in{
+    padding: 130px 0 139px;
+  }
+  .benefit_time_event .countdown .time_count {
+    height: 142px;
+    padding: 30px 0 0px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top: none;
+  }
+  .benefit_time_event .countdown .time_count .time {
+    display: inline-block;
+    position: relative;
+    min-width: 100px;
+    padding: 0 9px;
+    font-weight: bold;
+    font-size: 75px;
+    color: #0013fe;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_order_timebg_center.gif') 0 0 repeat-x;
+  }
+  .benefit_time_event .countdown .time_count .time_in {
+    display: inline-block;
+    position: relative;
+    height: 79px;
+    padding-top: 5px;
+    line-height: 1em;
+    vertical-align: top;
+    z-index: 51;
+  }
+  .benefit_time_event .countdown .time_count .time .time_text {
+    display: block;
+    margin-top: 17px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1em;
+    color: #fff;
+  }
+  .benefit_time_event .countdown .time_count .time .hours,
+  .benefit_time_event .countdown .time_count .time .min,
+  .benefit_time_event .countdown .time_count .time .sec {
+    display: inline-block;
+    width: 100px;
+  }
+  .benefit_time_event .countdown .time_count .time:before,
+  .benefit_time_event .countdown .time_count .time:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 19px;
+    height: 84px;
+    z-index: 50;
+  }
+  .benefit_time_event .countdown .time_count .time:before {
+    left: 0;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_order_timebg_left.gif') 0 0 no-repeat;
+  }
+  .benefit_time_event .countdown .time_count .time:after {
+    right: 0;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_order_timebg_right.gif') 0 0 no-repeat;
+  }
+</style>
+
 <input style="display: none" id="clip" />
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -987,110 +1338,6 @@
   }
 </script>
 
-<style type="text/css">
-  @import url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css');
-  * {
-    margin: 0;
-    padding: 0;
-    font-family: 'NanumSquareNeo';
-  }
-  li {
-    list-style: none;
-  }
-  .relti {position:relative;}
-  .cont-wraps {}
-  .dateTxt {position:absolute;top:250px;left:0px;font-size:25px;line-height:140%;color:#7c5137;width:100%;text-align:center;font-family:arial;}
-
-  .fix-nv-obj {margin-top:0px;z-index:15;}
-
-  .event_wrap {
-  }
-  .evt_section {
-    width: 1920px;
-  }
-
-  /* 플로팅 배너 */
-  .layer_bnnr_form {
-    position: absolute;
-    top: 0;
-    width: 1440px;
-    margin: 0 auto;
-    z-index: 120;
-  }
-  .layer_bnnr_form .layer_bnnr {
-    position: absolute;
-    top: 250px;
-    margin-left: -145px;
-    z-index: 101;
-  }
-  .layer_bnnr_form .layer_bnnr .quick_bnnr_live {
-    display: none;
-  }
-  .layer_bnnr_form_active {
-    position: fixed;
-  }
-  /* [Event] - 탭메뉴 */
-  .benefit_event_tab {
-    height: 162px;
-    width: 1920px;
-    background: #000;
-  }
-  .benefit_event_tab .section_in {
-    padding: 0;
-  }
-  .fixed_top_layer .benefit_event_fixed {
-    position: fixed;
-    top: 92px;
-    left: 0;
-    width: 1920px;
-    background: #000;
-    z-index: 99;
-  }
-  .tablist {
-    width: 1220px;
-    margin: auto;
-    background-color: #fff;
-  }
-  .tablist:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-  .tablist li {
-    float: left;
-    width: 25%;
-    box-sizing: border-box;
-    background-color: #000;
-    border-right: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-  }
-  .tablist li:nth-child(1){border-bottom-right-radius: 15px;}
-  .tablist li:nth-child(2),
-  .tablist li:nth-child(3){border-bottom-left-radius: 15px;border-bottom-right-radius: 15px;}
-  .tablist li:nth-child(4){border-bottom-left-radius: 15px;}
-  .tablist li:nth-child(5){border-top-right-radius: 15px;}
-  .tablist li:nth-child(6),
-  .tablist li:nth-child(7){border-top-left-radius: 15px;border-top-right-radius: 15px;}
-  .tablist li:nth-child(8){border-top-left-radius: 15px;}
-  .tablist li a {
-    display: block;
-    height: 81px;
-    padding-top: 27px;
-    font-size: 23px;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  .tablist li.on {
-    background: #fff;
-  }
-  .tablist li.on a {
-    color: #000;
-  }
-</style>
-
 <script type="text/javascript">
   // 초기 메뉴 위치
   $(document).ready(function () {
@@ -1102,14 +1349,18 @@
         $(window).scrollTop($('#js_nv_pos1').offset().top - 173);
       } else if (params.get('pageName') === 'time') {
         $(window).scrollTop($('#js_nv_pos2').offset().top - 173);
-      } else if (params.get('pageName') === 'draw') {
+      } else if (params.get('pageName') === 'interior') {
         $(window).scrollTop($('#js_nv_pos3').offset().top - 173);
-      } else if (params.get('pageName') === 'special') {
+      } else if (params.get('pageName') === 'category') {
         $(window).scrollTop($('#js_nv_pos4').offset().top - 173);
-      } else if (params.get('pageName') === 'clearance') {
+      } else if (params.get('pageName') === 'newProduct') {
         $(window).scrollTop($('#js_nv_pos5').offset().top - 173);
-      } else if (params.get('pageName') === 'counsel') {
+      } else if (params.get('pageName') === 'ssamFest') {
         $(window).scrollTop($('#js_nv_pos6').offset().top - 173);
+      } else if (params.get('pageName') === 'event') {
+        $(window).scrollTop($('#js_nv_pos7').offset().top - 173);
+      } else if (params.get('pageName') === 'consultation') {
+        $(window).scrollTop($('#js_nv_pos8').offset().top - 173);
       }
     });
   });
@@ -1436,8 +1687,8 @@
     // 기간 정의
     var periodResult = DateTimer.getDatesStartToLast([
       {
-        first: '2023/8/16 15:00:00',
-        last: '2023/8/17 14:59:59'
+        first: '2023/11/06 15:00:00',
+        last: '2023/11/23 14:59:59'
       },
       {
         first: '2023/8/23 15:00:00',
@@ -1453,17 +1704,16 @@
       }
     ]);
 
-    /*
+    
 		// 초기 이미지 활성화
 		if( periodResult.flag ){
 			// 상담신청 버튼 숨김
-			$bnnrLink.hide();
+			//$bnnrLink.hide();
 			// 라이브 버튼 활성화
-			$bnnrLive.show();
+			//$bnnrLive.show();
 		}
-		*/
-
-    $bnnrLink.hide();
+		
+    //$bnnrLink.hide();
     $bnnrLive.show();
 
     // 메뉴 클릭
@@ -1794,8 +2044,8 @@
       <div class="layer_bnnr_form">
         <!-- [Event] - Quick Banner -->
         <div id="js_floating_bnnr" class="layer_bnnr">
-          <a href="#js_nv_pos6" class="quick_bnnr_app quick_go"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_quick_layer_off.png" alt="쌤패스타 인테리어 상담신청" /></a>
-          <a href="https://mall.hanssem.com/tvMedia/tvMediaMain.do?wlp=37199822" class="quick_bnnr_live quick_live"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_quick_layer_on.png" alt="쌤페스타 라이브 단독혜택" /></a>
+          <a href="#js_nv_pos6" class="quick_bnnr_app quick_go"><img src="/20231113/11/semfesta_quick_layer_off.png" alt="쌤패스타 인테리어 상담신청" /></a>
+          <a href="https://mall.hanssem.com/tvMedia/tvMediaMain.do?wlp=37199822" class="quick_bnnr_live quick_live"><img src="/20231113/11/semfesta_quick_layer_on.png" alt="쌤페스타 라이브 단독혜택" /></a>
         </div>
         <!-- //[Event] - Quick Banner -->
       </div>
@@ -1826,9 +2076,9 @@
   <!-- [Event] - Benefit Coupon -->
   <div id="nv-01" class="evt_section benefit_coupon">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_couponpack_title.gif" alt="benefit 01 2023 대한민국 대표 리빙 혜택! 쌤페스타 쿠폰팩" /></p>
+      <p class="evt_section_title"><img src="/20231113/11/semfesta_couponpack_title.png" alt="benefit 01 2023 대한민국 대표 리빙 혜택! 쌤페스타 쿠폰팩" /></p>
       <div class="evt_section_content">
-        <img src="https://image2.hanssem.com/event/2023/08/image/ssemfesta_coupon.jpg" alt="" usemap="#benefit_coupon" />
+        <img src="/20231113/11/ssemfesta_coupon.png" alt="" usemap="#benefit_coupon" />
         <map name="benefit_coupon">
           <area shape="RECT" coords="149,629,450,687" href="#" class="coupon_map ssem_coupon_app" title="쿠폰 다운로드" onClick="appDown(); return false;" />
           <area shape="RECT" coords="769,628,1069,687" href="javascript:addCouponGrpNormal('1276','', '완료메시지', '발급완료시사용기간고지메시지');" class="ssem_coupon_first" title="첫구매 쿠폰다운받기" />
@@ -1905,15 +2155,15 @@
   <!-- //[Event] - Benefit Coupon -->
 
   <!-- [Event] - 선착순 특가 -->
-  <div id="nv-02" class="evt_section benefit_special">
+  <div id="nv-02" class="evt_section benefit_time_event">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_benefit_special_title.gif" alt="benefit 02 지금이 기회! 마지막 선착순 특가" /></p>
+      <p class="evt_section_title"><img src="/20231113/11/semfesta_time_event_title.png" alt="benefit 02 지금이 기회! 마지막 선착순 특가" /></p>
       <div class="evt_section_content">
         <!-- Counting Unit -->
         <div id="js_countdown_first_wrap" class="special_week_counting">
           <!-- 시간 카운팅 -->
           <div class="countdown js_week_countdown">
-            <p class="title"><img src="https://image2.hanssem.com/event/2023/08/image/ssemfesta_order_title1.gif" alt="매주 목요일 10시" /></p>
+            <p class="title"><img src="/20231113/11/ssemfesta_order_title1.png" alt="매주 목요일 10시 오픈" /></p>
             <div class="time_count">
               <span class="time">
                 <span class="time_in">
@@ -2310,7 +2560,7 @@
         <div id="js_countdown_last_wrap" class="special_week_counting special_week_counting_last">
           <!-- 시간 카운팅 -->
           <div class="countdown">
-            <p class="title"><img src="https://image2.hanssem.com/event/2023/08/image/ssemfesta_order_title2.gif" alt="매주 월요일 | 목요일 10시" /></p>
+            <p class="title"><img src="/20231113/11/ssemfesta_order_title2.png" alt="매주 목요일 10시 오픈" /></p>
             <div class="time_count">
               <span class="time">
                 <span class="time_in">
