@@ -802,16 +802,18 @@
       // 메뉴 고정 위치값
       if (top > $this.offset().top - 48) {
         $this.addClass('fixed_top_layer');
+        $quickBnnr.addClass('layer_bnnr_form_active');
       } else {
         $this.removeClass('fixed_top_layer');
+        $quickBnnr.removeClass('layer_bnnr_form_active');
       }
 
       // 배너 고정 위치값
-      if (top > $secProcess.offset().top - 48) {
-        $quickBnnr.addClass('layer_bnnr_form_active');
-      } else {
-        $quickBnnr.removeClass('layer_bnnr_form_active');
-      }
+      // if (top > $secProcess.offset().top - 48) {
+      //   $quickBnnr.addClass('layer_bnnr_form_active');
+      // } else {
+      //   $quickBnnr.removeClass('layer_bnnr_form_active');
+      // }
 
       // 메뉴 활성화
       for (var j = 0; j < posArr.length; j++) {
@@ -986,8 +988,8 @@
     $('.js_date_week_list').addClass('js_swiper_action');
     // 초기 실행
     var swiperDate = new Swiper('.js_date_week_list', {
-      slidesPerView: 3.1,
-      spaceBetween: 10,
+      slidesPerView: 'auto',
+      // spaceBetween: 10,
       //freeMode:true,
       scrollbar: {
         el: '.swiper-scrollbar'
@@ -1179,8 +1181,7 @@
 
     // 이벤트 배너 Swiper
     var swiperEvent = new Swiper('.js_event_list', {
-      slidesPerView: 1.1,
-      spaceBetween: 42,
+      slidesPerView: 'auto',
       scrollbar: {
         el: '.swiper-scrollbar'
       }
@@ -1307,7 +1308,7 @@
         <div class=""><a href="#nv-06" class="menu navi_clearance">쌤.페.특가</a></div>
         <div class=""><a href="#nv-07" class="menu navi_ssemdraw">이벤트</a></div>
         <div class="">
-          <a href="#nv-08" class="menu navi_counseling">인테리어<br />상담신청</a>
+          <a href="#nv-08" class="menu navi_counseling">인테리어<br />상담 신청</a>
         </div>
       </div>
     </div>
