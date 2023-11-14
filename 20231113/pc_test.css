@@ -1,0 +1,1292 @@
+
+  @import url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css');
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+  }
+  .relti {
+    position: relative;
+  }
+  .cont-wraps {
+  }
+  .dateTxt {
+    position: absolute;
+    top: 250px;
+    left: 0px;
+    font-size: 25px;
+    line-height: 140%;
+    color: #7c5137;
+    width: 100%;
+    text-align: center;
+    font-family: arial;
+  }
+
+  .fix-nv-obj {
+    margin-top: 0px;
+    z-index: 15;
+  }
+
+  /* [Event] - 상단이동 버튼 */
+  .quick_top_button {
+    display: none;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 20;
+  }
+  .quick_top_button a {
+    display: block;
+    width: 51px;
+    height: 51px;
+    text-indent: -9999px;
+    background: url('https://image2.hanssem.com/event/2023/08/image/semfesta_couponpack_btn_top.png') 0 0 no-repeat;
+  }
+  .event_wrap {
+    font-family: 'NanumSquareNeo';
+  }
+  .evt_section {
+    width: 1920px;
+    position: relative;
+  }
+  /* [Common] - Button */
+  .btn_comm_button {
+    margin-top: 70px;
+    text-align: center;
+  }
+  .btn_comm_button a {
+    display: inline-block;
+    width: 420px;
+    padding: 26px 0;
+    font-size: 25px;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    background: #000;
+    font-weight: 800;
+  }
+  .btn_comm_button.wht a {
+    background-color: #fff;
+    color: #000;
+  }
+  .btn_comm_button a span {
+    display: inline-block;
+    position: relative;
+    padding-right: 28px;
+  }
+  .btn_comm_button a span strong {
+    font-weight: 800;
+  }
+  .btn_comm_button a span:before,
+  .btn_comm_button a span:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 11px;
+    height: 2px;
+    background: #fff;
+  }
+  .btn_comm_button.wht a span:before,
+  .btn_comm_button.wht a span:after {
+    background-color: #000;
+  }
+  .btn_comm_button a span:before {
+    top: 8px;
+    transform: rotate(45deg);
+  }
+  .btn_comm_button a span:after {
+    top: 15px;
+    transform: rotate(-45deg);
+  }
+  /* [Common] - Product Form List */
+  .common_product_form {
+    position: relative;
+    margin: 45px -5px 0;
+    font-size: 0;
+  }
+  .common_product_form:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .common_product_form .item_column {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 5px;
+    vertical-align: top;
+    font-size: 0;
+  }
+  .common_product_form .item_column_last {
+    margin-right: 0;
+  }
+  .common_product_form .item_column a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+  }
+  .common_product_form .item_column .sale {
+    position: absolute;
+    left: 17px;
+    top: 13px;
+    width: 81px;
+    height: 94px;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 29px;
+    font-weight: 900;
+    color: #0c47c8;
+    text-align: center;
+    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_salebg.png') 0 0 no-repeat;
+    box-sizing: border-box;
+  }
+  .benefit_online .common_product_form .item_column .sale{
+    width: 90px;
+    height: 104px;
+    font-size: 33px;
+    padding-top: 33px;
+    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_saleRedBbg.png') 0 0 no-repeat;
+    color: #d24041;
+  }
+  .benefit_online .common_product_form .item_column .sale .max{
+    font-size: 17px;
+  }
+  .common_product_form .item_column .sale .max {
+    display: block;
+    margin: 0;
+    font-weight:800;
+    font-size: 15px;
+    text-align: center;
+  }
+  .common_product_form .item_column .sale img {
+    margin-left: -8px;
+  }
+  .common_product_form .item_column .sale_max {
+    font-size: 29px;
+  }
+  .common_product_form .item_column .img img {
+    vertical-align: top;
+    width: 100%;
+  }
+  .common_product_form .item_column .explain {
+    padding: 25px 37px 30px;
+  }
+  .common_product_form .item_column .explain .tit {
+    font-weight: 800;
+    font-size: 25px;
+    color: #000;
+    text-align: left;
+    font-family: 'NanumSquareNeo';
+  }
+  .common_product_form .item_column .explain .txt {
+    margin-top: 10px;
+    font-size: 24px;
+    line-height: 29px;
+    color: #333333;
+    font-family: 'NanumSquareNeo';
+    letter-spacing: -2px;
+    text-align: left;
+  }
+  .common_product_form_unit3 .item_column .explain .txt{
+    font-size: 21px;
+  }
+
+  .common_product_form_unit4  .item_column .explain .txt{
+    font-size: 19px;
+    font-weight: 700;
+  }
+  .common_product_form .item_column .explain .price_wrap {
+    margin-top: 7px;
+  }
+  .common_product_form .item_column .explain .price_wrap .del {
+    text-align: right;
+  }
+  .common_product_form .item_column .explain .price_wrap .del del {
+    font-size: 23px;
+    font-weight: 600;
+    color: #b3b3b3;
+  }
+  .common_product_form_unit4 .item_column .explain .price_wrap .del del{
+    font-size: 19px;
+  }
+  .common_product_form .item_column .explain .price_wrap .price {
+    width: 100%;
+    margin-top: 7px;
+  }
+  .common_product_form .item_column .explain .price_wrap .price:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .common_product_form .item_column .explain .price_wrap .price .icon {
+    float: left;
+  }
+  .item_column .explain .price_wrap .price .won {
+    float: right;
+    font-weight: 900;
+    font-size: 27px;
+    color: #003fcb;
+    letter-spacing: -1px;
+  }
+  .common_product_form_unit3 .item_column .explain .price_wrap .price .won {
+    font-size: 24px;
+  }
+  .common_product_form_unit3 .item_column .explain .price_wrap .price .won strong {
+    font-size: 34px;
+  }
+  .common_product_form_unit4 .item_column .explain .price_wrap .price .won {
+    font-size: 23px;
+  }
+  .common_product_form_unit4 .item_column .explain .price_wrap .price.price_black .won strong {
+    font-size: 28px;
+  }
+  .common_product_form_unit4 .item_column .explain .price_wrap .price .won strong {
+    font-size: 32px;
+  }
+  .common_product_form .item_column .explain .price_wrap .price .won strong {
+    margin-right: -2px;
+    font-weight: 900;
+  }
+  .common_product_form .item_column .explain .price_option {
+    margin-top: 20px;
+    padding-top: 28px;
+    text-align: center;
+    border-top: 1px solid #d2d2d2;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price {
+    display: inline-block;
+    width: 221px;
+    height: 120px;
+    vertical-align: middle;
+    border-radius: 15px;
+    border:1px solid #e95354;
+    color: #e95354;
+  }
+  .common_product_form .item_column .explain .price_option .plus + .detail_price{
+    border:1px solid #000;
+    color: #000;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price dl {
+    position: relative;
+    margin-top: 25px;
+    text-align: center;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price dl dt {
+    font-size: 15px;
+    color: #fff;
+    background-color: #e95354;
+    padding: 5px 0;
+    line-height: 1;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price dl dd {
+    margin-top: 12px;
+    font-weight: 900;
+    font-size: 20px;
+    color: #e95354;
+    letter-spacing: -1px;
+  }
+  .common_product_form .item_column .explain .price_option .plus + .detail_price dl dt {
+    background-color: #000;
+  }
+  .common_product_form .item_column .explain .price_option .plus + .detail_price dl dd {
+    color: #000;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price dl dd strong {
+    font-size: 31px;
+    font-weight: 900;
+  }
+  /* .common_product_form .item_column .explain .price_option .detail_price dl:before,
+  .common_product_form .item_column .explain .price_option .detail_price dl:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translateY(-50%);
+  } */
+  .common_product_form .item_column .explain .price_option .detail_price dl:before {
+    left: -10px;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price dl:after {
+    right: -10px;
+  }
+  .common_product_form .item_column .explain .price_option .plus {
+    display: inline-block;
+    position: relative;
+    width: 33px;
+    height: 33px;
+    margin: 0 10px -6px;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: #9fa0a6;
+  }
+  .common_product_form .item_column .explain .price_option .plus:before,
+  .common_product_form .item_column .explain .price_option .plus:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+  }
+  .common_product_form .item_column .explain .price_option .plus:before {
+    width: 3px;
+    height: 15px;
+  }
+  .common_product_form .item_column .explain .price_option .plus:after {
+    width: 15px;
+    height: 3px;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price_gray {
+    background: #e6e6e6;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price_black {
+    background: #000000;
+  }
+  .common_product_form .item_column .explain .price_option .detail_price_black dl dt,
+  .common_product_form .item_column .explain .price_option .detail_price_black dl dd {
+    color: #fff;
+  }
+  .common_product_form_unit2 .item_column {
+    width: 603px;
+  }
+  .common_product_form_unit4 .item_column {
+    width: 25%;
+    margin-bottom: 10px;
+  }
+  .common_product_form_unit3 .item_column {
+    width: 33.333%;
+    margin-bottom: 10px;
+  }
+  .common_product_form_unit3 .item_column .explain,
+  .common_product_form_unit4 .item_column .explain {
+    position: relative;
+    min-height: 270px;
+    background-color: #fff;
+    padding: 18px 18px 0px;
+  }
+  .common_product_form_unit3 .item_column .explain {
+    min-height: 210px;
+    padding: 18px 40px 0;
+  }
+  .common_product_form_unit3 .item_column .explain .price_wrap {
+    padding: 0 40px;
+  }
+  .common_product_form_unit3 .item_column .explain .tit,
+  .common_product_form_unit4 .item_column .explain .tit {
+    font-size: 23px;
+  }
+  .common_product_form_unit4 .item_column .explain .tit{
+    font-size: 22px;
+  }
+  .common_product_form_unit3 .item_column .explain .txt,
+  .common_product_form_unit4 .item_column .explain .txt {
+    min-height: 87px;
+    margin-top: 5px;
+  }
+  .item_column .explain .price_wrap {
+    position: absolute;
+    left: 0;
+    bottom: 18px;
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box; /*margin-top:-18px;*/
+  }
+  .item_column .explain .price_wrap .del {
+    margin-bottom: 4px;
+  }
+  .item_column .explain .price_wrap .del del {
+    font-size: 20px;
+  }
+  .item_column .explain .price_wrap .price {
+    margin-top: 0;
+  }
+  .item_column .explain .price_wrap .price .icon {
+    margin-top: 0;
+  }
+  .item_column .explain .price_wrap .price .won {
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+  .item_column .explain .price_wrap .price .won strong {
+    font-size: 41px;
+    letter-spacing: -2px;
+  }
+  .item_column .explain .price_wrap .price_black .won {
+    color: #000;
+  }
+  .item_column .explain .price_wrap .price_black .won strong {
+    font-size: 34px;
+  }
+  /* [Common] - Layer */
+  .evt_common_layer {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    min-width: 498px;
+    box-shadow: 10px 10px 35px -10px #888;
+    z-index: 100;
+    transform: translateX(-50%);
+  }
+  .evt_common_layer_in {
+    padding: 20px 60px;
+    border: 1px solid #2d2d2d;
+    background: #fff;
+  }
+  .evt_common_layer .msg {
+    margin-top: 50px;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+  }
+  .evt_common_layer .app_qr {
+    margin-top: 40px;
+  }
+  .evt_common_layer .app_qr .txt {
+    font-weight: bold;
+    font-size: 23px;
+    color: #000000;
+    text-align: center;
+  }
+  .evt_common_layer .app_qr .img {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .evt_common_layer .app_qr .img img {
+    padding: 12px;
+    border: 2px solid #000;
+  }
+  .evt_common_layer .layer_tit {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+  }
+  .evt_common_layer .layer_tit:first-child {
+    margin-top: 0;
+  }
+  .evt_common_layer .layer_stit {
+    font-size: 16px;
+  }
+  .evt_common_layer .layer_list {
+    margin-top: 12px;
+  }
+  .evt_common_layer .layer_list li {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #000000;
+  }
+  .evt_common_layer .button {
+    margin-top: 50px;
+  }
+  .evt_common_layer .button a {
+    margin: 0 5px;
+  }
+  .evt_common_layer .layer_btn_close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .evt_common_layer .layer_btn_close a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_layer_btn_close.gif') 0 0 no-repeat;
+  }
+  .special_date h4.tit{
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1;
+    padding: 125px 0 25px;
+  }
+  .special_date .tab_date {
+    text-align: center;
+  }
+  .special_date .tab_date li {
+    display: inline-block;
+    margin-right: 30px;
+  }
+  .special_date .tab_date li a {
+    display: block;
+  }
+  .special_date .tab_date li a.tab.active img,
+  .special_date .tab_date li a.tab img + img {
+    display: none;
+  }
+  .special_date .tab_date li a.tab.active img + img {
+    display: block;
+  }
+  .special_date .tab_date li a .week {
+  }
+  .special_date .tab_date li:last-child {
+    margin-right: 0;
+  }
+  .special_date .tab_date li.disabled a {
+    pointer-events: none;
+  }
+
+  .benefit_draw .evt_section_content,
+  .special_date .date_week_wrap2{
+    position: relative;
+  }
+  .special_date .rolling_list{
+    height: 490px;
+  }
+  .special_date .unit {
+    display: inline-block;
+    width: 232px;
+    margin-top: 47px;
+  }
+  .special_date .unit a{
+    text-decoration: none;
+  }
+  .special_date .unit .explain {
+    background-color: #fff;
+    text-align: center;
+    padding: 14px 0;
+    box-sizing: border-box;
+    height: 140px;
+  }
+  .special_date .unit .explain .tit {
+    color: #000;
+    font-weight: 800;
+    font-size: 20px;
+  }
+  .special_date .unit .explain .txt {
+    color: #333;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -2px;
+  }
+  .benefit_draw .evt_section_content .swiper-button-prev,
+  .benefit_draw .evt_section_content .swiper-button-next,
+  .date_week_wrap2 .swiper-button-prev,
+  .date_week_wrap2 .swiper-button-next {
+    position: absolute;
+    top: 228px;
+    width: 72px;
+    height: 72px;
+    border: none;
+    font-size: 0;
+    background: transparent;
+  }
+  .benefit_draw .evt_section_content .swiper-button-prev,
+  .benefit_draw .evt_section_content .swiper-button-next{
+    top: 180px;
+  }
+  .benefit_draw .evt_section_content .swiper-button-prev:after,
+  .benefit_draw .evt_section_content .swiper-button-next:after,
+  .date_week_wrap2 .swiper-button-prev:after,
+  .date_week_wrap2 .swiper-button-next::after{
+    content: none;
+  }
+
+  .benefit_draw .evt_section_content .swiper-button-prev,
+  .date_week_wrap2 .swiper-button-prev {
+    left: -95px;
+    border-top: 5px solid #000;
+    border-left: 5px solid #000;
+    transform: rotate(-45deg);
+  }
+  .benefit_draw .evt_section_content .swiper-button-next,
+  .date_week_wrap2 .swiper-button-next {
+    right: -95px;
+    border-top: 5px solid #000;
+    border-right: 5px solid #000;
+    transform: rotate(45deg);
+  }
+  .benefit_draw .evt_section_content .swiper-button-prev,
+  .benefit_draw .evt_section_content .swiper-button-next{
+    border-color: #fff;
+  }
+  .benefit_draw .evt_section_content .swiper-button-disabled,
+  .date_week_wrap2 .swiper-button-disabled{
+    display: none;
+  }
+  /* [Event] */
+  .event_wrap {
+  }
+  .evt_section {
+    width: 1920px;
+  }
+  .benefit_process {
+    background-color: #002984;
+  }
+  .evt_section_in {
+    position: relative;
+    width: 1440px;
+    margin: 0 auto;
+  }
+  .evt_section .evt_section_title {
+    margin: 0 0 60px;
+    text-align: center;
+  }
+  .evt_section .evt_section_content {
+    width: 1220px;
+    margin: 0 auto;
+  }
+  .evt_section .evt_section_care .btn {
+    display: inline-block;
+    position: relative;
+    text-decoration: underline;
+  }
+  .evt_section .evt_section_care .btn a {
+    display: inline-block;
+    position: relative;
+    font-size: 22px;
+    padding-bottom: 3px;
+    font-weight: 700;
+    color: #656565;
+    text-decoration: none;
+  }
+  .evt_section .evt_section_care .btn.wht_txt a{
+    color: #fff;
+  }
+  .evt_section .evt_section_care .btn a:before,
+  .evt_section .evt_section_care .btn a:after {
+    content: '';
+    display: inline-block;
+  }
+  .evt_section .evt_section_care .btn a:before {
+    width: 21px;
+    height: 21px;
+    margin: 0 5px -1px 0;
+    vertical-align: middle;
+    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_care_big_gray.png') 0 0 no-repeat;
+  }
+  .evt_section .evt_section_care .btn.wht_txt a:before{
+    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_care_big.png') 0 0 no-repeat;
+  }
+  .evt_section .evt_section_care .btn a:after {
+    width: 11px;
+    height: 15px;
+    margin: 0 0 0 8px;
+    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_arrow_big_gray.png') 0 0 no-repeat;
+  }
+  .evt_section .evt_section_care .btn.wht_txt a:after{
+    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_arrow_big.png') 0 0 no-repeat;
+  }
+  .evt_section .evt_section_care .btn:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #656565;
+  }
+  .evt_section .evt_section_care .btn.wht_txt:after {
+    background-color: #fff;
+  }
+  /* 플로팅 배너 */
+  .layer_bnnr_form {
+    position: absolute;
+    top: 0;
+    width: 1440px;
+    margin: 0 auto;
+    z-index: 120;
+  }
+  .layer_bnnr_form .layer_bnnr {
+    position: absolute;
+    top: 428px;
+    margin-left: -28px;
+    z-index: 101;
+  }
+  .layer_bnnr_form .layer_bnnr .quick_bnnr_live {
+    display: none;
+  }
+  .layer_bnnr_form_active {
+    position: fixed;
+  }
+  .layer_bnnr_form_active .layer_bnnr {
+    top: 290px;
+  }
+  /* [Event] - 탭메뉴 */
+  .benefit_event_tab {
+    height: 162px;
+    width: 1920px;
+    background: #000;
+  }
+  .benefit_event_tab .section_in {
+    padding: 0;
+  }
+  .fixed_top_layer .benefit_event_fixed {
+    position: fixed;
+    top: 92px;
+    left: 0;
+    width: 1920px;
+    background: #000;
+    z-index: 99;
+  }
+  .tablist {
+    width: 1220px;
+    margin: auto;
+    background-color: #fff;
+    border-left: 1px #fff solid;
+  }
+  .tablist:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .tablist li {
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+    background-color: #000;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .tablist li:nth-child(1) {
+    border-bottom-right-radius: 15px;
+  }
+  .tablist li:nth-child(2),
+  .tablist li:nth-child(3) {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .tablist li:nth-child(4) {
+    border-bottom-left-radius: 15px;
+  }
+  .tablist li:nth-child(5) {
+    border-top-right-radius: 15px;
+    border-bottom: 0;
+  }
+  .tablist li:nth-child(6),
+  .tablist li:nth-child(7) {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 0;
+  }
+  .tablist li:nth-child(8) {
+    border-top-left-radius: 15px;
+    border-bottom: 0;
+  }
+  .tablist li a {
+    display: block;
+    height: 81px;
+    padding-top: 27px;
+    font-size: 23px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: 700;
+  }
+
+  .tablist li.on {
+    background: #fff;
+  }
+  .tablist li.on a {
+    color: #000;
+  }
+  .evt_section {
+    width: 1920px;
+  }
+  .evt_section .evt_section_title {
+    margin: 0 0 60px;
+    text-align: center;
+    font-size: 0;
+  }
+  .evt_section .evt_section_content {
+    width: 1220px;
+    margin: auto;
+  }
+  .evt_section .evt_section_care {
+    margin-top: 52px;
+    text-align: center;
+  }
+
+  .benefit_online{
+    background-color: #eeeff5;
+  }
+  .benefit_online .evt_section .evt_section_title{
+    margin-bottom: 0;
+  }
+  .benefit_online .item_column .explain .price_wrap{
+    position: relative;
+    padding: 0;
+    bottom: 0;
+  }
+  .benefit_online .common_product_form .item_column .explain .price_wrap{
+    margin-top: 0;
+  }
+  .benefit_online .common_product_form .item_column .explain{
+    background-color: #fff;
+  }
+  .benefit_online .online_form_tit{
+    text-align: center;
+    margin-top: 100px;
+  }
+  .benefit_online .online_lowest_type .online_form:nth-child(1) .online_form_tit{
+    margin-top: 0;
+  }
+  .benefit_online .online_form_tit span{
+    display: inline-block;
+    font-size: 26px;
+    color: #fff;
+    line-height: 1;
+    padding: 19px 0;
+    background: #000;
+    width: 200px;
+    font-weight: 700;
+    border-radius: 35px;
+  }
+  .benefit_online .item_column .explain .price_wrap .price .won{
+    color: #d24041;
+  }
+  
+  .benefit_online .benefit_time_event .evt_section_in{
+    padding-top: 0;
+  }
+  .benefit_online .online_guide{
+    text-align: center;
+    color: #797979;
+    font-size:19px;
+    margin-top: 46px;
+    line-height: 1;
+  }
+  .benefit_online .special_bnnr{
+    text-align: center;
+    margin-top: 140px;
+    padding-bottom: 137px;
+  }
+  .benefit_category{
+    background-color: #002984;
+    position: relative;
+  }
+  .benefit_category::before,
+  .benefit_category::after{
+    content:'';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+  .benefit_category .common_product_form .item_column .sale{
+    color: #d24041;
+    width: 85px;
+    height: 98px;
+    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_saleRedbg.png') 0 0 no-repeat;
+  }
+  .benefit_category::before{
+    width: 402px;
+    height: 244px;
+    left: 0;
+    background-image: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_category_bg_left.jpg');
+  }
+  .benefit_category::after{
+    width: 389px;
+    height: 244px;
+    right: 0;
+    background-image: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_category_bg_right.jpg');
+  }
+  .benefit_category.evt_section .evt_section_title{
+    margin-bottom: 0;
+  }
+  .benefit_category.evt_section .common_product_form{
+    margin-top: 0;
+  }
+  .benefit_category .common_product_form_unit4 .item_column .explain{
+    padding: 26px 18px 0;
+    box-sizing: border-box;
+  }
+  .benefit_category .common_product_form .item_column .explain .price_wrap .del del{
+    font-size: 19px;
+  }
+  .benefit_category .common_product_form_unit4 .item_column .explain .tit{
+    font-size: 22px;
+  }
+  .benefit_category .common_product_form .item_column .explain .txt{
+    font-size: 19px;
+    line-height: 29px;
+    min-height: 80px;
+  }
+  .benefit_category .item_column .explain .price_wrap .price_total .won{
+    color: #e95354;
+  }
+  .benefit_category .btn_comm_button{
+    margin-top: 90px;
+    padding-bottom: 140px;
+  }
+
+  .benefit_newPrd{
+    background-color: #fc6d6e;
+  }
+  .benefit_newPrd .special_bnnr{
+    margin-top: 168px;
+    padding-bottom: 138px;
+  }
+  /* [Event] - 쿠폰팩 */
+  .benefit_coupon {
+    position: relative;
+    background: #f3ede8;
+    background-image: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_couponpack_bg.png');
+    background-repeat: no-repeat;
+    background-position: center 60px;
+  }
+  .benefit_coupon .evt_section_in {
+    padding: 125px 0 139px;
+  }
+  .benefit_coupon .evt_qr_img {
+    display: none;
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    box-shadow: 10px 10px 1px 1px rgba(50, 50, 50, 0.3);
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+  .benefit_coupon .evt_qr_img h4 {
+    padding: 30px 0 0 0;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    font-weight: 700;
+  }
+  .benefit_coupon .evt_qr_img .btn_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .benefit_coupon .evt_qr_img .btn_close a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-indent: -9999px;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_layer_btn_close.gif') 0 0 no-repeat;
+  }
+  .benefit_coupon .layer_btn_top {
+    display: none;
+    position: absolute;
+    right: 15px;
+    bottom: 30px;
+  }
+  /* 타임 특가 */
+  .benefit_time_event {
+    background-color: #fc6d6e;
+    background-position: center 53px;
+    background-repeat: no-repeat;
+    background-image: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_time_event_bg.png');
+  }
+  .benefit_time_event .evt_section_in {
+    padding: 130px 0 139px;
+  }
+  .benefit_time_event .countdown .time_count {
+    height: 172px;
+    padding: 30px 0 0px;
+    text-align: center;
+    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top: none;
+  }
+  .benefit_time_event .countdown .time_count .time {
+    display: inline-block;
+    position: relative;
+    min-width: 100px;
+    padding: 0 14px;
+    font-weight: 900;
+    font-size: 66px;
+    color: #002984;
+    letter-spacing: -1px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 8px 8px 5px 0 rgba(0, 41, 132, 0.25) inset;
+    -webkit-box-shadow: 8px 8px 5px 0 rgba(0, 41, 132, 0.25) inset;
+    -moz-box-shadow: 8px 8px 5px 0 rgba(0, 41, 132, 0.25) inset;
+  }
+  .benefit_time_event .countdown .time_count .time_in {
+    display: inline-block;
+    position: relative;
+    height: 72px;
+    padding-top: 12px;
+    line-height: 1em;
+    vertical-align: top;
+    z-index: 51;
+  }
+  .benefit_time_event .countdown .time_count .time .time_text {
+    display: block;
+    margin-top: 25px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1em;
+    color: #fff;
+  }
+  .benefit_time_event .countdown .time_count .time .hours,
+  .benefit_time_event .countdown .time_count .time .min,
+  .benefit_time_event .countdown .time_count .time .sec {
+    display: inline-block;
+    width: auto;
+  }
+  .benefit_time_event .countdown .time_count .time:before,
+  .benefit_time_event .countdown .time_count .time:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 19px;
+    height: 84px;
+    z-index: 50;
+  }
+  .benefit_time_event .countdown .time_count .time_colon {
+    display: inline-block;
+    width: 12px;
+    height: 84px;
+    margin: 10px 15px 0;
+    vertical-align: top;
+    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_time_icon.png') 0 50% no-repeat;
+  }
+
+  .benefit_counsel_care {
+    background: #000000;
+  }
+  .benefit_counsel_care .counsel_care_list {
+    padding: 125px 0 100px 156px;
+  }
+  .benefit_counsel_care .counsel_care_list .title {
+    font-size: 27px;
+    color: #ffffff;
+  }
+  .benefit_counsel_care .counsel_care_list .tit {
+    margin: 30px 0 10px;
+    font-size: 20px;
+    color: #ffffff;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area {
+    width: 100%;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area_in {
+    width: 100%;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area_in:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area_in .area {
+    float: left;
+    width: 50%;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area_first,
+  .benefit_counsel_care .counsel_care_list .division_area_last {
+    display: none;
+  }
+  .benefit_counsel_care .counsel_care_list .list {
+  }
+  .benefit_counsel_care .counsel_care_list .list li {
+    position: relative;
+    margin: 4px 0;
+    padding-left: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+  .benefit_counsel_care .counsel_care_list .list li:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 2px;
+    height: 2px;
+    background: #f4f4f4;
+  }
+  .benefit_counsel_care .counsel_care_list .list li.list_last {
+    display: none;
+  }
+  .benefit_counsel_care .counsel_care_list .list li.list_last.show {
+    display: block;
+  }
+
+  .benefit_clearance_bottom{
+    padding-bottom: 137px;
+  }
+
+  /* [Event] - DRAW */
+  .benefit_draw {
+    position: relative;
+    background-color: #002984;
+    padding-bottom: 135px;
+  }
+  .benefit_draw.evt_section .evt_section_title{
+    margin: 0;
+  }
+  .benefit_draw .draw-list{
+    height: 350px;
+  }
+  .benefit_draw .draw-list .swiper-slide{
+    width: 295px;
+    position: relative;
+  }
+  .benefit_draw .draw-list .swiper-slide p{
+    position: absolute;
+    left: 0;
+    font-size: 15px;
+    font-weight: 600;
+    top: 20px;
+    width: 100%;
+    font-weight: 800;
+    text-align: center;
+  }
+  .benefit_draw .draw-list .swiper-slide p span.blue{
+    color:#237bff;
+  }
+  .benefit_draw .draw-list .swiper-slide p span.red{
+    color: #ff7374;
+  }
+  .benefit_draw .draw-info{
+    margin-top: 100px;
+  }
+
+  .benefit_counsel {
+    position: relative;
+    background-color: #bf80ff;
+  }
+  .benefit_counsel .btn_comm_button{
+    margin-top: 100px;
+  }
+  .benefit_counsel.evt_section .evt_section_title {
+    margin: 0;
+  }
+  .benefit_counsel .evt_section_in {
+    padding-bottom: 135px;
+  }
+  .benefit_counsel .event_form {
+  }
+  .benefit_counsel .event_form .img {
+  }
+  .benefit_counsel .event_form .img + .img {
+    margin-top: 57px;
+  }
+  .benefit_counsel .evt_section_care .btn {
+  }
+  .benefit_counsel .evt_section_care .btn a {
+    font-size: 18px;
+    color: #656565;
+  }
+  .benefit_counsel .evt_section_care .btn a:before {
+    width: 17px;
+    height: 16px;
+    margin-bottom: -2px;
+    background-image: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_icon_care_small.png');
+  }
+  .benefit_counsel .evt_section_care .btn a:after {
+    width: 9px;
+    height: 16px;
+    margin-bottom: -2px;
+    background-image: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_icon_arrow_small.png');
+  }
+  .benefit_counsel .event_button {
+    margin-top: 35px;
+    text-align: center;
+  }
+  .benefit_counsel .event_button a {
+    display: inline-block;
+    width: 300px;
+    height: 60px;
+    padding: 18px 0 0 0;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    background: #000;
+    box-sizing: border-box;
+  }
+  .benefit_counsel .event_button a span {
+    display: inline-block;
+    padding-right: 18px;
+    background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_event_button_bg.gif') 100% 50% no-repeat;
+  }
+  .benefit_counsel .event_form_default {
+  }
+  .benefit_counsel .event_form_active {
+    display: none;
+  }
+  .benefit_counsel_care {
+    background: #000000;
+  }
+  .benefit_counsel_care .counsel_care_list {
+    padding: 125px 0 100px 156px;
+  }
+  .benefit_counsel_care .counsel_care_list .title {
+    font-size: 29px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+  .benefit_counsel_care .counsel_care_list .tit {
+    margin: 30px 0 10px;
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: 800;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area {
+    width: 100%;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area_in {
+    width: 100%;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area_in:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area_in .area {
+    float: left;
+    width: 50%;
+  }
+  .benefit_counsel_care .counsel_care_list .division_area_first,
+  .benefit_counsel_care .counsel_care_list .division_area_last {
+    display: none;
+  }
+  .benefit_counsel_care .counsel_care_list .list {
+  }
+  .benefit_counsel_care .counsel_care_list .list li {
+    position: relative;
+    margin: 4px 0;
+    padding-left: 8px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+  .benefit_counsel_care .counsel_care_list .list li:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 2px;
+    height: 2px;
+    background: #f4f4f4;
+  }
+  .benefit_counsel_care .counsel_care_list .list li.list_last {
+    display: none;
+  }
+  .benefit_counsel_care .counsel_care_list .list li.list_last.show {
+    display: block;
+  }
+  /* [Event] - 이벤트 > 레이어 */
+  .benefit_counsel .evt_common_layer .layer_tit {
+    margin-top: 20px;
+  }
+  .benefit_counsel .evt_common_layer .layer_event_list {
+    display: none;
+  }
+  .evt_section-bottom{
+    color:#fff;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 1;
+    text-align: center;
+    padding: 40px 0;
+    background-color: #2e2e2e;
+  }
