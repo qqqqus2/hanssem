@@ -2,7 +2,7 @@
 <input style="display: none" id="clip" />
 <link rel="stylesheet" href="https://realaecreative.cafe24.com/test/20231113/pc_test.css" />
 
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -79,7 +79,9 @@
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-      }
+      },
+      observer: true,
+      observeParents: true
     });
 
     // 샘드로우 Swiper
@@ -89,7 +91,9 @@
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-      }
+      },
+      observer: true,
+      observeParents: true
     });
   });
 </script>
@@ -1237,7 +1241,10 @@
 </script>
 
 <!-- [Event] - Event -->
-<div class="event_wrap">
+<div class="event_wrap" style="position: relative; width: 1920px">
+  <div style="position: absolute; left: 0; top: 0; width: 100%; opacity: 0; z-index: 100">
+    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_test.jpg" style="width: 100%" />
+  </div>
   <!-- [Event] - Visual -->
   <div class="evt_section visual">
     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_visual.jpg" alt="쌤페스타가 준비한 연말 선물 최대 85% 할인" />

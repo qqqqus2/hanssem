@@ -44,7 +44,7 @@
     text-indent: -9999px;
     background: url('https://image2.hanssem.com/event/2023/08/image/semfesta_couponpack_btn_top.png') 0 0 no-repeat;
   }
-  .event_wrap {
+  .event_wrap a{
     font-family: 'NanumSquareNeo';
   }
   .evt_section {
@@ -59,14 +59,15 @@
   .btn_comm_button a {
     display: inline-block;
     width: 420px;
-    padding: 26px 0;
+    padding: 29px 0;
     font-size: 25px;
     line-height: 1;
     color: #fff;
     text-decoration: none;
     text-align: center;
     background: #000;
-    font-weight: 800;
+    font-weight: 400;
+    font-family: 'NanumSquareNeo';
   }
   .btn_comm_button.wht a {
     background-color: #fff;
@@ -76,6 +77,7 @@
     display: inline-block;
     position: relative;
     padding-right: 28px;
+    font-weight: 800;
   }
   .btn_comm_button a span strong {
     font-weight: 800;
@@ -104,7 +106,7 @@
   /* [Common] - Product Form List */
   .common_product_form {
     position: relative;
-    margin: 45px -5px 0;
+    margin: 50px 0 0;
     font-size: 0;
   }
   .common_product_form:after {
@@ -119,12 +121,22 @@
     vertical-align: top;
     font-size: 0;
   }
+  .benefit_online .common_product_form .item_column{
+    padding: 0 25px;
+  }
+  .benefit_online .common_product_form .item_column:nth-child(even){
+    padding-right: 0;
+  }
+  .benefit_online .common_product_form .item_column:nth-child(odd){
+    padding-left: 0;
+  }
   .common_product_form .item_column_last {
     margin-right: 0;
   }
   .common_product_form .item_column a {
     display: block;
     position: relative;
+    font-family: 'NanumSquareNeo';
     text-decoration: none;
   }
   .common_product_form .item_column .sale {
@@ -133,11 +145,13 @@
     top: 13px;
     width: 81px;
     height: 94px;
-    padding-top: 30px;
+    word-break: break-all;
+    padding-top: 25px;
     font-weight: bold;
     font-size: 29px;
     font-weight: 900;
     color: #0c47c8;
+    font-family: 'NanumSquareNeo';
     text-align: center;
     background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_salebg.png') 0 0 no-repeat;
     box-sizing: border-box;
@@ -159,9 +173,12 @@
     font-weight:800;
     font-size: 15px;
     text-align: center;
+    line-height: 1;
+    top: 4px;
+    position: relative;
   }
   .common_product_form .item_column .sale img {
-    margin-left: -8px;
+    margin-left: -7px;
   }
   .common_product_form .item_column .sale_max {
     font-size: 29px;
@@ -185,12 +202,17 @@
     font-size: 24px;
     line-height: 29px;
     color: #333333;
+    word-break: keep-all;
     font-family: 'NanumSquareNeo';
-    letter-spacing: -2px;
+    letter-spacing: -0.6px;
     text-align: left;
+  }
+  .common_product_form_unit2 .item_column .explain .txt{
+    font-weight: 600;
   }
   .common_product_form_unit3 .item_column .explain .txt{
     font-size: 21px;
+    font-weight: 600;
   }
 
   .common_product_form_unit4  .item_column .explain .txt{
@@ -207,6 +229,7 @@
     font-size: 23px;
     font-weight: 600;
     color: #b3b3b3;
+    letter-spacing: -0.5px;
   }
   .common_product_form_unit4 .item_column .explain .price_wrap .del del{
     font-size: 19px;
@@ -214,6 +237,7 @@
   .common_product_form .item_column .explain .price_wrap .price {
     width: 100%;
     margin-top: 7px;
+    font-family: 'NanumSquareNeo';
   }
   .common_product_form .item_column .explain .price_wrap .price:after {
     content: '';
@@ -222,6 +246,8 @@
   }
   .common_product_form .item_column .explain .price_wrap .price .icon {
     float: left;
+    top: -3px;
+    position: relative;
   }
   .item_column .explain .price_wrap .price .won {
     float: right;
@@ -237,7 +263,7 @@
     font-size: 34px;
   }
   .common_product_form_unit4 .item_column .explain .price_wrap .price .won {
-    font-size: 23px;
+    font-size: 22px;
   }
   .common_product_form_unit4 .item_column .explain .price_wrap .price.price_black .won strong {
     font-size: 28px;
@@ -257,15 +283,16 @@
   }
   .common_product_form .item_column .explain .price_option .detail_price {
     display: inline-block;
-    width: 221px;
+    width: 220px;
     height: 120px;
     vertical-align: middle;
     border-radius: 15px;
-    border:1px solid #e95354;
+    border:2px solid #e95354;
     color: #e95354;
+    font-family: 'NanumSquareNeo';
   }
   .common_product_form .item_column .explain .price_option .plus + .detail_price{
-    border:1px solid #000;
+    border:2px solid #000;
     color: #000;
   }
   .common_product_form .item_column .explain .price_option .detail_price dl {
@@ -279,6 +306,7 @@
     background-color: #e95354;
     padding: 5px 0;
     line-height: 1;
+    font-weight: 600;
   }
   .common_product_form .item_column .explain .price_option .detail_price dl dd {
     margin-top: 12px;
@@ -317,9 +345,9 @@
   .common_product_form .item_column .explain .price_option .plus {
     display: inline-block;
     position: relative;
-    width: 33px;
-    height: 33px;
-    margin: 0 10px -6px;
+    width: 39px;
+    height: 39px;
+    margin: 0 12px -6px;
     vertical-align: middle;
     border-radius: 50%;
     background: #9fa0a6;
@@ -329,17 +357,18 @@
     content: '';
     position: absolute;
     left: 50%;
+    margin-left: 1px;
     top: 50%;
     background: #fff;
     transform: translate(-50%, -50%);
   }
   .common_product_form .item_column .explain .price_option .plus:before {
-    width: 3px;
-    height: 15px;
+    width: 4px;
+    height: 16px;
   }
   .common_product_form .item_column .explain .price_option .plus:after {
-    width: 15px;
-    height: 3px;
+    width: 16px;
+    height: 4px;
   }
   .common_product_form .item_column .explain .price_option .detail_price_gray {
     background: #e6e6e6;
@@ -352,7 +381,7 @@
     color: #fff;
   }
   .common_product_form_unit2 .item_column {
-    width: 603px;
+    width: 50%;
   }
   .common_product_form_unit4 .item_column {
     width: 25%;
@@ -365,16 +394,17 @@
   .common_product_form_unit3 .item_column .explain,
   .common_product_form_unit4 .item_column .explain {
     position: relative;
-    min-height: 270px;
+    min-height: 255px;
     background-color: #fff;
     padding: 18px 18px 0px;
   }
   .common_product_form_unit3 .item_column .explain {
     min-height: 210px;
-    padding: 18px 40px 0;
+    padding: 19px 40px 0;
   }
   .common_product_form_unit3 .item_column .explain .price_wrap {
     padding: 0 40px;
+    bottom:20px;
   }
   .common_product_form_unit3 .item_column .explain .tit,
   .common_product_form_unit4 .item_column .explain .tit {
@@ -394,7 +424,8 @@
     bottom: 18px;
     width: 100%;
     padding: 0 12px;
-    box-sizing: border-box; /*margin-top:-18px;*/
+    box-sizing: border-box;
+    /*margin-top:-18px;*/
   }
   .item_column .explain .price_wrap .del {
     margin-bottom: 4px;
@@ -429,12 +460,12 @@
     left: 50%;
     top: 0;
     min-width: 498px;
-    box-shadow: 10px 10px 35px -10px #888;
     z-index: 100;
     transform: translateX(-50%);
+    font-family: 'NanumSquareNeo';
   }
   .evt_common_layer_in {
-    padding: 20px 60px;
+    padding: 24px 70px;
     border: 1px solid #2d2d2d;
     background: #fff;
   }
@@ -463,7 +494,7 @@
   }
   .evt_common_layer .layer_tit {
     margin-top: 20px;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 20px;
     color: #000000;
   }
@@ -478,8 +509,9 @@
   }
   .evt_common_layer .layer_list li {
     margin: 5px 0;
-    font-size: 16px;
+    font-size: 15px;
     color: #000000;
+    font-weight: 700;
   }
   .evt_common_layer .button {
     margin-top: 50px;
@@ -499,13 +531,23 @@
     text-indent: -9999px;
     background: url('https://image2.hanssem.com/event/2023/08/image/ssemfesta_layer_btn_close.gif') 0 0 no-repeat;
   }
+  #js_draw_care_layer.evt_common_layer .evt_common_layer_in{
+    width: 650px;
+    padding: 34px 70px;
+  }
+  #js_draw_care_layer.evt_common_layer .layer_list {
+    margin-top: 0;
+  }
   .special_date h4.tit{
     font-size: 28px;
     color: #fff;
     text-align: center;
     font-weight: 700;
     line-height: 1;
-    padding: 125px 0 25px;
+    padding: 125px 0 29px;
+  }
+  #js_draw_care_layer.evt_common_layer .layer_list li{
+    line-height: 24px;
   }
   .special_date .tab_date {
     text-align: center;
@@ -513,6 +555,7 @@
   .special_date .tab_date li {
     display: inline-block;
     margin-right: 30px;
+    vertical-align: top;
   }
   .special_date .tab_date li a {
     display: block;
@@ -538,8 +581,16 @@
     position: relative;
   }
   .special_date .rolling_list{
-    height: 490px;
+    height: 508px;
+    font-family: 'NanumSquareNeo';
   }
+  .special_date .rolling_list .swiper-scrollbar{
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .special_date .rolling_list .swiper-scrollbar-drag{
+    background-color: #fff;
+  }
+
   .special_date .unit {
     display: inline-block;
     width: 232px;
@@ -547,6 +598,7 @@
   }
   .special_date .unit a{
     text-decoration: none;
+    font-family: 'NanumSquareNeo';
   }
   .special_date .unit .explain {
     background-color: #fff;
@@ -565,8 +617,8 @@
     margin-top: 10px;
     font-weight: 600;
     font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -2px;
+    line-height: 25px;
+    letter-spacing: -1px;
   }
   .benefit_draw .evt_section_content .swiper-button-prev,
   .benefit_draw .evt_section_content .swiper-button-next,
@@ -631,6 +683,9 @@
     margin: 0 0 60px;
     text-align: center;
   }
+  .benefit_event_tab.evt_section .evt_section_content{
+    left: -8px;
+  }
   .evt_section .evt_section_content {
     width: 1220px;
     margin: 0 auto;
@@ -643,9 +698,9 @@
   .evt_section .evt_section_care .btn a {
     display: inline-block;
     position: relative;
-    font-size: 22px;
+    font-size: 23px;
     padding-bottom: 3px;
-    font-weight: 700;
+    font-weight: 500;
     color: #656565;
     text-decoration: none;
   }
@@ -713,7 +768,7 @@
   }
   /* [Event] - 탭메뉴 */
   .benefit_event_tab {
-    height: 162px;
+    height: 121px;
     width: 1920px;
     background: #000;
   }
@@ -774,14 +829,15 @@
   }
   .tablist li a {
     display: block;
-    height: 81px;
-    padding-top: 27px;
-    font-size: 23px;
+    height: 60px;
+    padding-top: 16px;
+    font-size: 21px;
     color: #fff;
     text-decoration: none;
     text-align: center;
     box-sizing: border-box;
-    font-weight: 700;
+    letter-spacing: 0.005em;
+    font-weight: 500;
   }
 
   .tablist li.on {
@@ -789,6 +845,7 @@
   }
   .tablist li.on a {
     color: #000;
+    font-weight: 700;
   }
   .evt_section {
     width: 1920px;
@@ -841,9 +898,17 @@
     width: 200px;
     font-weight: 700;
     border-radius: 35px;
+    font-family: 'NanumSquareNeo';
+  }
+  .benefit_online .item_column .explain .price_wrap .del{
+    position: relative;
+    top: 8px;
+    position: relative;
   }
   .benefit_online .item_column .explain .price_wrap .price .won{
-    color: #d24041;
+    color: #e95354;
+    top: 8px;
+    position: relative;
   }
   
   .benefit_online .benefit_time_event .evt_section_in{
@@ -855,6 +920,7 @@
     font-size:19px;
     margin-top: 46px;
     line-height: 1;
+    font-family: 'NanumSquareNeo';
   }
   .benefit_online .special_bnnr{
     text-align: center;
@@ -878,7 +944,13 @@
     color: #d24041;
     width: 85px;
     height: 98px;
+    padding-top: 27px;
+    padding-left: 3px;
     background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_saleRedbg.png') 0 0 no-repeat;
+  }
+  .benefit_category .common_product_form .item_column .sale .max{
+    margin-bottom: 1px;
+    left: -1px;
   }
   .benefit_category::before{
     width: 402px;
@@ -899,17 +971,24 @@
     margin-top: 0;
   }
   .benefit_category .common_product_form_unit4 .item_column .explain{
-    padding: 26px 18px 0;
+    padding: 21px 18px 0;
+    height: 272px;
     box-sizing: border-box;
   }
+  .benefit_category .common_product_form_unit4 .item_column .explain .price_wrap .price.price_black .won strong{
+    font-size:27px;
+  }
+  .benefit_category .common_product_form_unit4 .item_column .explain .price_wrap .price_total .won strong{
+    font-size: 31px;
+  }
   .benefit_category .common_product_form .item_column .explain .price_wrap .del del{
-    font-size: 19px;
+    font-size: 18px;
   }
   .benefit_category .common_product_form_unit4 .item_column .explain .tit{
     font-size: 22px;
   }
   .benefit_category .common_product_form .item_column .explain .txt{
-    font-size: 19px;
+    font-size: 18px;
     line-height: 29px;
     min-height: 80px;
   }
@@ -923,6 +1002,18 @@
 
   .benefit_newPrd{
     background-color: #fc6d6e;
+  }
+  .benefit_newPrd.evt_section .evt_section_title{
+    margin-bottom: 0;
+  }
+  .benefit_newPrd .common_product_form{
+    margin-top: 0;
+  }
+  .benefit_newPrd .common_product_form .item_column .explain .price_wrap{
+    bottom: 17px;
+  }
+  .benefit_newPrd .btn_comm_button{
+    margin-top: 85px;
   }
   .benefit_newPrd .special_bnnr{
     margin-top: 168px;
@@ -986,14 +1077,15 @@
     padding: 130px 0 139px;
   }
   .benefit_time_event .countdown .time_count {
-    height: 172px;
-    padding: 30px 0 0px;
+    height: 152px;
+    padding: 40px 0 0px;
     text-align: center;
     margin: 0 10px;
     background-color: rgba(255, 255, 255, 0.2);
     border-top: none;
   }
   .benefit_time_event .countdown .time_count .time {
+    font-family: 'NanumSquareNeo';
     display: inline-block;
     position: relative;
     min-width: 100px;
@@ -1004,15 +1096,15 @@
     letter-spacing: -1px;
     border-radius: 20px;
     background-color: #fff;
-    box-shadow: 8px 8px 5px 0 rgba(0, 41, 132, 0.25) inset;
-    -webkit-box-shadow: 8px 8px 5px 0 rgba(0, 41, 132, 0.25) inset;
-    -moz-box-shadow: 8px 8px 5px 0 rgba(0, 41, 132, 0.25) inset;
+    box-shadow: 7px 7px 4px 0 rgba(0, 41, 132, 0.25) inset;
+    -webkit-box-shadow: 7px 7px 4px 0 rgba(0, 41, 132, 0.25) inset;
+    -moz-box-shadow: 7px 7px 4px 0 rgba(0, 41, 132, 0.25) inset;
   }
   .benefit_time_event .countdown .time_count .time_in {
     display: inline-block;
     position: relative;
     height: 72px;
-    padding-top: 12px;
+    padding-top: 16px;
     line-height: 1em;
     vertical-align: top;
     z-index: 51;
@@ -1108,9 +1200,19 @@
   .benefit_counsel_care .counsel_care_list .list li.list_last.show {
     display: block;
   }
+  .benefit_clearance.evt_section .evt_section_title{
+    margin-bottom: -110px;
+  }
 
   .benefit_clearance_bottom{
     padding-bottom: 137px;
+    position: relative;
+    margin-top: -50px;
+  }
+  .benefit_clearance_bottom .btn_comm_button{
+    top: -20px;
+    margin-top: 0;
+    position: relative;
   }
 
   /* [Event] - DRAW */
@@ -1123,7 +1225,19 @@
     margin: 0;
   }
   .benefit_draw .draw-list{
-    height: 350px;
+    height: 370px;
+    padding-bottom: 40px;
+    font-family: 'NanumSquareNeo';
+  }
+  .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+    width: 100% !important;
+    left: 0 !important;
+  }
+  .benefit_draw .draw-list .swiper-scrollbar{
+    background-color: rgba(255,255,255,0.2);
+  }
+  .benefit_draw .draw-list .swiper-scrollbar-drag{
+    background-color: #fff;
   }
   .benefit_draw .draw-list .swiper-slide{
     width: 295px;
@@ -1132,11 +1246,11 @@
   .benefit_draw .draw-list .swiper-slide p{
     position: absolute;
     left: 0;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
-    top: 20px;
+    top: 15px;
     width: 100%;
-    font-weight: 800;
+    font-weight: 900;
     text-align: center;
   }
   .benefit_draw .draw-list .swiper-slide p span.blue{
@@ -1217,7 +1331,8 @@
     background: #000000;
   }
   .benefit_counsel_care .counsel_care_list {
-    padding: 125px 0 100px 156px;
+    padding: 125px 0 100px 116px;
+    font-family: 'NanumSquareNeo';
   }
   .benefit_counsel_care .counsel_care_list .title {
     font-size: 29px;
@@ -1228,7 +1343,7 @@
     margin: 30px 0 10px;
     font-size: 17px;
     color: #ffffff;
-    font-weight: 800;
+    font-weight: 700;
   }
   .benefit_counsel_care .counsel_care_list .division_area {
     width: 100%;
@@ -1256,7 +1371,7 @@
     margin: 4px 0;
     padding-left: 8px;
     font-size: 15px;
-    line-height: 24px;
+    line-height: 22px;
     color: #ffffff;
   }
   .benefit_counsel_care .counsel_care_list .list li:after {
@@ -1289,4 +1404,5 @@
     text-align: center;
     padding: 40px 0;
     background-color: #2e2e2e;
+    font-family: 'NanumSquareNeo';
   }

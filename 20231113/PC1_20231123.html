@@ -2,7 +2,7 @@
 <input style="display: none" id="clip" />
 <link rel="stylesheet" href="https://realaecreative.cafe24.com/test/20231113/pc_test.css" />
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -79,7 +79,12 @@
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-      }
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true
     });
 
     // 샘드로우 Swiper
@@ -89,7 +94,12 @@
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
-      }
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true
     });
   });
 </script>
@@ -512,7 +522,7 @@
   });
 </script>
 
-<!-- <script src="/resources/js/appLaunch.js?20221216140119" type="text/javascript"></script> -->
+<script src="/resources/js/appLaunch.js?20221216140119" type="text/javascript"></script>
 <script type="text/javascript">
   function onCoupon() {
     if (fnIsApp()) {
@@ -882,7 +892,7 @@
           $link.eq(j).parent().addClass('on');
 
           // 클리어런스에서 레이어 비활성화
-          if (j === 4) {
+          if (j === 5) {
             $this.removeClass('fixed_top_layer');
           } else {
             // 그외 다시 활성화
@@ -1297,7 +1307,7 @@
       </div>
       <div class="evt_qr_img">
         <h4>[APP 다운로드 받기]</h4>
-        <div><img src="" alt="" /></div>
+        <!-- <div><img src="" alt="" /></div> -->
         <p class="btn_close"><a href="#">닫기</a></p>
       </div>
     </div>
@@ -1958,6 +1968,7 @@
               $('.tab')
                 .eq(val - 1)
                 .addClass('active');
+              swiper.destroy(true, true);
             }
           </script>
           <ul id="" class="tab_date">
@@ -2002,8 +2013,8 @@
                       <p class="tit">한샘</p>
                       <p class="txt">
                         아임빅 수납침대 SS<br />
-                        슬림수납헤드형(컬러8종)<br />
-                        +노뜨 매트 3종
+                        일반헤드형<br />
+                        (컬러8종, 매트별도)
                       </p>
                     </div>
                   </a>
@@ -2213,8 +2224,10 @@
                 </div>
                 <!-- //Unit -->
               </div>
+              <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
+
             <button type="button" class="swiper-button-prev"></button>
             <button type="button" class="swiper-button-next"></button>
           </div>
@@ -2457,6 +2470,7 @@
                 </div>
                 <!-- //Unit -->
               </div>
+              <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
             <button type="button" class="swiper-button-prev"></button>
@@ -2706,6 +2720,7 @@
                 </div>
                 <!-- //Unit -->
               </div>
+              <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
             <button type="button" class="swiper-button-prev"></button>
@@ -2934,6 +2949,7 @@
                 </div>
                 <!-- //Unit -->
               </div>
+              <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
             <button type="button" class="swiper-button-prev"></button>
@@ -2965,18 +2981,18 @@
                     22
                     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_online_kitchen1_img1.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_kitchen1_img1.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
-                    <p class="txt">한샘 유로 300 터치</p>
+                    <p class="txt">밀란100 퓨어 그레이 (기본형)</p>
                     <div class="price_wrap">
                       <div class="del">
-                        <del>3,560,000원</del>
+                        <del>2,600,000원</del>
                       </div>
                       <div class="price price_time">
                         <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
-                          <strong>2,776,800</strong>
+                          <strong>2,028,800</strong>
                           원
                         </p>
                       </div>
@@ -2985,14 +3001,14 @@
                       <div class="detail_price">
                         <dl>
                           <dt>총 할인 금액</dt>
-                          <dd><strong>783,200</strong>원</dd>
+                          <dd><strong>572,200</strong>원</dd>
                         </dl>
                       </div>
                       <div class="plus"></div>
                       <div class="detail_price">
                         <dl>
                           <dt>무이자 3개월</dt>
-                          <dd>월 <strong>925,600</strong>원</dd>
+                          <dd>월 <strong>676,000</strong>원</dd>
                         </dl>
                       </div>
                     </div>
@@ -3009,18 +3025,18 @@
                     22
                     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_online_kitchen1_img2.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_kitchen1_img2.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
-                    <p class="txt">한샘 유로 루체오크</p>
+                    <p class="txt">밀란200 모노 네이비(기본형)</p>
                     <div class="price_wrap">
                       <div class="del">
-                        <del>2,680,000원</del>
+                        <del>2,710,000원</del>
                       </div>
                       <div class="price price_total">
                         <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
-                          <strong>2,090,400</strong>
+                          <strong>2,113,800</strong>
                           원
                         </p>
                       </div>
@@ -3029,14 +3045,14 @@
                       <div class="detail_price">
                         <dl>
                           <dt>총 할인 금액</dt>
-                          <dd><strong>589,600</strong>원</dd>
+                          <dd><strong>596,200</strong>원</dd>
                         </dl>
                       </div>
                       <div class="plus"></div>
                       <div class="detail_price">
                         <dl>
                           <dt>무이자 3개월</dt>
-                          <dd>월 <strong>696,800</strong>원</dd>
+                          <dd>월 <strong>704,600</strong>원</dd>
                         </dl>
                       </div>
                     </div>
@@ -3062,18 +3078,18 @@
                     20
                     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_online_bath1_img1.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_bath1_img1.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
-                    <p class="txt">한샘 모노시티</p>
+                    <p class="txt">밀란1 마이티</p>
                     <div class="price_wrap">
                       <div class="del">
-                        <del>2,970,000원</del>
+                        <del>2,550,000원</del>
                       </div>
                       <div class="price price_time">
                         <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
-                          <strong>2,376,000</strong>
+                          <strong>2,040,000</strong>
                           원
                         </p>
                       </div>
@@ -3082,14 +3098,14 @@
                       <div class="detail_price">
                         <dl>
                           <dt>총 할인 금액</dt>
-                          <dd><strong>594,000</strong>원</dd>
+                          <dd><strong>510,000</strong>원</dd>
                         </dl>
                       </div>
                       <div class="plus"></div>
                       <div class="detail_price">
                         <dl>
                           <dt>무이자 3개월</dt>
-                          <dd>월 <strong>792,000</strong>원</dd>
+                          <dd>월 <strong>680,000</strong>원</dd>
                         </dl>
                       </div>
                     </div>
@@ -3106,18 +3122,18 @@
                     20
                     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_online_bath1_img2_20230816.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_bath1_img2.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
-                    <p class="txt">한샘 밀란1 마이티</p>
+                    <p class="txt">밀란5 오블리크화이트</p>
                     <div class="price_wrap">
                       <div class="del">
-                        <del>2,440,000원</del>
+                        <del>2,920,000원</del>
                       </div>
                       <div class="price price_total">
                         <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
-                          <strong>1,952,000</strong>
+                          <strong>2,336,000</strong>
                           원
                         </p>
                       </div>
@@ -3126,14 +3142,14 @@
                       <div class="detail_price">
                         <dl>
                           <dt>총 할인 금액</dt>
-                          <dd><strong>488,000</strong>원</dd>
+                          <dd><strong>584,000</strong>원</dd>
                         </dl>
                       </div>
                       <div class="plus"></div>
                       <div class="detail_price">
                         <dl>
                           <dt>무이자 3개월</dt>
-                          <dd>월 <strong>650,667</strong>원</dd>
+                          <dd>월 <strong>778,667</strong>원</dd>
                         </dl>
                       </div>
                     </div>
@@ -3159,18 +3175,18 @@
                     21
                     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_online_package1_img1.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_package1_img1.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
-                    <p class="txt">한샘 퓨어화이트 & 낭트</p>
+                    <p class="txt">퓨어화이트&낭트 키친바스PKG</p>
                     <div class="price_wrap">
                       <div class="del">
-                        <del>4,680,000원</del>
+                        <del>5,220,000원</del>
                       </div>
                       <div class="price price_time">
                         <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
-                          <strong>3,697,200</strong>
+                          <strong>4,123,800</strong>
                           원
                         </p>
                       </div>
@@ -3179,14 +3195,14 @@
                       <div class="detail_price">
                         <dl>
                           <dt>총 할인 금액</dt>
-                          <dd><strong>982,800</strong>원</dd>
+                          <dd><strong>1,096,200</strong>원</dd>
                         </dl>
                       </div>
                       <div class="plus"></div>
                       <div class="detail_price">
                         <dl>
                           <dt>무이자 3개월</dt>
-                          <dd>월 <strong>1,232,400</strong>원</dd>
+                          <dd>월 <strong>1,374,600</strong>원</dd>
                         </dl>
                       </div>
                     </div>
@@ -3203,18 +3219,18 @@
                     21
                     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_online_package1_img2.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_package1_img2.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
-                    <p class="txt">한샘 매트&피에트라</p>
+                    <p class="txt">플랫화이트&리버화이트 키친바스PKG</p>
                     <div class="price_wrap">
                       <div class="del">
-                        <del>5,270,000원</del>
+                        <del>5,230,000원</del>
                       </div>
                       <div class="price price_total">
                         <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
-                          <strong>4,163,300</strong>
+                          <strong>4,131,700</strong>
                           원
                         </p>
                       </div>
@@ -3223,14 +3239,14 @@
                       <div class="detail_price">
                         <dl>
                           <dt>총 할인 금액</dt>
-                          <dd><strong>1,106,700</strong>원</dd>
+                          <dd><strong>1,098,300</strong>원</dd>
                         </dl>
                       </div>
                       <div class="plus"></div>
                       <div class="detail_price">
                         <dl>
                           <dt>무이자 3개월</dt>
-                          <dd>월 <strong>1,387,767</strong>원</dd>
+                          <dd>월 <strong>1,377,233</strong>원</dd>
                         </dl>
                       </div>
                     </div>
@@ -3256,18 +3272,18 @@
                     14
                     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_online_door1_img1.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_door1_img1.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
-                    <p class="txt">수퍼초슬림_중형</p>
+                    <p class="txt">수퍼 초슬림 3연동 중문</p>
                     <div class="price_wrap">
                       <div class="del">
-                        <del>1,185,000원</del>
+                        <del>1,220,000원</del>
                       </div>
                       <div class="price price_time">
                         <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
-                          <strong>1,015,000</strong>
+                          <strong>1,050,000</strong>
                           원
                         </p>
                       </div>
@@ -3283,7 +3299,7 @@
                       <div class="detail_price">
                         <dl>
                           <dt>무이자 3개월</dt>
-                          <dd>월 <strong>338,333</strong>원</dd>
+                          <dd>월 <strong>350,000</strong>원</dd>
                         </dl>
                       </div>
                     </div>
@@ -3300,18 +3316,18 @@
                     16
                     <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_online_door1_img2.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_door1_img2.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
-                    <p class="txt">슬림소프트(일반형)_소형 1100~1200</p>
+                    <p class="txt">밀란 여닫이 중문</p>
                     <div class="price_wrap">
                       <div class="del">
-                        <del>1,277,000원</del>
+                        <del>1,070,000원</del>
                       </div>
                       <div class="price price_total">
                         <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
-                          <strong>1,077,000</strong>
+                          <strong>900,000</strong>
                           원
                         </p>
                       </div>
@@ -3320,14 +3336,14 @@
                       <div class="detail_price">
                         <dl>
                           <dt>총 할인 금액</dt>
-                          <dd><strong>200,000</strong>원</dd>
+                          <dd><strong>170,000</strong>원</dd>
                         </dl>
                       </div>
                       <div class="plus"></div>
                       <div class="detail_price">
                         <dl>
                           <dt>무이자 3개월</dt>
-                          <dd>월 <strong>359,000</strong>원</dd>
+                          <dd>월 <strong>300,000</strong>원</dd>
                         </dl>
                       </div>
                     </div>
@@ -3344,7 +3360,7 @@
         <!-- [Common] - Button -->
         <div class="btn_comm_button">
           <a href="https://mall.hanssem.com/mall_ssem.html?snb=interiordeal">
-            <span>더 많은 상품 보러가기</span>
+            <span>상품 더 보러가기</span>
           </a>
         </div>
         <!-- //[Common] - Button -->
@@ -3373,31 +3389,31 @@
             <a href="">
               <div class="sale sale_max">
                 <span class="max">최대</span>
-                30
+                20
                 <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_cate_last1_img1.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
-                  호텔침대 포에트 Q/K (헤드 2종,<br />
-                  하부서랍 선택, 매트별도)
+                  포레 컴포트 6인 라운지세트<br />
+                  (벤치1 ,코너벤치1, 원목의지2 포함)
                 </p>
                 <div class="price_wrap">
                   <div class="del">
-                    <del>747,000원</del>
+                    <del>1,615,000원</del>
                   </div>
                   <div class="price price_black">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
-                      <strong>534,950</strong>
+                      <strong>1,325,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
                     <p class="won">
-                      <strong>519,950</strong>
+                      <strong>1,300,000</strong>
                       원
                     </p>
                   </div>
@@ -3412,31 +3428,31 @@
             <a href="">
               <div class="sale sale_max">
                 <span class="max">최대</span>
-                30
+                20
                 <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_cate_last1_img2.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
-                  호텔침대 포에트 Q/K (헤드 2종,<br />
-                  하부서랍 선택, 매트별도)
+                  도노 엣지 세라믹 식탁세트<br />
+                  와이드4인용 (슬림의자4 포함)
                 </p>
                 <div class="price_wrap">
                   <div class="del">
-                    <del>747,000원</del>
+                    <del>1,194,000원</del>
                   </div>
                   <div class="price price_black">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
-                      <strong>534,950</strong>
+                      <strong>979,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
                     <p class="won">
-                      <strong>519,950</strong>
+                      <strong>954,000</strong>
                       원
                     </p>
                   </div>
@@ -3451,31 +3467,28 @@
             <a href="">
               <div class="sale sale_max">
                 <span class="max">최대</span>
-                30
+                21
                 <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_cate_last1_img3.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
-                <p class="txt">
-                  호텔침대 포에트 Q/K (헤드 2종,<br />
-                  하부서랍 선택, 매트별도)
-                </p>
+                <p class="txt">미나 스틸 원형 4인 1000 식탁</p>
                 <div class="price_wrap">
                   <div class="del">
-                    <del>747,000원</del>
+                    <del>310,000원</del>
                   </div>
                   <div class="price price_black">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
-                      <strong>534,950</strong>
+                      <strong>254,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
                     <p class="won">
-                      <strong>519,950</strong>
+                      <strong>244,000</strong>
                       원
                     </p>
                   </div>
@@ -3490,31 +3503,31 @@
             <a href="">
               <div class="sale sale_max">
                 <span class="max">최대</span>
-                30
+                13
                 <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_cate_last1_img4.jpg" alt="" /></div>
               <div class="explain">
-                <p class="tit">한샘</p>
+                <p class="tit">보니애가구</p>
                 <p class="txt">
-                  호텔침대 포에트 Q/K (헤드 2종,<br />
-                  하부서랍 선택, 매트별도)
+                  (한샘몰pick) 론다 1400<br />
+                  세라믹 식탁세트
                 </p>
                 <div class="price_wrap">
                   <div class="del">
-                    <del>747,000원</del>
+                    <del>294,000원</del>
                   </div>
                   <div class="price price_black">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
-                      <strong>534,950</strong>
+                      <strong>264,600</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
                     <p class="won">
-                      <strong>519,950</strong>
+                      <strong>254,600</strong>
                       원
                     </p>
                   </div>
@@ -3546,31 +3559,31 @@
             <a href="">
               <div class="sale sale_max">
                 <span class="max">최대</span>
-                30
+                23
                 <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_last1_img1.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
-                  호텔침대 포에트 Q/K (헤드 2종,<br />
-                  하부서랍 선택, 매트별도)
+                  노뜨 일체형침대 포켓스프링<br />
+                  라텍스폼탑 SS
                 </p>
                 <div class="price_wrap">
                   <div class="del">
-                    <del>747,000원</del>
+                    <del>448,000원</del>
                   </div>
                   <div class="price price_black">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
-                      <strong>534,950</strong>
+                      <strong>360,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                     <p class="won">
-                      <strong>519,950</strong>
+                      <strong>345,000</strong>
                       원
                     </p>
                   </div>
@@ -3585,31 +3598,31 @@
             <a href="">
               <div class="sale sale_max">
                 <span class="max">최대</span>
-                30
+                23
                 <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_last1_img2.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
-                  호텔침대 포에트 Q/K (헤드 2종,<br />
-                  하부서랍 선택, 매트별도)
+                  한샘 호텔침대 캔버스 수납형<br />
+                  SS (매트별도)
                 </p>
                 <div class="price_wrap">
                   <div class="del">
-                    <del>747,000원</del>
+                    <del>694,000원</del>
                   </div>
                   <div class="price price_black">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
-                      <strong>534,950</strong>
+                      <strong>549,900</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                     <p class="won">
-                      <strong>519,950</strong>
+                      <strong>534,900</strong>
                       원
                     </p>
                   </div>
@@ -3624,31 +3637,31 @@
             <a href="">
               <div class="sale sale_max">
                 <span class="max">최대</span>
-                30
+                22
                 <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_last1_img3.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
-                  호텔침대 포에트 Q/K (헤드 2종,<br />
-                  하부서랍 선택, 매트별도)
+                  샘키즈 교구장세트 자석보드형<br />
+                  1200 + 샘키즈 수납장 1305
                 </p>
                 <div class="price_wrap">
                   <div class="del">
-                    <del>747,000원</del>
+                    <del>702,000원</del>
                   </div>
                   <div class="price price_black">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
-                      <strong>534,950</strong>
+                      <strong>565,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                     <p class="won">
-                      <strong>519,950</strong>
+                      <strong>550,000</strong>
                       원
                     </p>
                   </div>
@@ -3663,31 +3676,28 @@
             <a href="">
               <div class="sale sale_max">
                 <span class="max">최대</span>
-                30
+                19
                 <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_last1_img4.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
-                <p class="txt">
-                  호텔침대 포에트 Q/K (헤드 2종,<br />
-                  하부서랍 선택, 매트별도)
-                </p>
+                <p class="txt">스노어 패브릭 소파 4인</p>
                 <div class="price_wrap">
                   <div class="del">
-                    <del>747,000원</del>
+                    <del>1,189,000원</del>
                   </div>
                   <div class="price price_black">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
-                      <strong>534,950</strong>
+                      <strong>989,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
                     <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                     <p class="won">
-                      <strong>519,950</strong>
+                      <strong>964,000</strong>
                       원
                     </p>
                   </div>
