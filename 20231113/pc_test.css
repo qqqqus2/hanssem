@@ -460,7 +460,7 @@
     left: 50%;
     top: 0;
     min-width: 498px;
-    z-index: 100;
+    z-index: 50;
     transform: translateX(-50%);
     font-family: 'NanumSquareNeo';
   }

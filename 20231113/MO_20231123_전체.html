@@ -1,10 +1,11 @@
 <!-- ==================== 싱단 시작 ==================== -->
 <input style="display: none" id="clip" />
 
+<link rel="stylesheet" href="https://realaecreative.cafe24.com/test/20231113/m_test.css" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-<link rel="stylesheet" href="https://realaecreative.cafe24.com/test/20231113/m_test.css" />
 
 <!-- 모바일 맵 -->
 <script type="text/javascript">
@@ -438,7 +439,7 @@
   }
 </script>
 
-<script src="/resources/js/appLaunch.js?20221216140119" type="text/javascript"></script>
+<!-- <script src="/resources/js/appLaunch.js?20221216140119" type="text/javascript"></script> -->
 <script type="text/javascript">
   function onCoupon() {
     let targetUrl = '';
@@ -1932,28 +1933,69 @@
 
 <div class="cont-wraps date_menu">
   <div class="date_menu_tit">다음 타임특가 상품을 기대하세요!</div>
+  <!-- Tab Menu -->
+  <script>
+    function tab(val) {
+      $('.tab_cont').hide();
+      $('.tab_cont')
+        .eq(val - 1)
+        .show();
+      $('.tab').removeClass('active');
+      $('.tab')
+        .eq(val - 1)
+        .addClass('active');
+      var rolling_swiper = document.querySelector('.rolling_list').swiper;
+      rolling_swiper.destroy(true, true);
+      rolling_swiper = new Swiper('.rolling_list', {
+        slidesPerView: 'auto',
+        spaceBetween: 15,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        scrollbar: {
+          el: '.swiper-scrollbar'
+        },
+        observer: true,
+        observeParents: true
+      });
+      $('.swiper-button-prev').addClass('swiper-button-disabled');
+    }
+  </script>
   <div class="date_menu" style="height: 13vw">
     <!-- Swiper -->
     <div id="" class="swiper mySwiper js_date_week">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <p class="tab"><img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab1_on.png" alt="11.27 월" /></p>
+          <p class="tab active" onclick="tab(1)">
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab1_on.png" alt="11.27 월" />
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab1_on.png" alt="11.27 월" />
+          </p>
         </div>
         <div class="swiper-slide">
-          <p class="tab"><img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab2_off.png" alt="11.30 목" /></p>
+          <p class="tab" onclick="tab(2)">
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab2_off.png" alt="11.30 목" />
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab2_on.png" alt="11.30 목" />
+          </p>
         </div>
         <div class="swiper-slide">
-          <p class="tab"><img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab3_off.png" alt="12.4 월" /></p>
+          <p class="tab" onclick="tab(3)">
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab3_off.png" alt="12.4 월" />
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab3_on.png" alt="12.4 월" />
+          </p>
         </div>
         <div class="swiper-slide">
-          <p class="tab"><img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab4_off.png" alt="12.7 목" /></p>
+          <p class="tab" onclick="tab(4)">
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab4_off.png" alt="12.7 목" />
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab4_on.png" alt="12.7 목" />
+          </p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- 요일별 제품(11.27) -->
-  <div class="date_menu_product">
+  <div id="tab1" class="date_menu_product tab_cont">
     <!-- Swiper -->
     <div class="date_week_product swiper js_date_week_list">
       <div class="swiper-wrapper week_product_lsit">
@@ -2118,7 +2160,722 @@
       <div class="swiper-scrollbar"></div>
     </div>
   </div>
-  <!-- //요일별 제품(8.14) -->
+  <!-- //요일별 제품(11.27) -->
+
+  <!-- 요일별 제품(11.30) -->
+  <div id="tab2" class="date_menu_product tab_cont">
+    <!-- Swiper -->
+    <div class="date_week_product swiper js_date_week_list">
+      <div class="swiper-wrapper week_product_lsit">
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img1.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                아임빅 수납침대 SS<br />
+                슬림수납헤드형(컬러8종)<br />
+                +노뜨 매트 3종
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img2.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                노뜨컴포트 포켓스프링<br />
+                매트리스 Q 퀸
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img3.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                바이엘 소프트<br />
+                붙박이장 모음
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img4.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                티오 책상세트 일반형<br />
+                5단 120cm(컬러 택1)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img5.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                샘키즈 슬라이딩침대 SS<br />
+                일반형+샘키즈 알러지케어<br />
+                매트리스 SS 2개
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img6.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                BEST 패브릭 소파<br />
+                특가 모음
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img7.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                도노 내추럴 세라믹<br />
+                4인 식탁세트<br />
+                (컴피 의자4 포함)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img8.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">BEST 주방용품</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img9.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                밀란100 퓨어 그레이<br />
+                (기본형)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img10.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                유로200 루체<br />
+                콘크리트&그레이
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img11.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                유로200 루체<br />
+                오크&화이트
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img12.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">밀란1 마이티</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img13.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">밀란5 오블리크화이트</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img14.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                밀란1 마이티<br />
+                실속패키지<br />
+                (1+1 욕실패키지)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+  <!-- //요일별 제품(11.30) -->
+
+  <!-- 요일별 제품(12.4) -->
+  <div id="tab3" class="date_menu_product tab_cont">
+    <!-- Swiper -->
+    <div class="date_week_product swiper js_date_week_list">
+      <div class="swiper-wrapper week_product_lsit">
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img1.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                슬리핑코드 매트리스<br />
+                SS,Q,K
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img2.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                샘베딩 플레인 침대<br />
+                SS (색상2종)+<br />
+                노뜨 매트 3종
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img3.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                샘베딩 BEST<br />
+                단품 모음
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img4.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                티오 그로우 전면책상 일반형<br />
+                5단 120x60cm+링고S<br />
+                고정중심봉DIY(발받침)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img5.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                보나 주니어 옷장세트 160cm<br />
+                SET (서랍형 1단행거+<br />
+                일반형/긴옷형 2단행거)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img6.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                MVME 노마딕<br />
+                천연가죽 리클라이너<br />
+                소파 4인
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img7.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                도노 어반 세라믹<br />
+                식탁세트 6인용<br />
+                (슬림의자4 포함)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img8.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                쌤페스타 수납<br />
+                BEST 상품 모음전
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img9.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                밀란100 퓨어 그레이<br />
+                (기본형)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img10.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                유로200 루체<br />
+                콘크리트&그레이
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img11.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                유로200 루체<br />
+                오크&화이트
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img12.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">밀란1 마이티</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img13.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">밀란5 오블리크화이트</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img14.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                밀란1 마이티<br />
+                실속패키지<br />
+                (1+1 욕실패키지)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+  <!-- //요일별 제품(12.4) -->
+
+  <!-- 요일별 제품(12.7) -->
+  <div id="tab4" class="date_menu_product tab_cont">
+    <!-- Swiper -->
+    <div class="date_week_product swiper js_date_week_list">
+      <div class="swiper-wrapper week_product_lsit">
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img1.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                아임빅 수납침대SS<br />
+                일반헤드형(컬러8종)<br />
+                +노뜨 매트 3
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img2.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                노뜨컴포트<br />
+                포켓스프링 매트리스<br />
+                SS 슈퍼싱글
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img3.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                스테이 드레스룸<br />
+                84cm 단독형 10종
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img4.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                샘 책장 5단 120cm 시공<br />
+                (컬러 택1)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img5.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                샘키즈 수납장 1305<br />
+                뉴트럴베이지
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img6.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                엠마 컴포트<br />
+                천연가죽 소파 4인<br />
+                (3종/택1)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img7.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                포레 컴포트 6인<br />
+                라운지세트(벤치1, 코너<br />
+                벤치1, PP의자2 포함)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img8.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                리빙용품 쌤페스타<br />
+                특가 모음전
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img9.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                밀란100 퓨어 화이트<br />
+                (기본형)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img10.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">
+                밀란100 퓨어 그레이<br />
+                (기본형)
+              </p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img11.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">유로300 터치</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img12.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">밀란1 마이티</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img13.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">밀란3 리버화이트</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+        <!-- Unit -->
+        <div class="swiper-slide">
+          <a href="javascript:;">
+            <div class="img">
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img14.jpg" alt="" />
+            </div>
+            <div class="explain">
+              <p class="title">한샘</p>
+              <p class="txt">밀란5 오블리크화이트</p>
+            </div>
+          </a>
+        </div>
+        <!-- //Unit -->
+      </div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+  <!-- //요일별 제품(12.7) -->
 </div>
 
 <!-- 온라인 최저가 보상 -->

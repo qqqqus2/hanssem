@@ -2,7 +2,7 @@
 <input style="display: none" id="clip" />
 <link rel="stylesheet" href="https://realaecreative.cafe24.com/test/20231113/pc_test.css" />
 
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -72,9 +72,12 @@
   }
   $(function () {
     fixedNavi('fixed-nv-wrap', 'fixed-nv-scroll', 'fixed-nv-conts');
-    // 요일별 탭메뉴 Swiper
-    var swiper = new Swiper('.rolling_list', {
+    // 요일별 탭메뉴 Swiperrolling_swiper
+    var rolling_swiper = document.querySelector('.rolling_list').swiper;
+    // rolling_swiper.destroy(true, true);
+    rolling_swiper = new Swiper('.rolling_list', {
       slidesPerView: 'auto',
+      loop: false,
       spaceBetween: 15,
       navigation: {
         nextEl: '.swiper-button-next',
@@ -84,7 +87,12 @@
         el: '.swiper-scrollbar'
       },
       observer: true,
-      observeParents: true
+      observeParents: true,
+      on: {
+        afterInit: function () {
+          $('.swiper-button-prev').addClass('swiper-button-disabled');
+        }
+      }
     });
 
     // 샘드로우 Swiper
@@ -921,10 +929,10 @@
 
     // 기간 정의
     var periodResult = DateTimer.getDatesStartToLast([
-      {
-        first: '2023/11/06 15:00:00',
-        last: '2023/11/23 14:59:59'
-      }
+      // {
+      //   first: '2023/11/06 15:00:00',
+      //   last: '2023/11/23 14:59:59'
+      // }
       // {
       //   first: '2023/8/23 15:00:00',
       //   last: '2023/8/24 14:59:59'
@@ -1019,22 +1027,22 @@
 
     // 기간 정의
     var periodResult = DateTimer.getDatesStartToLast([
-      {
-        first: '2023/11/1 10:00:00',
-        last: '2023/11/16 17:00:00'
-      },
-      {
-        first: '2023/8/23 10:00:00',
-        last: '2023/8/23 17:00:00'
-      },
-      {
-        first: '2023/8/30 10:00:00',
-        last: '2023/8/30 17:00:00'
-      },
-      {
-        first: '2023/9/6 10:00:00',
-        last: '2023/9/6 17:00:00'
-      }
+      // {
+      //   first: '2023/11/1 10:00:00',
+      //   last: '2023/11/16 17:00:00'
+      // },
+      // {
+      //   first: '2023/8/23 10:00:00',
+      //   last: '2023/8/23 17:00:00'
+      // },
+      // {
+      //   first: '2023/8/30 10:00:00',
+      //   last: '2023/8/30 17:00:00'
+      // },
+      // {
+      //   first: '2023/9/6 10:00:00',
+      //   last: '2023/9/6 17:00:00'
+      // }
     ]);
 
     for (var i = 0; i < 4; i++) {
@@ -1418,7 +1426,7 @@
           <div class="common_product_form common_product_form_unit4">
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=932380">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   30
@@ -1457,7 +1465,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=948679">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   31
@@ -1496,7 +1504,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17035">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   33
@@ -1532,7 +1540,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=37960">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   31
@@ -1571,7 +1579,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=967858">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   32
@@ -1607,7 +1615,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=817730">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   27
@@ -1646,7 +1654,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=909639">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   29
@@ -1685,7 +1693,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17017">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   57
@@ -1764,19 +1772,19 @@
           <div class="common_product_form common_product_form_unit3">
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=777202">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
-                  30
+                  24
                   <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
                 <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_special1_img1.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
-                  <p class="txt"></p>
+                  <p class="txt">밀란100 퓨어화이트(기본형)</p>
                   <div class="price_wrap">
                     <div class="del">
-                      <del></del>
+                      <del>2,510,000</del>
                     </div>
                     <div class="price">
                       <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
@@ -1793,7 +1801,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=822608">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   26
@@ -1822,7 +1830,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=822475">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   24
@@ -1851,7 +1859,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=760460">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   31
@@ -1880,7 +1888,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=770064">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   22
@@ -1909,7 +1917,7 @@
 
             <!-- Item -->
             <div class="item_column">
-              <a href="">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1018608">
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   22
@@ -1944,7 +1952,7 @@
           <div class="special_button">
             <!-- [Common] - Button -->
             <div class="btn_comm_button">
-              <a href="https://mall.hanssem.com/mall_ssem.html?snb=timedeal">
+              <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17088#nv-02">
                 <span><strong>타임특가</strong> 상품 전체 보기</span>
               </a>
             </div>
@@ -1968,7 +1976,22 @@
               $('.tab')
                 .eq(val - 1)
                 .addClass('active');
-              swiper.destroy(true, true);
+              var rolling_swiper = document.querySelector('.rolling_list').swiper;
+              rolling_swiper.destroy(true, true);
+              rolling_swiper = new Swiper('.rolling_list', {
+                slidesPerView: 'auto',
+                spaceBetween: 15,
+                navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev'
+                },
+                scrollbar: {
+                  el: '.swiper-scrollbar'
+                },
+                observer: true,
+                observeParents: true
+              });
+              $('.swiper-button-prev').addClass('swiper-button-disabled');
             }
           </script>
           <ul id="" class="tab_date">
@@ -2975,7 +2998,7 @@
             <div class="common_product_form common_product_form_unit2">
               <!-- Item -->
               <div class="item_column">
-                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=762233">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=777416">
                   <div class="sale sale_max">
                     <span class="max">최대</span>
                     22
@@ -3019,7 +3042,7 @@
 
               <!-- Item -->
               <div class="item_column item_column_last">
-                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?searchdetail=gds_view&searchPagelist=&searchKey=822609&gdsNo=822609">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=822472">
                   <div class="sale">
                     <span class="max">최대</span>
                     22
@@ -3072,7 +3095,7 @@
             <div class="common_product_form common_product_form_unit2">
               <!-- Item -->
               <div class="item_column">
-                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=770064">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=977677">
                   <div class="sale">
                     <span class="max">최대</span>
                     20
@@ -3116,7 +3139,7 @@
 
               <!-- Item -->
               <div class="item_column item_column_last">
-                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?searchdetail=gds_view&searchPagelist=&searchKey=977677&gdsNo=977677">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=770061">
                   <div class="sale">
                     <span class="max">최대</span>
                     20
@@ -3169,7 +3192,7 @@
             <div class="common_product_form common_product_form_unit2">
               <!-- Item -->
               <div class="item_column">
-                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?searchdetail=gds_view&searchPagelist=&searchKey=%ed%93%a8%ec%96%b4%ed%99%94%ec%9d%b4%ed%8a%b8++%eb%82%ad%ed%8a%b8&gdsNo=806222">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=806222">
                   <div class="sale">
                     <span class="max">최대</span>
                     21
@@ -3213,7 +3236,7 @@
 
               <!-- Item -->
               <div class="item_column item_column_last">
-                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?searchdetail=gds_view&searchPagelist=&searchKey=%eb%a7%a4%ed%8a%b8%ed%94%bc%ec%97%90%ed%8a%b8%eb%9d%bc&gdsNo=776129">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=782078">
                   <div class="sale">
                     <span class="max">최대</span>
                     21
@@ -3266,7 +3289,7 @@
             <div class="common_product_form common_product_form_unit2">
               <!-- Item -->
               <div class="item_column">
-                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?searchdetail=gds_view&searchPagelist=&searchKey=997378&gdsNo=997378">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=920686">
                   <div class="sale">
                     <span class="max">최대</span>
                     14
@@ -3310,7 +3333,7 @@
 
               <!-- Item -->
               <div class="item_column item_column_last">
-                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?searchdetail=gds_view&searchPagelist=&searchKey=997377&gdsNo=997377">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=855775">
                   <div class="sale">
                     <span class="max">최대</span>
                     16
@@ -3359,7 +3382,7 @@
 
         <!-- [Common] - Button -->
         <div class="btn_comm_button">
-          <a href="https://mall.hanssem.com/mall_ssem.html?snb=interiordeal">
+          <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17088#nv-03">
             <span>상품 더 보러가기</span>
           </a>
         </div>
@@ -3369,11 +3392,11 @@
         <p class="online_guide">※ 제품 유효기간은 결제 완료 월 포함 3개월 이내 설치 완료되어야 합니다.</p>
         <!-- //안내 메세지 -->
       </div>
-      <!-- 특가 배너 -->
+      <!-- 망한 수납 경연 배너 -->
       <div class="special_bnnr">
-        <a href="#" class="js_special_conpon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_coupon_bnnr.jpg" alt="20만원 할인 쿠폰팩 다운로드" /></a>
+        <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=16937" class="js_special_conpon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_coupon_bnnr.jpg" alt="20만원 할인 쿠폰팩 다운로드" /></a>
       </div>
-      <!-- //특가 배너 -->
+      <!-- //망한 수납 경연 배너 -->
     </div>
   </div>
   <!-- //[Event] - 인테리어 특가  -->
@@ -3386,7 +3409,7 @@
         <div class="common_product_form common_product_form_unit4">
           <!-- Item -->
           <div class="item_column">
-            <a href="">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=819864">
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 20
@@ -3425,7 +3448,7 @@
 
           <!-- Item -->
           <div class="item_column">
-            <a href="">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=909272">
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 20
@@ -3464,7 +3487,7 @@
 
           <!-- Item -->
           <div class="item_column">
-            <a href="">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=923646">
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 21
@@ -3500,7 +3523,7 @@
 
           <!-- Item -->
           <div class="item_column">
-            <a href="">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1028131">
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 13
@@ -3539,7 +3562,7 @@
         </div>
 
         <div class="btn_comm_button wht">
-          <a href="https://mall.hanssem.com/mall_ssem.html?snb=clearance">
+          <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17088#nv-04">
             <span>상품 더 보러 가기</span>
           </a>
         </div>
@@ -3556,7 +3579,7 @@
         <div class="common_product_form common_product_form_unit4">
           <!-- Item -->
           <div class="item_column">
-            <a href="">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1018219">
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 23
@@ -3595,7 +3618,7 @@
 
           <!-- Item -->
           <div class="item_column">
-            <a href="">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1007020">
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 23
@@ -3634,7 +3657,7 @@
 
           <!-- Item -->
           <div class="item_column">
-            <a href="">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1024764">
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 22
@@ -3673,7 +3696,7 @@
 
           <!-- Item -->
           <div class="item_column">
-            <a href="">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1031908">
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 19
@@ -3708,7 +3731,7 @@
           <!-- //Item -->
         </div>
         <div class="btn_comm_button">
-          <a href="https://mall.hanssem.com/mall_ssem.html?snb=clearance">
+          <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17088#nv-05">
             <span>상품 더 보러 가기</span>
           </a>
         </div>
