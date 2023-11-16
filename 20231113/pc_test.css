@@ -159,13 +159,15 @@
   .benefit_online .common_product_form .item_column .sale{
     width: 90px;
     height: 104px;
+    padding-left: 6px;
     font-size: 33px;
-    padding-top: 33px;
+    padding-top: 29px;
     background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_saleRedBbg.png') 0 0 no-repeat;
     color: #d24041;
   }
   .benefit_online .common_product_form .item_column .sale .max{
     font-size: 17px;
+    left: -3px;
   }
   .common_product_form .item_column .sale .max {
     display: block;

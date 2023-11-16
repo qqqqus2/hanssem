@@ -439,7 +439,7 @@
   }
 </script>
 
-<!-- <script src="/resources/js/appLaunch.js?20221216140119" type="text/javascript"></script> -->
+<script src="/resources/js/appLaunch.js?20221216140119" type="text/javascript"></script>
 <script type="text/javascript">
   function onCoupon() {
     let targetUrl = '';
@@ -864,7 +864,7 @@
     var periodResult = DateTimer.getDatesStartToLast([
       {
         first: '2023/11/07 15:00:00',
-        last: '2023/11/23 14:59:59'
+        last: '2023/11/29 14:59:59'
       }
       // {
       //   first: '2023/8/23 15:00:00',
@@ -923,18 +923,18 @@
 
     // 기간 정의
     var periodResult = DateTimer.getDatesStartToLast([
-      {
-        first: '2023/11/23 10:00:00',
-        last: '2023/11/27 09:59:00'
-      },
-      {
-        first: '2023/11/30 10:00:00',
-        last: '2023/12/4 09:59:00'
-      },
-      {
-        first: '2023/12/7 10:00:00',
-        last: '2023/12/11 09:59:00'
-      }
+      // {
+      //   first: '2023/11/21 10:00:00',
+      //   last: '2023/11/30 09:59:00'
+      // },
+      // {
+      //   first: '2023/11/30 10:00:00',
+      //   last: '2023/12/4 09:59:00'
+      // },
+      // {
+      //   first: '2023/12/7 10:00:00',
+      //   last: '2023/12/11 09:59:00'
+      // }
     ]);
 
     for (var i = 0; i < 6; i++) {
@@ -986,7 +986,7 @@
 	*/
 
     // 초기 클래스 생성
-    $('.js_date_week_list').addClass('js_swiper_action');
+    // $('.js_date_week_list').addClass('js_swiper_action');
     // 초기 실행
     var swiperDate = new Swiper('.js_date_week_list', {
       slidesPerView: 'auto',
@@ -994,7 +994,9 @@
       //freeMode:true,
       scrollbar: {
         el: '.swiper-scrollbar'
-      }
+      },
+      observer: true,
+      observeParents: true
     });
 
     // 요일별 탭 클릭
@@ -1166,14 +1168,14 @@
 
     // 기간 정의
     var periodResult = DateTimer.getDatesStartToLast([
-      {
-        first: '2023/8/8 10:00:00',
-        last: '2023/8/14 23:59:00'
-      },
-      {
-        first: '2023/8/22 10:00:00',
-        last: '2023/8/26 23:59:00'
-      }
+      // {
+      //   first: '2023/8/8 10:00:00',
+      //   last: '2023/8/14 23:59:00'
+      // },
+      // {
+      //   first: '2023/8/22 10:00:00',
+      //   last: '2023/8/26 23:59:00'
+      // }
     ]);
 
     $item_default.show();
@@ -1283,7 +1285,7 @@
   <div class="layer_bnnr_form">
     <!-- 퀵 배너 레이어 -->
     <div id="js_floating_bnnr" class="layer_bnnr">
-      <a href="#nv-06" class="quick_event_app quick_advice"><img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_quick_menu_off" alt="쌤페스타 인테리어 상담신청" /></a>
+      <a href="#nv-06" class="quick_event_app quick_advice"><img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_quick_menu_off.png" alt="쌤페스타 인테리어 상담신청" /></a>
       <a href="https://mall.hanssem.com/m/msamLive/samLiveMain.do" class="quick_event_live quick_live">
         <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_quick_menu_on.png" alt="쌤페스타 라이브 단독혜택" />
       </a>
@@ -1944,15 +1946,10 @@
       $('.tab')
         .eq(val - 1)
         .addClass('active');
-      var rolling_swiper = document.querySelector('.rolling_list').swiper;
+      var rolling_swiper = document.querySelector('.js_date_week_list').swiper;
       rolling_swiper.destroy(true, true);
-      rolling_swiper = new Swiper('.rolling_list', {
+      rolling_swiper = new Swiper('.js_date_week_list', {
         slidesPerView: 'auto',
-        spaceBetween: 15,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        },
         scrollbar: {
           el: '.swiper-scrollbar'
         },
@@ -1968,7 +1965,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <p class="tab active" onclick="tab(1)">
-            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab1_on.png" alt="11.27 월" />
+            <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab1_off.png" alt="11.27 월" />
             <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_orders_date_tab1_on.png" alt="11.27 월" />
           </p>
         </div>
@@ -2163,14 +2160,14 @@
   <!-- //요일별 제품(11.27) -->
 
   <!-- 요일별 제품(11.30) -->
-  <div id="tab2" class="date_menu_product tab_cont">
+  <div id="tab2" class="date_menu_product tab_cont" style="display: none">
     <!-- Swiper -->
     <div class="date_week_product swiper js_date_week_list">
       <div class="swiper-wrapper week_product_lsit">
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img1.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img1.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2186,7 +2183,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img2.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img2.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2203,7 +2200,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img3.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img3.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2220,7 +2217,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img4.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img4.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2237,7 +2234,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img5.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img5.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2255,7 +2252,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img6.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img6.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2272,7 +2269,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img7.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img7.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2290,7 +2287,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img8.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img8.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2304,7 +2301,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img9.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img9.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2321,7 +2318,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img10.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img10.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2338,7 +2335,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img11.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img11.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2355,7 +2352,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img12.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img12.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2369,7 +2366,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img13.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img13.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2383,7 +2380,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img14.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day2_img14.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2403,7 +2400,7 @@
   <!-- //요일별 제품(11.30) -->
 
   <!-- 요일별 제품(12.4) -->
-  <div id="tab3" class="date_menu_product tab_cont">
+  <div id="tab3" class="date_menu_product tab_cont" style="display: none">
     <!-- Swiper -->
     <div class="date_week_product swiper js_date_week_list">
       <div class="swiper-wrapper week_product_lsit">
@@ -2411,7 +2408,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img1.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img1.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2428,7 +2425,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img2.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img2.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2446,7 +2443,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img3.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img3.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2463,7 +2460,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img4.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img4.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2481,7 +2478,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img5.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img5.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2499,7 +2496,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img6.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img6.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2517,7 +2514,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img7.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img7.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2535,7 +2532,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img8.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img8.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2552,7 +2549,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img9.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img9.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2569,7 +2566,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img10.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img10.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2586,7 +2583,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img11.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img11.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2603,7 +2600,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img12.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img12.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2617,7 +2614,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img13.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img13.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2631,7 +2628,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img14.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day3_img14.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2651,7 +2648,7 @@
   <!-- //요일별 제품(12.4) -->
 
   <!-- 요일별 제품(12.7) -->
-  <div id="tab4" class="date_menu_product tab_cont">
+  <div id="tab4" class="date_menu_product tab_cont" style="display: none">
     <!-- Swiper -->
     <div class="date_week_product swiper js_date_week_list">
       <div class="swiper-wrapper week_product_lsit">
@@ -2659,7 +2656,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img1.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img1.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2676,7 +2673,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img2.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img2.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2693,7 +2690,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img3.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img3.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2709,7 +2706,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img4.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img4.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2725,7 +2722,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img5.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img5.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2741,7 +2738,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img6.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img6.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2758,7 +2755,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img7.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img7.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2775,7 +2772,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img8.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img8.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2791,7 +2788,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img9.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img9.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2807,7 +2804,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img10.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img10.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2823,7 +2820,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img11.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img11.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2836,7 +2833,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img12.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img12.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2849,7 +2846,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img13.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img13.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -2862,7 +2859,7 @@
         <div class="swiper-slide">
           <a href="javascript:;">
             <div class="img">
-              <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img14.jpg" alt="" />
+              <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_day4_img14.jpg" alt="" />
             </div>
             <div class="explain">
               <p class="title">한샘</p>
@@ -3536,13 +3533,13 @@
 
     // 플로팅 배너
     floatingBnnr('#js_floating_bnnr');
-    // 선착순특가 매주월, 목요일 10시
+    /// 선착순특가 매주월, 목요일 10시
     $('#js_countdown_last_wrap').specialCountDown({
-      setupTime: ['2023/11/23 10:00:00', '2023/11/27 10:00:00', '2023/11/30 10:00:00', '2023/12/4 10:00:00', '2023/12/7 10:00:00', , '2023/12/11 10:00:00']
+      setupTime: ['2023/11/30 10:00:00', '2023/12/4 10:00:00', '2023/12/7 10:00:00', '2023/12/11 10:00:00']
     });
     // 선착순특가 매주목요일 10시
     $('#js_countdown_first_wrap').specialCountDown({
-      setupTime: ['2023/11/23 10:00:00', '2023/11/30 10:00:00', '2023/12/7 10:00:00']
+      setupTime: ['2023/11/27 10:00:00', '2023/11/30 10:00:00', '2023/12/7 10:00:00']
     });
 
     // 선착순특가 요일별 롤링 배너
