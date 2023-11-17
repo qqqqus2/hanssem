@@ -73,26 +73,19 @@
   $(function () {
     fixedNavi('fixed-nv-wrap', 'fixed-nv-scroll', 'fixed-nv-conts');
     // 요일별 탭메뉴 Swiperrolling_swiper
-    var rolling_swiper = document.querySelector('.rolling_list').swiper;
-    // rolling_swiper.destroy(true, true);
-    rolling_swiper = new Swiper('.rolling_list', {
+    var rolling_swiper_1 = new Swiper('.rolling_list', {
       slidesPerView: 'auto',
       loop: false,
       spaceBetween: 15,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl: '.swiper-button-next1',
+        prevEl: '.swiper-button-prev1'
       },
       scrollbar: {
         el: '.swiper-scrollbar'
       },
       observer: true,
-      observeParents: true,
-      on: {
-        afterInit: function () {
-          $('.swiper-button-prev').addClass('swiper-button-disabled');
-        }
-      }
+      observeParents: true
     });
 
     // 샘드로우 Swiper
@@ -319,7 +312,7 @@
 <script type="text/javascript">
   const urlParams = new URL(location.href).searchParams;
 
-  let planTargetNo = ''; // 실제 접속될 기획전 번호
+  let planTargetNo = '16744'; // 실제 접속될 기획전 번호
   let utm_source = urlParams.get('utm_source');
   let utm_campaign = urlParams.get('utm_campaign');
   let utm_medium = urlParams.get('utm_medium');
@@ -1317,8 +1310,8 @@
       <div class="evt_section_content">
         <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_coupon.jpg" alt="" usemap="#benefit_coupon" />
         <map name="benefit_coupon">
-          <area shape="RECT" coords="149,629,450,687" href="#" class="coupon_map ssem_coupon_app" title="쿠폰 다운로드" onClick="appDown(); return false;" />
-          <area shape="RECT" coords="769,628,1069,687" href="javascript:addCouponGrpNormal('1276','', '완료메시지', '발급완료시사용기간고지메시지');" class="ssem_coupon_first" title="첫구매 쿠폰다운받기" />
+          <area shape="RECT" coords="149,599,447,656" href="#" class="coupon_map ssem_coupon_app" title="쿠폰 다운로드" onClick="appDown(); return false;" />
+          <area shape="RECT" coords="769,599,1068,658" href="javascript:addCouponGrpNormal('1276','', '완료메시지', '발급완료시사용기간고지메시지');" class="ssem_coupon_first" title="첫구매 쿠폰다운받기" />
         </map>
       </div>
       <div class="evt_section_care">
@@ -1326,7 +1319,7 @@
       </div>
       <div class="evt_qr_img">
         <h4>[APP 다운로드 받기]</h4>
-        <!-- <div><img src="" alt="" /></div> -->
+        <div><img src="" alt="" /></div>
         <p class="btn_close"><a href="#">닫기</a></p>
       </div>
     </div>
@@ -1359,30 +1352,51 @@
       <div class="evt_common_layer_in">
         <p class="layer_tit">[첫 구매 쿠폰]</p>
         <ul class="layer_list">
-          <li>- 발급 기간 : 2023.08.01 00:00 - 08.31 23:59</li>
-          <li>- 사용기간 : 발급일로부터 7일</li>
+          <li>- 발급 기간 : 2023.11.23 AM 10:00 - 12.01 09:59</li>
+          <li>- 사용 기간 : 2023.12.01 AM 10:00</li>
           <li>- 가입 후 구매 이력이 없는 회원에 한 해 발급 가능합니다.</li>
           <li>- 가입 후 1년 이내에 재가입한 회원에게는 발급되지 않습니다.</li>
         </ul>
 
         <p class="layer_tit">[쌤 쿠폰팩]</p>
         <ul class="layer_list">
-          <li>- 발급 기간 : 2023.08.10. 10:00 - 09.11. 14:00</li>
-          <li>- 사용기간 : 발급일로부터 7일</li>
+          <li>- 발급 기간 : 2023.11.23 10:00 ~ 12.11 23:59</li>
+          <li>- 사용 기간 : 2023.11.23 10:00 ~ 12.11 23:59</li>
           <li>- 하루 발급 수량 소진 시 선착순 마감되며, 매일 00시 오픈됩니다.</li>
+          <li>- 소파 전용 쿠폰은 일부 품목에 한하여 적용 가능합니다. (할인 대상 상품에만 각 10/20만원 할인 적용)</li>
+          <li>- 30/60만원 이상 구매 시 할인쿠폰은 전 품목에 적용 가능합니다. <span style="display: block; text-indent: 13px">(상품 구분 없이 최종 결제금액이 30/60만원 이상일 경우 각 1.5만원/2.5만원 할인 적용)</span></li>
         </ul>
 
         <p class="layer_tit">[공통 유의사항]</p>
         <ul class="layer_list">
           <li>- ID 당 1회 발급 가능합니다.</li>
-          <li>- 다른 결제 쿠폰과 중복 적용되지 않습니다.</li>
-          <li>- 주문 후에는 부분 취소가 불가합니다. (전체 취소 후 재주문 가능)</li>
+          <li>- 결제 쿠폰끼리는 중복 적용되지 않습니다.</li>
+          <li>- 결제 쿠폰은 주문 후 부분 취소가 불가합니다. (전체 취소 후 재주문 가능)</li>
           <li>- 한샘몰 및 한샘 오프라인 가구 매장에서 사용 가능합니다.</li>
           <li>- 쿠폰 다운로드 후 오프라인 매장 직원에게 쿠폰을 보여주시면 사용이 가능합니다.</li>
           <li>- 인테리어 상품 및 일부 상품에는 쿠폰이 적용되지 않습니다.</li>
           <li>- 발급된 쿠폰은 'My한샘 - 혜택 - 쿠폰' 페이지에서 확인 가능합니다.</li>
           <li>- 미사용 및 사용기간 만료 시 쿠폰은 재발급되지 않습니다.</li>
           <li>- 본 이벤트는 당사 사정에 의해 사전 고지 없이 변경 또는 중단 될 수 있습니다.</li>
+        </ul>
+
+        <p class="layer_tit">[소파 전용 쿠폰 품목안내]</p>
+        <ul class="layer_list">
+          <li>
+            - 10만원 할인쿠폰 :
+            <span style="display: block; text-indent: 13px">한샘 유로 601 키안티 소파 (3인, 4인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 키안티 천연가죽 리클라이너 (1인, 3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 포네플러스 패브릭소파 (암리스모듈/코너모듈)</span>
+          </li>
+          <li>
+            - 20만원 할인쿠폰 :
+            <span style="display: block; text-indent: 13px">한샘 바흐 702 인피니 소파 (3인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 뉴인피니 천연가죽 소파 (3인, 4인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 시어터 천연가죽 리클라이너 (3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 고다 천연가죽 리클라이너 (3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 고다 슬림 천연가죽 리클라이너 (3.5인용)</span>
+            <span style="display: block; text-indent: 13px">한샘 포네플러스 패브릭소파 (세미라운지형)</span>
+          </li>
         </ul>
       </div>
       <div class="layer_btn_close"><a href="#">닫기</a></div>
@@ -1993,8 +2007,8 @@
                 slidesPerView: 'auto',
                 spaceBetween: 15,
                 navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev'
+                  nextEl: '.swiper-button-next' + val,
+                  prevEl: '.swiper-button-prev' + val
                 },
                 scrollbar: {
                   el: '.swiper-scrollbar'
@@ -2261,9 +2275,8 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
-
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+            <button type="button" class="swiper-button-prev swiper-button-prev1"></button>
+            <button type="button" class="swiper-button-next swiper-button-next1"></button>
           </div>
           <!-- //요일별 특가 -->
 
@@ -2507,8 +2520,8 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+            <button type="button" class="swiper-button-prev swiper-button-prev2"></button>
+            <button type="button" class="swiper-button-next swiper-button-next2"></button>
           </div>
           <!-- //요일별 특가 -->
 
@@ -2757,8 +2770,8 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+            <button type="button" class="swiper-button-prev swiper-button-prev3"></button>
+            <button type="button" class="swiper-button-next swiper-button-next3"></button>
           </div>
           <!-- //요일별 특가 -->
 
@@ -2986,8 +2999,8 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+            <button type="button" class="swiper-button-prev swiper-button-prev4"></button>
+            <button type="button" class="swiper-button-next swiper-button-next4"></button>
           </div>
           <!-- //요일별 특가 -->
         </div>
@@ -2999,7 +3012,7 @@
   <!-- [Event] - 인테리어 특가 -->
   <div id="nv-03" class="evt_section benefit_online">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_title.jpg" alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
+      <p class="evt_section_title" style="margin-bottom: 0"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_title.jpg" alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
       <div class="evt_section_content">
         <div class="online_lowest_type">
           <!-- 부엌 -->

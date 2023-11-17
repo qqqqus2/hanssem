@@ -605,10 +605,14 @@
   }
   /* [Event] - 탭메뉴 */
   .benefit_event_tab {
+    width: 100%;
+    overflow: hidden;
   }
   .benefit_event_tab .js_fixed_menus {
     display: flex;
     flex-wrap: wrap;
+    background: #000;
+    margin: 0 -0.1vw;
   }
   .benefit_event_tab .js_fixed_menus > div {
     display: block;
@@ -629,6 +633,7 @@
   .benefit_event_tab .js_fixed_menus > div:nth-child(4) a {
     border-bottom-left-radius: 1vw;
     border-top: 0;
+    border-right: 0;
   }
   .benefit_event_tab .js_fixed_menus > div:nth-child(5) a {
     border-top-right-radius: 1vw;
@@ -643,6 +648,7 @@
   .benefit_event_tab .js_fixed_menus > div:nth-child(8) a {
     border-top-left-radius: 1vw;
     border-bottom: 0;
+    border-right: 0;
   }
   .benefit_event_tab a {
     display: flex;
@@ -874,7 +880,7 @@
   }
   .draw_product .draw_form a .day {
     font-weight: 900;
-    font-size: 2.8vw;
+    font-size: 3.6vw;
     line-height: 4vw;
     color: #000000;
     margin: 0;

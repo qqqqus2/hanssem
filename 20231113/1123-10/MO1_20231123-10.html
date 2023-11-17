@@ -443,11 +443,11 @@
 <script type="text/javascript">
   function onCoupon() {
     let targetUrl = '';
-    const planNo = 16744; // (수정가능) 기획전 번호
-    const tempCampaign = 'DX_ssemfesta'; // (수정가능) utm_campaign(c)값 김나연 대리님 담당"
+    const planNo = 17089; // (수정가능) 기획전 번호
+    const tempCampaign = 'DX_ssemfesta'; // (수정가능) utm_campaign(c)값 이다혜 대리님 담당"
     if (fnIsApp()) {
       // (수정가능) 쿠폰 다운로드 스크립트 기획팀 담당
-      addCouponGrpNormal('1338', '', '쌤페스타 쿠폰팩', '쿠폰 유효기간을 확인해주세요');
+      addCouponGrpNormal('1338', '', '완료메시지', '발급완료시사용기간고지메시지');
     } else {
       popupConfirm('앱으로 이동하시겠습니까?', function (confirmFlag) {
         if (confirmFlag) {
@@ -456,6 +456,7 @@
           let utm_campaign = urlParams.get('utm_campaign');
           let utm_medium = urlParams.get('utm_medium');
           let utm_content = urlParams.get('utm_content');
+          let utm_term = urlParams.get('utm_term');
 
           if (utm_source == undefined || utm_source == '') {
             utm_source = 'link_official';
@@ -469,7 +470,11 @@
             utm_medium = 'referral';
           }
 
-          targetUrl = 'https://hanssem.onelink.me/tm0Q?' + 'pid=' + utm_source + '&c=' + utm_campaign + '&af_channel=' + utm_medium;
+          if (utm_term == undefined || utm_term == '') {
+            utm_term = '';
+          }
+
+          targetUrl = 'https://hanssem.onelink.me/tm0Q?' + 'pid=' + utm_source + '&c=' + utm_campaign + '&af_channel=' + utm_medium + '&af_adset=' + utm_term + '&is_retargeting=true';
 
           if (utm_content != undefined && utm_content != '') {
             targetUrl += '&af_ad=' + utm_content;
@@ -1288,7 +1293,7 @@
   };
 </script>
 
-<div class="cont-wraps"><img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_visual.jpg" style="width: 100%" /></div>
+<div class="cont-wraps"><img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_visual.jpg" style="width: 100%; position: relative; top: 1px" /></div>
 <div class="cont-wraps benefit_content">
   <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_benefit.jpg" style="width: 100%" />
 
@@ -1334,9 +1339,9 @@
 <div class="cont-wraps fixed-nv-conts" id="nv-01">
   <img src="https://realaecreative.cafe24.com/test/20231113/11/mo_image/ssemfesta_mo_coupon.jpg" style="width: 100%" usemap="#ssemfesta_m_04" />
   <map name="ssemfesta_m_04">
-    <area shape="RECT" coords="119,1296,632,1393" href="javascript:onCoupon();" title="쿠폰 다운받기" class="ssem_coupon_app" />
-    <area shape="RECT" coords="117,1966,631,2062" href="javascript:addCouponGrpNormal('1276','', '완료메시지', '발급완료시사용기간고지메시지');" title="첫구매 쿠폰 다운받기" class="ssem_coupon_first" />
-    <area shape="RECT" coords="253,2167,499,2197" href="#js_appdown_layer" class="js_care_btn" title="쿠폰 할인 유의사항" />
+    <area shape="RECT" coords="121,1428,630,1526" href="javascript:onCoupon();" title="쿠폰 다운받기" class="ssem_coupon_app" />
+    <area shape="RECT" coords="119,2099,631,2194" href="javascript:addCouponGrpNormal('1276','', '완료메시지', '발급완료시사용기간고지메시지');" title="첫구매 쿠폰 다운받기" class="ssem_coupon_first" />
+    <area shape="RECT" coords="251,2293,504,2331" href="#js_appdown_layer" class="js_care_btn" title="쿠폰 할인 유의사항" />
   </map>
 
   <!-- 쿠폰 할인 유의사항 레이어 -->
@@ -1344,30 +1349,55 @@
     <div class="evtpop-wrap">
       <div class="evtpop-tit">[첫 구매 쿠폰]</div>
       <ul class="evtpop-list">
-        <li>- 발급 기간 : 2023.08.01 00:00 - 08.31 23:59</li>
-        <li>- 사용기간 : 발급일로부터 7일</li>
+        <li>- 발급 기간 : 2023.11.23 AM 10:00 - 12.01 09:59</li>
+        <li>- 사용 기간 : 2023.12.01 AM 10:00</li>
         <li>- 가입 후 구매 이력이 없는 회원에 한 해 발급 가능합니다.</li>
         <li>- 가입 후 1년 이내에 재가입한 회원에게는 발급되지 않습니다.</li>
       </ul>
 
       <div class="evtpop-tit">[쌤 쿠폰팩]</div>
       <ul class="evtpop-list">
-        <li>- 발급 기간 : 2023.08.10. 10:00 - 09.11. 14:00</li>
-        <li>- 사용기간 : 발급일로부터 7일</li>
+        <li>- 발급 기간 : 2023.11.23 10:00 ~ 12.11 23:59</li>
+        <li>- 사용 기간 : 2023.11.23 10:00 ~ 12.11 23:59</li>
         <li>- 하루 발급 수량 소진 시 선착순 마감되며, 매일 00시 오픈됩니다.</li>
+        <li>- 소파 전용 쿠폰은 일부 품목에 한하여 적용 가능합니다. <span style="display: block; text-indent: 2vw">(할인 대상 상품에만 각 10/20만원 할인 적용)</span></li>
+        <li>
+          - 30/60만원 이상 구매 시 할인쿠폰은 전 품목에 적용 가능합니다.
+          <span style="display: block; text-indent: 2vw">(상품 구분 없이 최종 결제금액이 30/60만원 이상일 경우</span>
+          <span style="display: block; text-indent: 2vw">각 1.5만원/2.5만원 할인 적용)</span>
+        </li>
       </ul>
 
       <div class="evtpop-tit">[공통 유의사항]</div>
       <ul class="evtpop-list">
         <li>- ID 당 1회 발급 가능합니다.</li>
-        <li>- 다른 결제 쿠폰과 중복 적용되지 않습니다.</li>
-        <li>- 주문 후에는 부분 취소가 불가합니다. (전체 취소 후 재주문 가능)</li>
+        <li>- 결제 쿠폰끼리는 중복 적용되지 않습니다.</li>
+        <li>- 결제 쿠폰은 주문 후 부분 취소가 불가합니다. <span style="display: block; text-indent: 2vw">(전체 취소 후 재주문 가능)</span></li>
         <li>- 한샘몰 및 한샘 오프라인 가구 매장에서 사용 가능합니다.</li>
         <li>- 쿠폰 다운로드 후 오프라인 매장 직원에게 쿠폰을 보여주시면 <span style="display: block; text-indent: 2vw">사용이 가능합니다.</span></li>
         <li>- 인테리어 상품 및 일부 상품에는 쿠폰이 적용되지 않습니다.</li>
         <li>- 발급된 쿠폰은 'My한샘 - 혜택 - 쿠폰' 페이지에서 확인 가능합니다.</li>
         <li>- 미사용 및 사용기간 만료 시 쿠폰은 재발급되지 않습니다.</li>
         <li>- 본 이벤트는 당사 사정에 의해 사전 고지 없이 변경 또는 중단 <span style="display: block; text-indent: 2vw">될 수 있습니다.</span></li>
+      </ul>
+
+      <div class="evtpop-tit">[소파 전용 쿠폰 품목 안내]</div>
+      <ul class="evtpop-list">
+        <li>
+          - 10만원 할인쿠폰 :
+          <span style="display: block; text-indent: 2vw">한샘 유로 601 키안티 소파 (3인, 4인, 코너형)</span>
+          <span style="display: block; text-indent: 2vw">한샘 MVME 키안티 천연가죽 리클라이너 (1인, 3인, 4인)</span>
+          <span style="display: block; text-indent: 2vw">한샘 포네플러스 패브릭소파 (암리스모듈/코너모듈)</span>
+        </li>
+        <li>
+          - 20만원 할인쿠폰 :
+          <span style="display: block; text-indent: 2vw">한샘 바흐 702 인피니 소파 (3인, 코너형)</span>
+          <span style="display: block; text-indent: 2vw">한샘 뉴인피니 천연가죽 소파 (3인, 4인, 코너형)</span>
+          <span style="display: block; text-indent: 2vw">한샘 MVME 시어터 천연가죽 리클라이너 (3인, 4인)</span>
+          <span style="display: block; text-indent: 2vw">한샘 MVME 고다 천연가죽 리클라이너 (3인, 4인)</span>
+          <span style="display: block; text-indent: 2vw">한샘 MVME 고다 슬림 천연가죽 리클라이너 (3.5인용)</span>
+          <span style="display: block; text-indent: 2vw">한샘 포네플러스 패브릭소파 (세미라운지형)</span>
+        </li>
       </ul>
     </div>
     <div class="layer_btn_close">
