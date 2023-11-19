@@ -607,6 +607,10 @@
   .benefit_event_tab {
     width: 100%;
     overflow: hidden;
+    height: 26.4vw;
+  }
+  .benefit_event_tab.fixed_top_layer{
+    
   }
   .benefit_event_tab .js_fixed_menus {
     display: flex;
