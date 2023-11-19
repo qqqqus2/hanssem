@@ -153,7 +153,7 @@
     color: #0c47c8;
     font-family: 'NanumSquareNeo';
     text-align: center;
-    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_salebg.png') 0 0 no-repeat;
+    background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_benefit_special_salebg.png') 0 0 no-repeat;
     box-sizing: border-box;
   }
   .benefit_online .common_product_form .item_column .sale{
@@ -162,7 +162,7 @@
     padding-left: 6px;
     font-size: 33px;
     padding-top: 29px;
-    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_saleRedBbg.png') 0 0 no-repeat;
+    background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_benefit_special_saleRedBbg.png') 0 0 no-repeat;
     color: #d24041;
   }
   .benefit_online .common_product_form .item_column .sale .max{
@@ -719,19 +719,19 @@
     height: 21px;
     margin: 0 5px -1px 0;
     vertical-align: middle;
-    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_care_big_gray.png') 0 0 no-repeat;
+    background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_care_big_gray.png') 0 0 no-repeat;
   }
   .evt_section .evt_section_care .btn.wht_txt a:before{
-    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_care_big.png') 0 0 no-repeat;
+    background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_care_big.png') 0 0 no-repeat;
   }
   .evt_section .evt_section_care .btn a:after {
     width: 11px;
     height: 15px;
     margin: 0 0 0 8px;
-    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_arrow_big_gray.png') 0 0 no-repeat;
+    background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_arrow_big_gray.png') 0 0 no-repeat;
   }
   .evt_section .evt_section_care .btn.wht_txt a:after{
-    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_arrow_big.png') 0 0 no-repeat;
+    background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_arrow_big.png') 0 0 no-repeat;
   }
   .evt_section .evt_section_care .btn:after {
     content: '';
@@ -948,7 +948,7 @@
     height: 98px;
     padding-top: 27px;
     padding-left: 3px;
-    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_benefit_special_saleRedbg.png') 0 0 no-repeat;
+    background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_benefit_special_saleRedbg.png') 0 0 no-repeat;
   }
   .benefit_category .common_product_form .item_column .sale .max{
     margin-bottom: 1px;
@@ -958,13 +958,13 @@
     width: 402px;
     height: 244px;
     left: 0;
-    background-image: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_category_bg_left.jpg');
+    background-image: url('https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_category_bg_left.jpg');
   }
   .benefit_category::after{
     width: 389px;
     height: 244px;
     right: 0;
-    background-image: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_category_bg_right.jpg');
+    background-image: url('https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_category_bg_right.jpg');
   }
   .benefit_category.evt_section .evt_section_title{
     margin-bottom: 0;
@@ -1025,7 +1025,7 @@
   .benefit_coupon {
     position: relative;
     background: #f3ede8;
-    background-image: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_couponpack_bg.png');
+    background-image: url('https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_couponpack_bg.png');
     background-repeat: no-repeat;
     background-position: center 60px;
   }
@@ -1073,7 +1073,7 @@
     background-color: #fc6d6e;
     background-position: center 53px;
     background-repeat: no-repeat;
-    background-image: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_time_event_bg.png');
+    background-image: url('https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_time_event_bg.png');
   }
   .benefit_time_event .evt_section_in {
     padding: 130px 0 139px;
@@ -1140,7 +1140,7 @@
     height: 84px;
     margin: 10px 15px 0;
     vertical-align: top;
-    background: url('https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_time_icon.png') 0 50% no-repeat;
+    background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_time_icon.png') 0 50% no-repeat;
   }
 
   .benefit_counsel_care {
@@ -1408,3 +1408,4 @@
     background-color: #2e2e2e;
     font-family: 'NanumSquareNeo';
   }
+

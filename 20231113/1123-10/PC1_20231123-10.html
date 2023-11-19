@@ -1,8 +1,8 @@
 <!-- ==================== 싱단 시작 ==================== -->
 <input style="display: none" id="clip" />
-<link rel="stylesheet" href="https://realaecreative.cafe24.com/test/20231113/pc_test.css" />
+<link rel="stylesheet" href="https://realaecreative.cafe24.com/test/20231113/pc_image/pc_test.css" />
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -73,26 +73,19 @@
   $(function () {
     fixedNavi('fixed-nv-wrap', 'fixed-nv-scroll', 'fixed-nv-conts');
     // 요일별 탭메뉴 Swiperrolling_swiper
-    var rolling_swiper = document.querySelector('.rolling_list').swiper;
-    // rolling_swiper.destroy(true, true);
-    rolling_swiper = new Swiper('.rolling_list', {
+    var rolling_swiper_1 = new Swiper('.rolling_list', {
       slidesPerView: 'auto',
       loop: false,
       spaceBetween: 15,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl: '.swiper-button-next1',
+        prevEl: '.swiper-button-prev1'
       },
       scrollbar: {
         el: '.swiper-scrollbar'
       },
       observer: true,
-      observeParents: true,
-      on: {
-        afterInit: function () {
-          $('.swiper-button-prev').addClass('swiper-button-disabled');
-        }
-      }
+      observeParents: true
     });
 
     // 샘드로우 Swiper
@@ -111,7 +104,85 @@
     });
   });
 </script>
+<script>
+  $(function () {
+    var rolling_swiper1 = new Swiper('#tab1 .rolling_list', {
+      slidesPerView: 'auto',
+      loop: false,
+      lazy: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '#tab1 .swiper-button-next',
+        prevEl: '#tab1 .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true,
+    });
+    var rolling_swiper2 = new Swiper('#tab2 .rolling_list', {
+      slidesPerView: 'auto',
+      loop: false,
+      lazy: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '#tab2 .swiper-button-next',
+        prevEl: '#tab2 .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true,
+    });
+    var rolling_swiper3 = new Swiper('#tab3 .rolling_list', {
+      slidesPerView: 'auto',
+      loop: false,
+      lazy: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '#tab3 .swiper-button-next',
+        prevEl: '#tab3 .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true,
+    });
+    var rolling_swiper4 = new Swiper('#tab4 .rolling_list', {
+      slidesPerView: 'auto',
+      loop: false,
+      lazy: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '#tab4 .swiper-button-next',
+        prevEl: '#tab4 .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true,
+    });
+    rolling_swiper.slideReset()
+    rolling_swiper.slideTo(0, 0)
+  });
+  function tab(val) {
+    $('.tab_cont').hide();
+    $('.tab_cont')
+      .eq(val - 1)
+      .show();
+    $('.tab').removeClass('active');
+    $('.tab')
+      .eq(val - 1)
+      .addClass('active');
 
+    rolling_swiper + val.update();
+    rolling_swiper + val.slideReset();
+  }
+</script>
 <script>
   function popupBind(id, event) {
     let pop = $('#' + id);
@@ -319,7 +390,7 @@
 <script type="text/javascript">
   const urlParams = new URL(location.href).searchParams;
 
-  let planTargetNo = ''; // 실제 접속될 기획전 번호
+  let planTargetNo = '16744'; // 실제 접속될 기획전 번호
   let utm_source = urlParams.get('utm_source');
   let utm_campaign = urlParams.get('utm_campaign');
   let utm_medium = urlParams.get('utm_medium');
@@ -1269,20 +1340,20 @@
 <div class="event_wrap">
   <!-- [Event] - Visual -->
   <div class="evt_section visual">
-    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_visual.jpg" alt="쌤페스타가 준비한 연말 선물 최대 85% 할인" />
+    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_visual.jpg" alt="쌤페스타가 준비한 연말 선물 최대 85% 할인" />
   </div>
 
   <!-- [Event] - Benefit -->
   <div class="evt_section benefit_process">
     <div class="evt_section_in">
-      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_benefit.jpg" alt="최대 00" />
+      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_benefit.jpg" alt="최대 00" />
 
       <!-- [Event] - Banner Layer -->
       <div class="layer_bnnr_form">
         <!-- [Event] - Quick Banner -->
         <div id="js_floating_bnnr" class="layer_bnnr">
-          <!-- <a href="#js_nv_pos6" class="quick_bnnr_app quick_go"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_quick_layer_off.png" alt="쌤패스타 인테리어 상담신청" /></a> -->
-          <a href="https://mall.hanssem.com/tvMedia/tvMediaMain.do?wlp=37199822" class="quick_bnnr_live quick_live"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_quick_layer_on.png" alt="쌤페스타 라이브 단독혜택" /></a>
+          <!-- <a href="#js_nv_pos6" class="quick_bnnr_app quick_go"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_quick_layer_off.png" alt="쌤패스타 인테리어 상담신청" /></a> -->
+          <a href="https://mall.hanssem.com/tvMedia/tvMediaMain.do?wlp=37199822" class="quick_bnnr_live quick_live"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_quick_layer_on.png" alt="쌤페스타 라이브 단독혜택" /></a>
         </div>
         <!-- //[Event] - Quick Banner -->
       </div>
@@ -1313,12 +1384,12 @@
   <!-- [Event] - Benefit Coupon -->
   <div id="nv-01" class="evt_section benefit_coupon">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_couponpack_title.png" alt="쌤페스타가 준비한 연말 선물 최대 85% 할인" /></p>
+      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_couponpack_title.png" alt="쌤페스타가 준비한 연말 선물 최대 85% 할인" /></p>
       <div class="evt_section_content">
-        <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_coupon.jpg" alt="" usemap="#benefit_coupon" />
+        <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_coupon.jpg" alt="" usemap="#benefit_coupon" />
         <map name="benefit_coupon">
-          <area shape="RECT" coords="149,629,450,687" href="#" class="coupon_map ssem_coupon_app" title="쿠폰 다운로드" onClick="appDown(); return false;" />
-          <area shape="RECT" coords="769,628,1069,687" href="javascript:addCouponGrpNormal('1276','', '완료메시지', '발급완료시사용기간고지메시지');" class="ssem_coupon_first" title="첫구매 쿠폰다운받기" />
+          <area shape="RECT" coords="149,599,447,656" href="#" class="coupon_map ssem_coupon_app" title="쿠폰 다운로드" onClick="appDown(); return false;" />
+          <area shape="RECT" coords="769,599,1068,658" href="javascript:addCouponGrpNormal('1276','', '완료메시지', '발급완료시사용기간고지메시지');" class="ssem_coupon_first" title="첫구매 쿠폰다운받기" />
         </map>
       </div>
       <div class="evt_section_care">
@@ -1326,7 +1397,7 @@
       </div>
       <div class="evt_qr_img">
         <h4>[APP 다운로드 받기]</h4>
-        <!-- <div><img src="" alt="" /></div> -->
+        <div><img src="" alt="" /></div>
         <p class="btn_close"><a href="#">닫기</a></p>
       </div>
     </div>
@@ -1359,30 +1430,51 @@
       <div class="evt_common_layer_in">
         <p class="layer_tit">[첫 구매 쿠폰]</p>
         <ul class="layer_list">
-          <li>- 발급 기간 : 2023.08.01 00:00 - 08.31 23:59</li>
-          <li>- 사용기간 : 발급일로부터 7일</li>
+          <li>- 발급 기간 : 2023.11.23 AM 10:00 - 12.01 09:59</li>
+          <li>- 사용 기간 : 2023.12.01 AM 10:00</li>
           <li>- 가입 후 구매 이력이 없는 회원에 한 해 발급 가능합니다.</li>
           <li>- 가입 후 1년 이내에 재가입한 회원에게는 발급되지 않습니다.</li>
         </ul>
 
         <p class="layer_tit">[쌤 쿠폰팩]</p>
         <ul class="layer_list">
-          <li>- 발급 기간 : 2023.08.10. 10:00 - 09.11. 14:00</li>
-          <li>- 사용기간 : 발급일로부터 7일</li>
+          <li>- 발급 기간 : 2023.11.23 10:00 ~ 12.11 23:59</li>
+          <li>- 사용 기간 : 2023.11.23 10:00 ~ 12.11 23:59</li>
           <li>- 하루 발급 수량 소진 시 선착순 마감되며, 매일 00시 오픈됩니다.</li>
+          <li>- 소파 전용 쿠폰은 일부 품목에 한하여 적용 가능합니다. (할인 대상 상품에만 각 10/20만원 할인 적용)</li>
+          <li>- 30/60만원 이상 구매 시 할인쿠폰은 전 품목에 적용 가능합니다. <span style="display: block; text-indent: 13px">(상품 구분 없이 최종 결제금액이 30/60만원 이상일 경우 각 1.5만원/2.5만원 할인 적용)</span></li>
         </ul>
 
         <p class="layer_tit">[공통 유의사항]</p>
         <ul class="layer_list">
           <li>- ID 당 1회 발급 가능합니다.</li>
-          <li>- 다른 결제 쿠폰과 중복 적용되지 않습니다.</li>
-          <li>- 주문 후에는 부분 취소가 불가합니다. (전체 취소 후 재주문 가능)</li>
+          <li>- 결제 쿠폰끼리는 중복 적용되지 않습니다.</li>
+          <li>- 결제 쿠폰은 주문 후 부분 취소가 불가합니다. (전체 취소 후 재주문 가능)</li>
           <li>- 한샘몰 및 한샘 오프라인 가구 매장에서 사용 가능합니다.</li>
           <li>- 쿠폰 다운로드 후 오프라인 매장 직원에게 쿠폰을 보여주시면 사용이 가능합니다.</li>
           <li>- 인테리어 상품 및 일부 상품에는 쿠폰이 적용되지 않습니다.</li>
           <li>- 발급된 쿠폰은 'My한샘 - 혜택 - 쿠폰' 페이지에서 확인 가능합니다.</li>
           <li>- 미사용 및 사용기간 만료 시 쿠폰은 재발급되지 않습니다.</li>
           <li>- 본 이벤트는 당사 사정에 의해 사전 고지 없이 변경 또는 중단 될 수 있습니다.</li>
+        </ul>
+
+        <p class="layer_tit">[소파 전용 쿠폰 품목안내]</p>
+        <ul class="layer_list">
+          <li>
+            - 10만원 할인쿠폰 :
+            <span style="display: block; text-indent: 13px">한샘 유로 601 키안티 소파 (3인, 4인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 키안티 천연가죽 리클라이너 (1인, 3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 포네플러스 패브릭소파 (암리스모듈/코너모듈)</span>
+          </li>
+          <li>
+            - 20만원 할인쿠폰 :
+            <span style="display: block; text-indent: 13px">한샘 바흐 702 인피니 소파 (3인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 뉴인피니 천연가죽 소파 (3인, 4인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 시어터 천연가죽 리클라이너 (3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 고다 천연가죽 리클라이너 (3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 고다 슬림 천연가죽 리클라이너 (3.5인용)</span>
+            <span style="display: block; text-indent: 13px">한샘 포네플러스 패브릭소파 (세미라운지형)</span>
+          </li>
         </ul>
       </div>
       <div class="layer_btn_close"><a href="#">닫기</a></div>
@@ -1394,13 +1486,13 @@
   <!-- [Event] - 선착순 특가 -->
   <div id="nv-02" class="evt_section benefit_time_event">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_time_event_title.png" alt="benefit 02 지금이 기회! 마지막 선착순 특가" /></p>
+      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_time_event_title.png" alt="benefit 02 지금이 기회! 마지막 선착순 특가" /></p>
       <div class="evt_section_content" style="padding-top: 20px">
         <!-- Counting Unit -->
         <div id="js_countdown_first_wrap" class="special_week_counting">
           <!-- 시간 카운팅 -->
           <div class="countdown js_week_countdown">
-            <p class="title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_title1.jpg" alt="매주 목요일 10시 오픈" /></p>
+            <p class="title"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_title1.jpg" alt="매주 목요일 10시 오픈" /></p>
             <div class="time_count">
               <span class="time">
                 <span class="time_in">
@@ -1441,9 +1533,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   30
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_last1_img1.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">
@@ -1455,14 +1547,14 @@
                       <del>747,000원</del>
                     </div>
                     <div class="price price_black">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
                       <p class="won">
                         <strong>534,950</strong>
                         원
                       </p>
                     </div>
                     <div class="price price_total">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                       <p class="won">
                         <strong>519,950</strong>
                         원
@@ -1480,9 +1572,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   31
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img2.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_last1_img2.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">
@@ -1494,14 +1586,14 @@
                       <del>466,000원</del>
                     </div>
                     <div class="price price_black">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
                       <p class="won">
                         <strong>336,000</strong>
                         원
                       </p>
                     </div>
                     <div class="price price_total">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                       <p class="won">
                         <strong>321,000</strong>
                         원
@@ -1519,9 +1611,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   33
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img3.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_last1_img3.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">샘베딩 서랍장 모음</p>
@@ -1530,14 +1622,14 @@
                       <del>192,000원</del>
                     </div>
                     <div class="price price_black">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
                       <p class="won">
                         <strong>136,320</strong>
                         원
                       </p>
                     </div>
                     <div class="price price_total">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                       <p class="won">
                         <strong>129,510</strong>
                         원
@@ -1555,9 +1647,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   31
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img4.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_last1_img4.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">
@@ -1569,14 +1661,14 @@
                       <del>123,000원</del>
                     </div>
                     <div class="price price_black">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
                       <p class="won">
                         <strong>89,900</strong>
                         원
                       </p>
                     </div>
                     <div class="price price_total">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                       <p class="won">
                         <strong>85,410</strong>
                         원
@@ -1594,9 +1686,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   32
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img5.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_last1_img5.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">샘키즈 옷장세트 1200 A형</p>
@@ -1605,14 +1697,14 @@
                       <del>535,000원</del>
                     </div>
                     <div class="price price_black">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
                       <p class="won">
                         <strong>376,900</strong>
                         원
                       </p>
                     </div>
                     <div class="price price_total">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                       <p class="won">
                         <strong>361,900</strong>
                         원
@@ -1630,9 +1722,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   27
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img6.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_last1_img6.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">
@@ -1644,14 +1736,14 @@
                       <del>1,750,000원</del>
                     </div>
                     <div class="price price_black">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
                       <p class="won">
                         <strong>1,299,000</strong>
                         원
                       </p>
                     </div>
                     <div class="price price_total">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                       <p class="won">
                         <strong>1,274,000</strong>
                         원
@@ -1669,9 +1761,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   29
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img7.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_last1_img7.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">
@@ -1683,14 +1775,14 @@
                       <del>1,109,000원</del>
                     </div>
                     <div class="price price_black">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
                       <p class="won">
                         <strong>809,000</strong>
                         원
                       </p>
                     </div>
                     <div class="price price_total">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                       <p class="won">
                         <strong>784,000</strong>
                         원
@@ -1708,9 +1800,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   57
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_last1_img8.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_last1_img8.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">소가구/조명 쌤페스타 특가</p>
@@ -1719,14 +1811,14 @@
                       <del>89,000원</del>
                     </div>
                     <div class="price price_black">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
                       <p class="won">
                         <strong>39,900</strong>
                         원
                       </p>
                     </div>
                     <div class="price price_total">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                       <p class="won">
                         <strong>37,910</strong>
                         원
@@ -1746,7 +1838,7 @@
         <div id="js_countdown_last_wrap" class="special_week_counting special_week_counting_last" style="margin-top: 150px">
           <!-- 시간 카운팅 -->
           <div class="countdown">
-            <p class="title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_title2.jpg" alt="매주 목요일 10시 오픈" /></p>
+            <p class="title"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_title2.jpg" alt="매주 목요일 10시 오픈" /></p>
             <div class="time_count">
               <span class="time">
                 <span class="time_in">
@@ -1787,9 +1879,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   24
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_special1_img1.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_special1_img1.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">밀란100 퓨어화이트(기본형)</p>
@@ -1798,7 +1890,7 @@
                       <del>2,510,000</del>
                     </div>
                     <div class="price">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
                       <p class="won">
                         <strong>1,907,600</strong>
                         원
@@ -1816,9 +1908,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   26
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_special1_img2.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_special1_img2.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">유로200 루체 멜로즈&화이트</p>
@@ -1827,7 +1919,7 @@
                       <del>2,980,000원</del>
                     </div>
                     <div class="price">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
                       <p class="won">
                         <strong>2,205,200</strong>
                         원
@@ -1845,9 +1937,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   24
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_special1_img3.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_special1_img3.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">밀란200 모노 그레이 (기본형)</p>
@@ -1856,7 +1948,7 @@
                       <del>2,690,000원</del>
                     </div>
                     <div class="price">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
                       <p class="won">
                         <strong>2,044,400</strong>
                         원
@@ -1874,9 +1966,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   22
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_special1_img4.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_special1_img4.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">밀란3 리버화이트</p>
@@ -1885,7 +1977,7 @@
                       <del>2,690,000원</del>
                     </div>
                     <div class="price">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
                       <p class="won">
                         <strong>2,098,200</strong>
                         원
@@ -1903,9 +1995,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   22
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_special1_img5.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_special1_img5.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">밀란5 모노시티</p>
@@ -1914,7 +2006,7 @@
                       <del>3,070,000원</del>
                     </div>
                     <div class="price">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
                       <p class="won">
                         <strong>2,394,600</strong>
                         원
@@ -1932,9 +2024,9 @@
                 <div class="sale sale_max">
                   <span class="max">최대</span>
                   22
-                  <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
                 </div>
-                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_order_special1_img6.jpg" alt="" /></div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_order_special1_img6.jpg" alt="" /></div>
                 <div class="explain">
                   <p class="tit">한샘</p>
                   <p class="txt">
@@ -1946,7 +2038,7 @@
                       <del>3,640,000원</del>
                     </div>
                     <div class="price">
-                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
                       <p class="won">
                         <strong>2,839,200</strong>
                         원
@@ -1976,58 +2068,30 @@
 
         <div class="special_date">
           <h4 class="tit">다음 타임특가 상품을 기대하세요!</h4>
-          <!-- Tab Menu -->
-          <script>
-            function tab(val) {
-              $('.tab_cont').hide();
-              $('.tab_cont')
-                .eq(val - 1)
-                .show();
-              $('.tab').removeClass('active');
-              $('.tab')
-                .eq(val - 1)
-                .addClass('active');
-              var rolling_swiper = document.querySelector('.rolling_list').swiper;
-              rolling_swiper.destroy(true, true);
-              rolling_swiper = new Swiper('.rolling_list', {
-                slidesPerView: 'auto',
-                spaceBetween: 15,
-                navigation: {
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev'
-                },
-                scrollbar: {
-                  el: '.swiper-scrollbar'
-                },
-                observer: true,
-                observeParents: true
-              });
-              $('.swiper-button-prev').addClass('swiper-button-disabled');
-            }
-          </script>
+          
           <ul id="" class="tab_date">
             <li>
               <a href="javascript:void(0)" onclick="tab(1)" class="tab active">
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_orders_date_tab1_off.jpg" alt="11.27 월" />
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_orders_date_tab1_on.jpg" alt="11.27 월" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_orders_date_tab1_off.jpg" alt="11.27 월" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_orders_date_tab1_on.jpg" alt="11.27 월" />
               </a>
             </li>
             <li>
               <a href="javascript:void(0)" onclick="tab(2)" class="tab">
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_orders_date_tab2_off.jpg" alt="11.30 목" />
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_orders_date_tab2_on.jpg" alt="11.30 목" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_orders_date_tab2_off.jpg" alt="11.30 목" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_orders_date_tab2_on.jpg" alt="11.30 목" />
               </a>
             </li>
             <li>
               <a href="javascript:void(0)" onclick="tab(3)" class="tab">
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_orders_date_tab3_off.jpg" alt="12.4 월" />
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_orders_date_tab3_on.jpg" alt="12.4 월" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_orders_date_tab3_off.jpg" alt="12.4 월" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_orders_date_tab3_on.jpg" alt="12.4 월" />
               </a>
             </li>
             <li>
               <a href="javascript:void(0)" onclick="tab(4)" class="tab">
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_orders_date_tab4_off.jpg" alt="12.7 목" />
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_orders_date_tab4_on.jpg" alt="12.7 목" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_orders_date_tab4_off.jpg" alt="12.7 목" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_orders_date_tab4_on.jpg" alt="12.7 목" />
               </a>
             </li>
           </ul>
@@ -2041,7 +2105,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img1.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img1.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2058,7 +2122,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img2.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img2.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2075,7 +2139,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img3.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img3.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2088,7 +2152,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img4.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img4.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2104,7 +2168,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img5.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img5.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2121,7 +2185,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img6.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img6.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2138,7 +2202,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img7.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img7.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2154,7 +2218,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img8.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img8.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2170,7 +2234,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img9.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img9.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2186,7 +2250,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img10.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img10.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2202,7 +2266,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img11.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img11.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2218,7 +2282,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img12.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img12.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2231,7 +2295,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img13.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img13.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2244,7 +2308,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day1_img14.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day1_img14.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2261,9 +2325,8 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
-
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+            <button type="button" class="swiper-button-prev swiper-button-prev1"></button>
+            <button type="button" class="swiper-button-next swiper-button-next1"></button>
           </div>
           <!-- //요일별 특가 -->
 
@@ -2275,7 +2338,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img1.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img1.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2293,7 +2356,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img2.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img2.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2310,7 +2373,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img3.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img3.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2327,7 +2390,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img4.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img4.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2344,7 +2407,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img5.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img5.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2362,7 +2425,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img6.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img6.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2379,7 +2442,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img7.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img7.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2397,7 +2460,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img8.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img8.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2411,7 +2474,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img9.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img9.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2428,7 +2491,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img10.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img10.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2445,7 +2508,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img11.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img11.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2462,7 +2525,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img12.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img12.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2476,7 +2539,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img13.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img13.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2490,7 +2553,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day2_img14.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day2_img14.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2507,8 +2570,8 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+            <button type="button" class="swiper-button-prev swiper-button-prev2"></button>
+            <button type="button" class="swiper-button-next swiper-button-next2"></button>
           </div>
           <!-- //요일별 특가 -->
 
@@ -2520,7 +2583,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img1.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img1.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2537,7 +2600,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img2.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img2.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2555,7 +2618,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img3.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img3.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2572,7 +2635,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img4.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img4.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2590,7 +2653,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img5.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img5.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2608,7 +2671,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img6.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img6.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2626,7 +2689,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img7.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img7.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2644,7 +2707,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img8.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img8.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2661,7 +2724,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img9.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img9.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2678,7 +2741,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img10.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img10.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2695,7 +2758,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img11.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img11.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2712,7 +2775,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img12.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img12.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2726,7 +2789,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img13.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img13.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2740,7 +2803,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day3_img14.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day3_img14.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2757,8 +2820,8 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+            <button type="button" class="swiper-button-prev swiper-button-prev3"></button>
+            <button type="button" class="swiper-button-next swiper-button-next3"></button>
           </div>
           <!-- //요일별 특가 -->
 
@@ -2770,7 +2833,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img1.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img1.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2787,7 +2850,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img2.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img2.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2804,7 +2867,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img3.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img3.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2820,7 +2883,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img4.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img4.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2836,7 +2899,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img5.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img5.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2852,7 +2915,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img6.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img6.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2869,7 +2932,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img7.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img7.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2886,7 +2949,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img8.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img8.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2902,7 +2965,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img9.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img9.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2918,7 +2981,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img10.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img10.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2934,7 +2997,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img11.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img11.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2947,7 +3010,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img12.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img12.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2960,7 +3023,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img13.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img13.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2973,7 +3036,7 @@
                 <div class="unit swiper-slide">
                   <a href="javascript:;">
                     <div class="img">
-                      <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_day4_img14.jpg" alt="" />
+                      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_day4_img14.jpg" alt="" />
                     </div>
                     <div class="explain">
                       <p class="tit">한샘</p>
@@ -2986,8 +3049,8 @@
               <div class="swiper-scrollbar"></div>
             </div>
             <!-- //요일별 제품 -->
-            <button type="button" class="swiper-button-prev"></button>
-            <button type="button" class="swiper-button-next"></button>
+            <button type="button" class="swiper-button-prev swiper-button-prev4"></button>
+            <button type="button" class="swiper-button-next swiper-button-next4"></button>
           </div>
           <!-- //요일별 특가 -->
         </div>
@@ -2999,7 +3062,7 @@
   <!-- [Event] - 인테리어 특가 -->
   <div id="nv-03" class="evt_section benefit_online">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_title.jpg" alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
+      <p class="evt_section_title" style="margin-bottom: 0"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_title.jpg" alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
       <div class="evt_section_content">
         <div class="online_lowest_type">
           <!-- 부엌 -->
@@ -3013,9 +3076,9 @@
                   <div class="sale sale_max">
                     <span class="max">최대</span>
                     22
-                    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_kitchen1_img1.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_kitchen1_img1.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
                     <p class="txt">밀란100 퓨어 그레이 (기본형)</p>
@@ -3024,7 +3087,7 @@
                         <del>2,600,000원</del>
                       </div>
                       <div class="price price_time">
-                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
                           <strong>2,028,800</strong>
                           원
@@ -3057,9 +3120,9 @@
                   <div class="sale">
                     <span class="max">최대</span>
                     22
-                    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_kitchen1_img2.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_kitchen1_img2.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
                     <p class="txt">밀란200 모노 네이비(기본형)</p>
@@ -3068,7 +3131,7 @@
                         <del>2,710,000원</del>
                       </div>
                       <div class="price price_total">
-                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
                           <strong>2,113,800</strong>
                           원
@@ -3110,9 +3173,9 @@
                   <div class="sale">
                     <span class="max">최대</span>
                     20
-                    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_bath1_img1.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_bath1_img1.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
                     <p class="txt">밀란1 마이티</p>
@@ -3121,7 +3184,7 @@
                         <del>2,550,000원</del>
                       </div>
                       <div class="price price_time">
-                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
                           <strong>2,040,000</strong>
                           원
@@ -3154,9 +3217,9 @@
                   <div class="sale">
                     <span class="max">최대</span>
                     20
-                    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_bath1_img2.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_bath1_img2.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
                     <p class="txt">밀란5 오블리크화이트</p>
@@ -3165,7 +3228,7 @@
                         <del>2,920,000원</del>
                       </div>
                       <div class="price price_total">
-                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
                           <strong>2,336,000</strong>
                           원
@@ -3207,9 +3270,9 @@
                   <div class="sale">
                     <span class="max">최대</span>
                     21
-                    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_package1_img1.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_package1_img1.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
                     <p class="txt">퓨어화이트&낭트 키친바스PKG</p>
@@ -3218,7 +3281,7 @@
                         <del>5,220,000원</del>
                       </div>
                       <div class="price price_time">
-                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
                           <strong>4,123,800</strong>
                           원
@@ -3251,9 +3314,9 @@
                   <div class="sale">
                     <span class="max">최대</span>
                     21
-                    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_package1_img2.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_package1_img2.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
                     <p class="txt">플랫화이트&리버화이트 키친바스PKG</p>
@@ -3262,7 +3325,7 @@
                         <del>5,230,000원</del>
                       </div>
                       <div class="price price_total">
-                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
                           <strong>4,131,700</strong>
                           원
@@ -3304,9 +3367,9 @@
                   <div class="sale">
                     <span class="max">최대</span>
                     14
-                    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_door1_img1.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_door1_img1.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
                     <p class="txt">수퍼 초슬림 3연동 중문</p>
@@ -3315,7 +3378,7 @@
                         <del>1,220,000원</del>
                       </div>
                       <div class="price price_time">
-                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
                           <strong>1,050,000</strong>
                           원
@@ -3348,9 +3411,9 @@
                   <div class="sale">
                     <span class="max">최대</span>
                     16
-                    <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                    <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
                   </div>
-                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_door1_img2.jpg" alt="" /></div>
+                  <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_door1_img2.jpg" alt="" /></div>
                   <div class="explain">
                     <p class="tit">한샘</p>
                     <p class="txt">밀란 여닫이 중문</p>
@@ -3359,7 +3422,7 @@
                         <del>1,070,000원</del>
                       </div>
                       <div class="price price_total">
-                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
                         <p class="won">
                           <strong>900,000</strong>
                           원
@@ -3405,7 +3468,7 @@
       </div>
       <!-- 쿠폰 배너 -->
       <div class="special_bnnr">
-        <a href="#none" class="js_special_conpon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_coupon_bnnr.jpg" alt="20만원 할인 쿠폰팩 다운로드" /></a>
+        <a href="#none" class="js_special_conpon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_coupon_bnnr.jpg" alt="20만원 할인 쿠폰팩 다운로드" /></a>
       </div>
       <!-- //쿠폰 배너 -->
     </div>
@@ -3415,7 +3478,7 @@
   <!-- [Event] - 카테고리 특가 -->
   <div id="nv-04" class="evt_section benefit_category">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_category_title.jpg" alt="2023년 인기 신상들을 모아 놓치면 후회할 신상 특가" /></p>
+      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_category_title.jpg" alt="2023년 인기 신상들을 모아 놓치면 후회할 신상 특가" /></p>
       <div class="evt_section_content">
         <div class="common_product_form common_product_form_unit4">
           <!-- Item -->
@@ -3424,9 +3487,9 @@
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 20
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_cate_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_cate_last1_img1.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
@@ -3438,14 +3501,14 @@
                     <del>1,615,000원</del>
                   </div>
                   <div class="price price_black">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
                       <strong>1,325,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
                     <p class="won">
                       <strong>1,300,000</strong>
                       원
@@ -3463,9 +3526,9 @@
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 20
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_cate_last1_img2.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_cate_last1_img2.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
@@ -3477,14 +3540,14 @@
                     <del>1,194,000원</del>
                   </div>
                   <div class="price price_black">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
                       <strong>979,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
                     <p class="won">
                       <strong>954,000</strong>
                       원
@@ -3502,9 +3565,9 @@
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 21
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_cate_last1_img3.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_cate_last1_img3.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">미나 스틸 원형 4인 1000 식탁</p>
@@ -3513,14 +3576,14 @@
                     <del>310,000원</del>
                   </div>
                   <div class="price price_black">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
                       <strong>254,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
                     <p class="won">
                       <strong>244,000</strong>
                       원
@@ -3538,9 +3601,9 @@
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 13
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent_red.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_cate_last1_img4.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_cate_last1_img4.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">보니애가구</p>
                 <p class="txt">
@@ -3552,14 +3615,14 @@
                     <del>294,000원</del>
                   </div>
                   <div class="price price_black">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
                       <strong>264,600</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
                     <p class="won">
                       <strong>254,600</strong>
                       원
@@ -3585,7 +3648,7 @@
   <!-- [Event] - 신상 특가 -->
   <div id="nv-05" class="evt_section benefit_newPrd">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_newPrd_title.jpg" alt="2023년 인기 신상들을 모아 놓치면 후회할 신상 특가" /></p>
+      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_newPrd_title.jpg" alt="2023년 인기 신상들을 모아 놓치면 후회할 신상 특가" /></p>
       <div class="evt_section_content">
         <div class="common_product_form common_product_form_unit4">
           <!-- Item -->
@@ -3594,9 +3657,9 @@
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 23
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_last1_img1.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_newPrd_last1_img1.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
@@ -3608,14 +3671,14 @@
                     <del>448,000원</del>
                   </div>
                   <div class="price price_black">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
                       <strong>360,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                     <p class="won">
                       <strong>345,000</strong>
                       원
@@ -3633,9 +3696,9 @@
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 23
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_last1_img2.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_newPrd_last1_img2.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
@@ -3647,14 +3710,14 @@
                     <del>694,000원</del>
                   </div>
                   <div class="price price_black">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
                       <strong>549,900</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                     <p class="won">
                       <strong>534,900</strong>
                       원
@@ -3672,9 +3735,9 @@
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 22
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_last1_img3.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_newPrd_last1_img3.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">
@@ -3686,14 +3749,14 @@
                     <del>702,000원</del>
                   </div>
                   <div class="price price_black">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
                       <strong>565,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                     <p class="won">
                       <strong>550,000</strong>
                       원
@@ -3711,9 +3774,9 @@
               <div class="sale sale_max">
                 <span class="max">최대</span>
                 19
-                <img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+                <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_text_percent.png" alt="%" />
               </div>
-              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_last1_img4.jpg" alt="" /></div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_newPrd_last1_img4.jpg" alt="" /></div>
               <div class="explain">
                 <p class="tit">한샘</p>
                 <p class="txt">스노어 패브릭 소파 4인</p>
@@ -3722,14 +3785,14 @@
                     <del>1,189,000원</del>
                   </div>
                   <div class="price price_black">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
                     <p class="won">
                       <strong>989,000</strong>
                       원
                     </p>
                   </div>
                   <div class="price price_total">
-                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                    <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
                     <p class="won">
                       <strong>964,000</strong>
                       원
@@ -3748,7 +3811,7 @@
         </div>
         <!-- 망한 수납 경연 배너 -->
         <div class="special_bnnr">
-          <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=16937" class=""><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/ssemfesta_newPrd_bnnr.jpg" alt="20만원 할인 쿠폰팩 다운로드" /></a>
+          <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=16937" class=""><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/ssemfesta_newPrd_bnnr.jpg" alt="20만원 할인 쿠폰팩 다운로드" /></a>
         </div>
         <!-- //망한 수납 경연 배너 -->
       </div>
@@ -3759,7 +3822,7 @@
   <!-- [Event] - 클리어런스 -->
   <div id="nv-06" class="evt_section benefit_clearance">
     <div class="evt_section_in">
-      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_clearance_title.jpg" alt="베스트 리빙 상품부터 ~85% 클리어런스까지 놓치면 품절! 샘페특가" /></p>
+      <p class="evt_section_title"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_clearance_title.jpg" alt="베스트 리빙 상품부터 ~85% 클리어런스까지 놓치면 품절! 샘페특가" /></p>
     </div>
   </div>
   <!-- //[Event] - 클리어런스 -->
