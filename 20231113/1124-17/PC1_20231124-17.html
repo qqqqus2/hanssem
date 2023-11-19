@@ -1012,8 +1012,8 @@
       //$bnnrLive.show();
     }
 
-    //$bnnrLink.hide();
-    $bnnrLive.show();
+    $bnnrLink.show();
+    $bnnrLive.hide();
 
     // 메뉴 클릭
     $bnnrLink.bind('click', function (e) {
@@ -1021,7 +1021,7 @@
       e.preventDefault();
 
       // 상담신청 컨텐츠 이동
-      $('.tablist a').eq(5).trigger('click');
+      $('.tablist a').eq(7).trigger('click');
     });
   }
 
@@ -1338,7 +1338,7 @@
       <div class="layer_bnnr_form">
         <!-- [Event] - Quick Banner -->
         <div id="js_floating_bnnr" class="layer_bnnr">
-          <!-- <a href="#js_nv_pos6" class="quick_bnnr_app quick_go"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_quick_layer_off.png" alt="쌤패스타 인테리어 상담신청" /></a> -->
+          <a href="#js_nv_pos6" class="quick_bnnr_app quick_go"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_quick_layer_off.png" alt="쌤패스타 인테리어 상담신청" /></a>
           <a href="https://mall.hanssem.com/tvMedia/tvMediaMain.do?wlp=37199822" class="quick_bnnr_live quick_live"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_quick_layer_on.png" alt="쌤페스타 라이브 단독혜택" /></a>
         </div>
         <!-- //[Event] - Quick Banner -->
