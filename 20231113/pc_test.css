@@ -462,7 +462,7 @@
     left: 50%;
     top: 0;
     min-width: 498px;
-    z-index: 50;
+    z-index: 60;
     transform: translateX(-50%);
     font-family: 'NanumSquareNeo';
   }
@@ -514,6 +514,9 @@
     font-size: 15px;
     color: #000000;
     font-weight: 700;
+  }
+  .evt_common_layer .layer_list li span{
+    margin: 5px 0;
   }
   .evt_common_layer .button {
     margin-top: 50px;

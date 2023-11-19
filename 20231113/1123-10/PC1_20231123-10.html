@@ -2068,7 +2068,39 @@
 
         <div class="special_date">
           <h4 class="tit">다음 타임특가 상품을 기대하세요!</h4>
+<<<<<<< HEAD
           
+=======
+          <!-- Tab Menu -->
+          <script>
+            function tab(val) {
+              $('.tab_cont').hide();
+              $('.tab_cont')
+                .eq(val - 1)
+                .show();
+              $('.tab').removeClass('active');
+              $('.tab')
+                .eq(val - 1)
+                .addClass('active');
+              var rolling_swiper = document.querySelector('.rolling_list').swiper;
+              rolling_swiper.destroy(true, true);
+              rolling_swiper = new Swiper('.rolling_list', {
+                slidesPerView: 'auto',
+                spaceBetween: 15,
+                navigation: {
+                  nextEl: '.swiper-button-next' + val,
+                  prevEl: '.swiper-button-prev' + val
+                },
+                scrollbar: {
+                  el: '.swiper-scrollbar'
+                },
+                observer: true,
+                observeParents: true
+              });
+              $('.swiper-button-prev').addClass('swiper-button-disabled');
+            }
+          </script>
+>>>>>>> e6d2ac90ac696e62692fc4065ce3ff16368a8474
           <ul id="" class="tab_date">
             <li>
               <a href="javascript:void(0)" onclick="tab(1)" class="tab active">
@@ -3062,7 +3094,11 @@
   <!-- [Event] - 인테리어 특가 -->
   <div id="nv-03" class="evt_section benefit_online">
     <div class="evt_section_in">
+<<<<<<< HEAD
       <p class="evt_section_title" style="margin-bottom: 0"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_title.jpg" alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
+=======
+      <p class="evt_section_title" style="margin-bottom: 0"><img src="https://realaecreative.cafe24.com/test/20231113/11/pc_image/semfesta_online_title.jpg" alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
+>>>>>>> e6d2ac90ac696e62692fc4065ce3ff16368a8474
       <div class="evt_section_content">
         <div class="online_lowest_type">
           <!-- 부엌 -->
