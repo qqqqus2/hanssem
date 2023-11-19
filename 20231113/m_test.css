@@ -699,7 +699,7 @@
   .cont-wraps .countdown .time_count .time_in {
     display: inline-block;
     min-width: 10vw;
-    padding: 1vw 1.5vw 0.8vw 1.5vw;
+    padding: 1.2vw 1.5vw 0.6vw 1.5vw;
     font-weight: bold;
     font-size: 9.2vw;
     line-height: 1;
@@ -880,11 +880,7 @@
   }
   .draw_product .draw_form a .day {
     font-weight: 900;
-<<<<<<< HEAD
     font-size: 3.7vw;
-=======
-    font-size: 3.6vw;
->>>>>>> e6d2ac90ac696e62692fc4065ce3ff16368a8474
     line-height: 4vw;
     color: #000000;
     margin: 0;
