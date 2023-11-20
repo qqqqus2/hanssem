@@ -773,7 +773,7 @@
   }
   /* [Event] - 탭메뉴 */
   .benefit_event_tab {
-    height: 121px;
+    height: 0;
     width: 1920px;
     background: #000;
     opacity: 0;
@@ -1427,4 +1427,3 @@
     background-color: #2e2e2e;
     font-family: 'NanumSquareNeo';
   }
-
