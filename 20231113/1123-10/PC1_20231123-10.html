@@ -98,8 +98,12 @@
       } catch (e) {}
     });
   }
+  $(window).on('load', function () {
+    $('#js_fixed_menu').css('opacity', '1');
+  });
   $(function () {
     fixedNavi('fixed_top_layer', 'fixed-nv-scroll', 'fixed-nv-conts');
+
     // 요일별 탭메뉴 Swiperrolling_swiper
 
     // 샘드로우 Swiper

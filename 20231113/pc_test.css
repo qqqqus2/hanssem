@@ -776,6 +776,7 @@
     height: 121px;
     width: 1920px;
     background: #000;
+    opacity: 0;
   }
   .benefit_event_tab .section_in {
     padding: 0;
