@@ -20,20 +20,48 @@
     $('.mv-scroll').click(function (event) {
       var this_top = $(this.hash).offset().top;
       event.preventDefault();
+      if ($('.head-gnb').length > 0) {
+        if ($(window).scrollTop() > $(' .' + wrapClass).offset().top) {
+          if ($(this).closest('li').index() > $(this).closest('.fix-nv-list').find('li.on').index()) {
+            topY = 92;
+          } else {
+            topY = 144;
+          }
+        } else {
+          topY = 92;
+        }
+      }
       $('html,body')
         .stop()
-        .animate({ scrollTop: this_top - topY - $('.' + wrapClass).height() + 1 }, 600);
+        .animate({ scrollTop: this_top - topY - $('.' + wrapClass).height() + 1 }, 400);
     });
 
     $(window).bind('scroll', function () {
       var scrTop = $(window).scrollTop();
       try {
-        if ($(window).scrollTop() > $(' .' + wrapClass).offset().top - topY && $(window).scrollTop() <= $('.fixed-nv-end').offset().top - topY) {
-          $(' .' + titleClass)
-            .css({ top: topY })
-            .addClass('on');
+        if ($('.head-gnb').length > 0) {
+          topY = topFixed_H;
+        }
+        if ($('.head-gnb').hasClass('off')) {
+          $(' .' + titleClass).css('top', 92);
         } else {
-          $(' .' + titleClass).removeClass('on');
+          $(' .' + titleClass).css('top', 144);
+        }
+        if ($(window).scrollTop() > $(' .' + wrapClass).offset().top - topY && $(window).scrollTop() <= $('.fixed-nv-end').offset().top - topY) {
+          // $(' .' + titleClass)
+          //   .css('top', 144)
+          //   .addClass('on');
+        } else {
+          // $(' .' + titleClass)
+          //   .css('top', 92)
+          //   .removeClass('on');
+          // if ($('.head-gnb').length > 0) {
+          //   $(' .' + titleClass)
+          //     .css('top', 92)
+          //     .removeClass('on');
+          // } else {
+          //   $(' .' + titleClass).removeClass('on');
+          // }
         }
 
         $(' .' + contsClass).each(function (n) {
@@ -63,15 +91,15 @@
         });
 
         /* 첫번째 메뉴 온 제거
-			if($(window).scrollTop() <= $(" ."+contsClass).eq(0).offset().top - $(" ."+wrapClass).height() - topY){
-				$(" ."+titleClass).find("li").removeClass("on");
-			}
-			*/
+				if($(window).scrollTop() <= $(" ."+contsClass).eq(0).offset().top - $(" ."+wrapClass).height() - topY){
+					$(" ."+titleClass).find("li").removeClass("on");
+				}
+				*/
       } catch (e) {}
     });
   }
   $(function () {
-    fixedNavi('fixed-nv-wrap', 'fixed-nv-scroll', 'fixed-nv-conts');
+    fixedNavi('fixed_top_layer', 'fixed-nv-scroll', 'fixed-nv-conts');
     // 요일별 탭메뉴 Swiperrolling_swiper
 
     // 샘드로우 Swiper

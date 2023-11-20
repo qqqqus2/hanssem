@@ -18,15 +18,15 @@
 <!-- 샘 DRAW -->
 <div class="cont-wraps fixed-nv-conts" id="nv-07">
   <img src="https://realaecreative.cafe24.com/test/20231113/mo_image/ssemfesta_mo_draw_title.jpg" style="width: 100%" />
-  <div id="js_product_draw" class="draw_product" style="background-color: #002984;">
+  <div id="js_product_draw" class="draw_product" style="background-color: #002984">
     <!-- Swiper -->
     <div class="draw-last">
-      <img src="https://realaecreative.cafe24.com/test/20231113/mo_image/semfesta_mo_draw_5_last.jpg" alt="">
+      <img src="https://realaecreative.cafe24.com/test/20231113/mo_image/semfesta_mo_draw_5_last.jpg" alt="" />
     </div>
   </div>
 </div>
 
-<div class="cont-wraps draw_content" style="background-color: #002984; padding-left: 0; padding-right: 0;padding-top: 0;margin-top: -4vw;">
+<div class="cont-wraps draw_content" style="background-color: #002984; padding-left: 0; padding-right: 0; padding-top: 0; margin-top: -4vw">
   <img src="https://realaecreative.cafe24.com/test/20231113/mo_image/ssemfesta_mo_draw_text1.jpg" alt="" style="width: 100%" />
 
   <!-- 드로우 결과 -->
@@ -229,54 +229,6 @@
 
     // 이벤트
     eventGuideForm();
-
-    // 쿠폰 다운 함수
-    function onCoupon() {
-      let targetUrl = '';
-      const planNo = 17089; // (수정가능) 기획전 번호
-      const tempCampaign = 'DX_ssemfesta'; // (수정가능) utm_campaign(c)값 이다혜 대리님 담당"
-      if (fnIsApp()) {
-        // (수정가능) 쿠폰 다운로드 스크립트 기획팀 담당
-        addCouponGrpNormal('1338', '', '완료메시지', '발급완료시사용기간고지메시지');
-      } else {
-        popupConfirm('앱으로 이동하시겠습니까?', function (confirmFlag) {
-          if (confirmFlag) {
-            const urlParams = new URL(location.href).searchParams;
-            let utm_source = urlParams.get('utm_source');
-            let utm_campaign = urlParams.get('utm_campaign');
-            let utm_medium = urlParams.get('utm_medium');
-            let utm_content = urlParams.get('utm_content');
-            let utm_term = urlParams.get('utm_term');
-
-            if (utm_source == undefined || utm_source == '') {
-              utm_source = 'link_official';
-            }
-
-            if (utm_campaign == undefined || utm_campaign == '') {
-              utm_campaign = tempCampaign;
-            }
-
-            if (utm_medium == undefined || utm_medium == '') {
-              utm_medium = 'referral';
-            }
-
-            if (utm_term == undefined || utm_term == '') {
-              utm_term = '';
-            }
-
-            targetUrl = 'https://hanssem.onelink.me/tm0Q?' + 'pid=' + utm_source + '&c=' + utm_campaign + '&af_channel=' + utm_medium + '&af_adset=' + utm_term + '&is_retargeting=true';
-
-            if (utm_content != undefined && utm_content != '') {
-              targetUrl += '&af_ad=' + utm_content;
-            }
-
-            targetUrl += '&af_dp=hss://planlink?deep_link_sub1=' + planNo + '&af_force_deeplink=true&deep_link_value=planlink&deep_link_sub1=' + planNo;
-            console.log(targetUrl);
-            location.href = targetUrl;
-          }
-        });
-      }
-    }
   });
 </script>
 
