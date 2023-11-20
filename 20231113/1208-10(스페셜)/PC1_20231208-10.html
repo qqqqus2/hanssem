@@ -70,7 +70,7 @@
       } catch (e) {}
     });
   }
-   $(function () {
+  $(function () {
     fixedNavi('fixed-nv-wrap', 'fixed-nv-scroll', 'fixed-nv-conts');
     // 요일별 탭메뉴 Swiperrolling_swiper
 
@@ -105,7 +105,7 @@
         el: '.swiper-scrollbar'
       },
       observer: true,
-      observeParents: true,
+      observeParents: true
     });
     var rolling_swiper2 = new Swiper('#tab2 .rolling_list', {
       slidesPerView: 'auto',
@@ -120,7 +120,7 @@
         el: '.swiper-scrollbar'
       },
       observer: true,
-      observeParents: true,
+      observeParents: true
     });
     var rolling_swiper3 = new Swiper('#tab3 .rolling_list', {
       slidesPerView: 'auto',
@@ -135,7 +135,7 @@
         el: '.swiper-scrollbar'
       },
       observer: true,
-      observeParents: true,
+      observeParents: true
     });
     var rolling_swiper4 = new Swiper('#tab4 .rolling_list', {
       slidesPerView: 'auto',
@@ -150,10 +150,8 @@
         el: '.swiper-scrollbar'
       },
       observer: true,
-      observeParents: true,
+      observeParents: true
     });
-    rolling_swiper.slideReset()
-    rolling_swiper.slideTo(0, 0)
   });
   function tab(val) {
     $('.tab_cont').hide();
@@ -3048,9 +3046,7 @@
   <!-- [Event] - 인테리어 특가 -->
   <div id="nv-03" class="evt_section benefit_online">
     <div class="evt_section_in">
-      <p class="evt_section_title" style="margin-bottom: 0"><img
-          src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_title.jpg"
-          alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
+      <p class="evt_section_title" style="margin-bottom: 0"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_online_title.jpg" alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
 
       <div class="evt_section_content">
         <div class="online_lowest_type">
