@@ -8,12 +8,12 @@
 
 <script type="text/javascript">
   function fixedNavi(wrapClass, titleClass, contsClass) {
-    var topY = 0;
-    if ($('.top-fix').length > 0) {
-      topY = parseInt($('.top-fix').height());
-    } else {
-      topY = 0;
-    }
+    var topY = parseInt($('.top-fix').height());
+    // if ($('.top-fix').length > 0) {
+    //   topY = parseInt($('.top-fix').height());
+    // } else {
+    //   topY = 0;
+    // }
 
     $(' .' + wrapClass).height(parseInt($(' .' + wrapClass).height()));
 
