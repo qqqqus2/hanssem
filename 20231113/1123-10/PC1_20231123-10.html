@@ -8,12 +8,12 @@
 
 <script type="text/javascript">
   function fixedNavi(wrapClass, titleClass, contsClass) {
-    var topY = parseInt($('.top-fix').height());
-    // if ($('.top-fix').length > 0) {
-    //   topY = parseInt($('.top-fix').height());
-    // } else {
-    //   topY = 0;
-    // }
+    var topY = 0;
+    if ($('.top-fix').length > 0) {
+      topY = parseInt($('.top-fix').height());
+    } else {
+      topY = 0;
+    }
 
     $(' .' + wrapClass).height(parseInt($(' .' + wrapClass).height()));
 
@@ -98,10 +98,7 @@
       } catch (e) {}
     });
   }
-  $(window).on('load', function () {
-    $('#js_fixed_menu').css('height', 'auto');
-    $('#js_fixed_menu').css('opacity', '1');
-  });
+
   $(function () {
     fixedNavi('fixed_top_layer', 'fixed-nv-scroll', 'fixed-nv-conts');
 
@@ -1001,9 +998,9 @@
     function fixedScrollEvt() {
       // 현재 ScrollTop
       var top = $(window).scrollTop();
-
+      $this.removeClass('fixed_top_layer');
       // 메뉴 고정 위치값
-      if (top > thisTop - 9) {
+      if (top > thisTop - 92) {
         $this.addClass('fixed_top_layer');
       } else {
         $this.removeClass('fixed_top_layer');
@@ -1087,7 +1084,7 @@
       e.preventDefault();
 
       // 상담신청 컨텐츠 이동
-      $('.tablist a').eq(5).trigger('click');
+      $('.tablist a').eq(7).trigger('click');
     });
   }
 
@@ -1381,9 +1378,9 @@
   <!-- //[Event] - Benefit -->
 
   <!-- [Event] - Tab Menu -->
-  <div id="js_fixed_menu" class="evt_section benefit_event_tab fixed_top_layer">
+  <div id="js_fixed_menu" class="evt_section benefit_event_tab">
     <div class="benefit_event_fixed fixed-nv-scroll">
-      <div class="evt_section_content" style="position: relative">
+      <div class="evt_section_content">
         <ul class="tablist fix-nv-list">
           <li class="on"><a href="#nv-01" class="menu navi_couponpack">쿠폰팩</a></li>
           <li><a href="#nv-02" class="menu navi_timeprice">타임 특가</a></li>

@@ -560,6 +560,7 @@
   /* [Event] - 프로세스 */
   .benefit_content {
     position: relative;
+    background-color: #002984;
   }
   .layer_bnnr_form {
     position: absolute;
@@ -616,7 +617,7 @@
     display: flex;
     flex-wrap: wrap;
     background: #000;
-    margin: 0 -0.1vw;
+    margin: -0.1vw;
   }
   .benefit_event_tab .js_fixed_menus > div {
     display: block;
