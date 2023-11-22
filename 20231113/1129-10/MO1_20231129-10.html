@@ -949,11 +949,11 @@
     // 메뉴 활성화
     $('#js_week_tab').tab({ active: 1 });
     // 요일별 탭메뉴 Swiper
-    var swiper = new Swiper('.js_date_week', {
-      //initialSlide : 0,
-      slidesPerView: 'auto',
-      freeMode: true
-    });
+    // var swiper = new Swiper('.js_date_week', {
+    //   //initialSlide : 0,
+    //   slidesPerView: 'auto',
+    //   freeMode: true
+    // });
 
     // 상품 활성화
     //$swiperMenuProduct.eq(0).addClass("date_week_product_active");
@@ -2005,20 +2005,20 @@
   <div class="date_menu" style="height: 13vw">
     <!-- Swiper -->
     <div id="" class="swiper mySwiper js_date_week">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
+      <div class="swiper-wrapper" style="align-items: center; width: 75%; margin: auto;">
+        <div class="swiper-slide" style="width: 33.333%;">
           <p class="tab" onclick="tab(1)">
             <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_orders_date_tab2_off.png" alt="11.30 목" />
             <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_orders_date_tab2_on.png" alt="11.30 목" />
           </p>
         </div>
-        <div class="swiper-slide">
+        <div class="swiper-slide" style="width: 33.333%;">
           <p class="tab" onclick="tab(2)">
             <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_orders_date_tab3_off.png" alt="12.4 월" />
             <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_orders_date_tab3_on.png" alt="12.4 월" />
           </p>
         </div>
-        <div class="swiper-slide">
+        <div class="swiper-slide" style="width: 33.333%;">
           <p class="tab" onclick="tab(3)">
             <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_orders_date_tab4_off.png" alt="12.7 목" />
             <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_orders_date_tab4_on.png" alt="12.7 목" />
