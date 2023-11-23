@@ -10,9 +10,9 @@
   function fixedNavi(wrapClass, titleClass, contsClass) {
     var topY = 0;
     if ($('.top-fix').length > 0) {
-    topY = parseInt($('.top-fix').height());
+      topY = parseInt($('.top-fix').height());
     } else {
-    topY = 0;
+      topY = 0;
     }
 
     $(' .' + wrapClass).height(parseInt($(' .' + wrapClass).height()));
@@ -409,7 +409,7 @@
   let utm_campaign = urlParams.get('utm_campaign');
   let utm_medium = urlParams.get('utm_medium');
   let utm_content = urlParams.get('utm_content');
-let utm_term = urlParams.get('utm_term');
+  let utm_term = urlParams.get('utm_term');
 
   let targetUrl = '';
   let qrUrl = '';
@@ -644,38 +644,38 @@ let utm_term = urlParams.get('utm_term');
     let utm_campaign = urlParams.get('utm_campaign');
     let utm_medium = urlParams.get('utm_medium');
     let utm_content = urlParams.get('utm_content');
-let utm_term = urlParams.get('utm_term');
+    let utm_term = urlParams.get('utm_term');
 
     let targetUrl = '';
     let qrUrl = '';
 
-$(function () {
-    if (utm_source == undefined || utm_source == '') {
-      utm_source = 'link_official';
-    }
-    if (utm_campaign == undefined || utm_campaign == '') {
-      utm_campaign = 'HF_F_study_newseason';
-    }
+    $(function () {
+      if (utm_source == undefined || utm_source == '') {
+        utm_source = 'link_official';
+      }
+      if (utm_campaign == undefined || utm_campaign == '') {
+        utm_campaign = 'HF_F_study_newseason';
+      }
 
-    if (utm_medium == undefined || utm_medium == '') {
-      utm_medium = 'referral';
-    }
+      if (utm_medium == undefined || utm_medium == '') {
+        utm_medium = 'referral';
+      }
 
-    if (utm_term == undefined || utm_term == '') {
+      if (utm_term == undefined || utm_term == '') {
         utm_term = '';
       }
 
       targetUrl = 'https://hanssem.onelink.me/tm0Q' + '?pid=' + utm_source + '&c=' + utm_campaign + '&af_channel=' + utm_medium + '&af_adset=' + utm_term + '&is_retargeting=true';
 
-    if (utm_content != undefined && utm_content != '') {
-      targetUrl += '&af_ad=' + utm_content;
-    }
+      if (utm_content != undefined && utm_content != '') {
+        targetUrl += '&af_ad=' + utm_content;
+      }
 
-    targetUrl += '&af_dp=hss://planlink?deep_link_sub1=' + planTargetNo + '&af_force_deeplink=true&deep_link_value=planlink&deep_link_sub1=' + planTargetNo;
+      targetUrl += '&af_dp=hss://planlink?deep_link_sub1=' + planTargetNo + '&af_force_deeplink=true&deep_link_value=planlink&deep_link_sub1=' + planTargetNo;
 
-    targetUrl = encodeURIComponent(targetUrl);
+      targetUrl = encodeURIComponent(targetUrl);
 
-    qrUrl = 'https://chart.apis.google.com/chart?chl=' + targetUrl + '&cht=qr&chs=370x334';
+      qrUrl = 'https://chart.apis.google.com/chart?chl=' + targetUrl + '&cht=qr&chs=370x334';
 
       $('.evt_qr_img img').attr('src', qrUrl);
 
@@ -1349,7 +1349,7 @@ $(function () {
   };
 
   // Coupon Qr
-  </script>
+</script>
 
 <!-- [Event] - Event -->
 <div class="event_wrap">
@@ -1445,7 +1445,7 @@ $(function () {
       <div class="evt_common_layer_in">
         <p class="layer_tit">[첫 구매 쿠폰]</p>
         <ul class="layer_list">
-          <li>- 발급 기간 : 2023.11.23 AM 10:00 - 12.11 PM 23:59</li>
+          <li>- 발급 기간 : 2023.11.23 AM 10:00 - 12.01 AM 09:59</li>
           <li>- 사용 기간 : 2023.12.01 AM 10:00</li>
           <li>- 가입 후 구매 이력이 없는 회원에 한 해 발급 가능합니다.</li>
           <li>- 가입 후 1년 이내에 재가입한 회원에게는 발급되지 않습니다.</li>
@@ -2083,7 +2083,7 @@ $(function () {
 
         <div class="special_date">
           <h4 class="tit">다음 타임특가 상품을 기대하세요!</h4>
-          
+
           <ul id="" class="tab_date">
             <li>
               <a href="javascript:void(0)" onclick="tab(1)" class="tab active">
