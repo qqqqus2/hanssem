@@ -492,28 +492,34 @@
 <script type="text/javascript">
   // 초기 메뉴 위치
   $(document).ready(function () {
-    var querySearch = location.search,
-      params = new URLSearchParams(querySearch);
+    // 현재 페이지의 URL을 가져오기
+    var currentPageUrl = window.location.href;
+
+    // URL 파싱
+    var urlObj = new URL(currentPageUrl);
+
+    // search 부분을 가져와서 '?'를 제거하고 '&'를 기준으로 파라미터를 분리
+    var params = new URLSearchParams(urlObj.search.slice(1));
 
     setTimeout(function () {
-      if (params.get('pageName') === 'nv-01') {
+      if (params.has('coupon')) {
         $(window).scrollTop($('#nv-01').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 48));
-      } else if (params.get('pageName') === 'nv-02') {
+      } else if (params.has('time')) {
         $(window).scrollTop($('#nv-02').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 48));
-      } else if (params.get('pageName') === 'nv-03') {
+      } else if (params.has('interior')) {
         $(window).scrollTop($('#nv-03').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 48));
-      } else if (params.get('pageName') === 'nv-04') {
+      } else if (params.has('category')) {
         $(window).scrollTop($('#nv-04').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 48));
-      } else if (params.get('pageName') === 'nv-05') {
+      } else if (params.has('new')) {
         $(window).scrollTop($('#nv-05').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 48));
-      } else if (params.get('pageName') === 'nv-06') {
+      } else if (params.has('ssemfesta')) {
         $(window).scrollTop($('#nv-06').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 48));
-      } else if (params.get('pageName') === 'nv-07') {
+      } else if (params.has('event')) {
         $(window).scrollTop($('#nv-07').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 48));
-      } else if (params.get('pageName') === 'nv-08') {
+      } else if (params.has('counseling')) {
         $(window).scrollTop($('#nv-08').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 48));
       }
-    });
+    }, 500);
   });
 
   /* ===== 시간 관련 스크립트 =====
