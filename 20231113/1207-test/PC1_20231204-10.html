@@ -1,0 +1,3155 @@
+<!-- ==================== 싱단 시작 ==================== -->
+<input style="display: none" id="clip" />
+<link rel="stylesheet" href="https://image2.hanssem.com/event/2023/11/pc_image/pc_test.css" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script type="text/javascript">
+  function fixedNavi(wrapClass, titleClass, contsClass) {
+    var topY = 0;
+    if ($('.top-fix').length > 0) {
+      topY = parseInt($('.top-fix').height());
+    } else {
+      topY = 0;
+    }
+
+    $(' .' + wrapClass).height(parseInt($(' .' + wrapClass).height()));
+
+    $('.mv-scroll').click(function (event) {
+      var this_top = $(this.hash).offset().top;
+      event.preventDefault();
+      if ($('.head-gnb').length > 0) {
+        if ($(window).scrollTop() > $(' .' + wrapClass).offset().top) {
+          if ($(this).closest('li').index() > $(this).closest('.fix-nv-list').find('li.on').index()) {
+            topY = 92;
+          } else {
+            topY = 144;
+          }
+        } else {
+          topY = 92;
+        }
+      }
+      $('html,body')
+        .stop()
+        .animate({ scrollTop: this_top - topY - $('.' + wrapClass).height() + 1 }, 400);
+    });
+
+    $(window).bind('scroll', function () {
+      var scrTop = $(window).scrollTop();
+      try {
+        if ($('.head-gnb').length > 0) {
+          topY = topFixed_H;
+        }
+        if ($('.head-gnb').hasClass('off')) {
+          $(' .' + titleClass).css('top', 92);
+        } else {
+          $(' .' + titleClass).css('top', 144);
+        }
+        if ($(window).scrollTop() > $(' .' + wrapClass).offset().top - topY && $(window).scrollTop() <= $('.fixed-nv-end').offset().top - topY) {
+          // $(' .' + titleClass)
+          //   .css('top', 144)
+          //   .addClass('on');
+        } else {
+          // $(' .' + titleClass)
+          //   .css('top', 92)
+          //   .removeClass('on');
+          // if ($('.head-gnb').length > 0) {
+          //   $(' .' + titleClass)
+          //     .css('top', 92)
+          //     .removeClass('on');
+          // } else {
+          //   $(' .' + titleClass).removeClass('on');
+          // }
+        }
+
+        $(' .' + contsClass).each(function (n) {
+          if ($(window).scrollTop() >= $(this).offset().top - $(' .' + wrapClass).height() - topY) {
+            $(' .' + titleClass)
+              .find('li')
+              .removeClass('on');
+            $(' .' + titleClass)
+              .find('li')
+              .eq(n)
+              .addClass('on');
+            $(' .' + titleClass)
+              .stop()
+              .animate(
+                {
+                  scrollLeft: parseInt(
+                    $(' .' + titleClass).scrollLeft() +
+                      $(' .' + titleClass)
+                        .find('li')
+                        .eq(n - (n > 0 ? 1 : 0))
+                        .position().left
+                  )
+                },
+                300
+              );
+          }
+        });
+
+        /* 첫번째 메뉴 온 제거
+				if($(window).scrollTop() <= $(" ."+contsClass).eq(0).offset().top - $(" ."+wrapClass).height() - topY){
+					$(" ."+titleClass).find("li").removeClass("on");
+				}
+				*/
+      } catch (e) {}
+    });
+  }
+
+  $(function () {
+    fixedNavi('fixed_top_layer', 'fixed-nv-scroll', 'fixed-nv-conts');
+
+    // 요일별 탭메뉴 Swiperrolling_swiper
+
+    // 샘드로우 Swiper
+    var draw_swiper = new Swiper('.draw-list', {
+      slidesPerView: 'auto',
+      spaceBetween: 12,
+      navigation: {
+        nextEl: '.benefit_draw .swiper-button-next',
+        prevEl: '.benefit_draw .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true
+    });
+  });
+</script>
+<script>
+  $(function () {
+    var rolling_swiper1 = new Swiper('#tab1 .rolling_list', {
+      slidesPerView: 'auto',
+      loop: false,
+      lazy: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '#tab1 .swiper-button-next',
+        prevEl: '#tab1 .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true
+    });
+    var rolling_swiper2 = new Swiper('#tab2 .rolling_list', {
+      slidesPerView: 'auto',
+      loop: false,
+      lazy: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '#tab2 .swiper-button-next',
+        prevEl: '#tab2 .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true
+    });
+    var rolling_swiper3 = new Swiper('#tab3 .rolling_list', {
+      slidesPerView: 'auto',
+      loop: false,
+      lazy: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '#tab3 .swiper-button-next',
+        prevEl: '#tab3 .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true
+    });
+    var rolling_swiper4 = new Swiper('#tab4 .rolling_list', {
+      slidesPerView: 'auto',
+      loop: false,
+      lazy: true,
+      spaceBetween: 15,
+      navigation: {
+        nextEl: '#tab4 .swiper-button-next',
+        prevEl: '#tab4 .swiper-button-prev'
+      },
+      scrollbar: {
+        el: '.swiper-scrollbar'
+      },
+      observer: true,
+      observeParents: true
+    });
+  });
+  function tab(val) {
+    $('.tab_cont').hide();
+    $('.tab_cont')
+      .eq(val - 1)
+      .show();
+    $('.tab').removeClass('active');
+    $('.tab')
+      .eq(val - 1)
+      .addClass('active');
+
+    rolling_swiper + val.update();
+    rolling_swiper + val.slideReset();
+  }
+</script>
+<script>
+  function popupBind(id, event) {
+    let pop = $('#' + id);
+    let height = pop.find(':first').outerHeight();
+    let wHeight = parseInt($(window).outerHeight()) / 2 - height / 2;
+    pop.css({ height: height, top: $('html,body').scrollTop() + wHeight }).addClass('openPop');
+  }
+</script>
+<script type="text/javascript">
+  function getTime(timeObj, endTimeVar) {
+    var endTime = endTimeVar;
+    var nowTime = convertTime(js_yyyy_mm_dd_hh_mm_ss_mi(), 1);
+
+    if (endTime > js_yyyy_mm_dd_hh_mm_ss_mi()) {
+      dday = convertTime(endTime, 1);
+      days = (dday - nowTime) / 1000 / 60 / 60 / 24;
+      daysRound = Math.floor(days);
+      hours = (dday - nowTime) / 1000 / 60 / 60;
+      hoursRound = Math.floor(hours);
+      hoursRound = hoursRound - daysRound * 24;
+      minutes = (dday - nowTime) / 1000 / 60 - 24 * 60 * daysRound - 60 * Math.floor((dday - nowTime) / 1000 / 60 / 60 - 24 * daysRound);
+      minutesRound = Math.floor(minutes);
+      seconds = (dday - nowTime) / 1000 - 24 * 60 * 60 * daysRound - 60 * 60 * Math.floor((dday - nowTime) / 1000 / 60 / 60 - 24 * daysRound) - 60 * minutesRound;
+      secondsRound = Math.round(seconds);
+
+      nowTime.setMilliseconds(nowTime.getMilliseconds() + 80);
+      miSeconds = nowTime.getMilliseconds();
+
+      //3자리
+      miSecondsRound = Math.round(miSeconds);
+
+      //2자리
+      miSecondsRound = Math.round(miSeconds / 10);
+
+      /* 두자리수일 때 */
+      if (daysRound < 10) {
+        $(timeObj + ' ' + '.timer_day').html('<span>' + getTimeNumber(0) + '</span>' + chageImage('D', parseInt(daysRound, 10)));
+      } else {
+        $(timeObj + ' ' + '.timer_day').html(chageImage('D', parseInt(daysRound, 10)));
+      }
+      /* // 두자리수일 때 */
+
+      /* 한자리수일 때 
+				$(timeObj + " " + ".timer_day").html(chageImage("D", parseInt(daysRound, 10)));
+				 // 한자리수일 때 */
+
+      var hour = parseInt(Math.floor(hours), 10).toString();
+      $(timeObj + ' ' + '.timer_hour').html('');
+      if (hour < 10) {
+        $(timeObj + ' ' + '.timer_hour').append('<span>' + getTimeNumber(0) + '</span>');
+      }
+      for (var i = 0; i < hour.length; i++) {
+        $(timeObj + ' ' + '.timer_hour').append('<span>' + getTimeNumber(hour.substring(i, i + 1)) + '</span>');
+      }
+
+      var h = parseInt(hoursRound, 10).toString();
+      if (parseInt(hoursRound, 10) > 9) {
+        $(timeObj + ' ' + '.timer_hour_1').html(getTimeNumber(h.substring(0, 1)));
+        $(timeObj + ' ' + '.timer_hour_2').html(getTimeNumber(h.substring(1, 2)));
+      } else {
+        $(timeObj + ' ' + '.timer_hour_1').html(getTimeNumber(0));
+        $(timeObj + ' ' + '.timer_hour_2').html(getTimeNumber(h));
+      }
+
+      var m = parseInt(minutesRound, 10).toString();
+      if (parseInt(minutesRound, 10) > 9) {
+        $(timeObj + ' ' + '.timer_minute_1').html(getTimeNumber(m.substring(0, 1)));
+        $(timeObj + ' ' + '.timer_minute_2').html(getTimeNumber(m.substring(1, 2)));
+      } else {
+        $(timeObj + ' ' + '.timer_minute_1').html(getTimeNumber(0));
+        $(timeObj + ' ' + '.timer_minute_2').html(getTimeNumber(m));
+      }
+
+      var s = parseInt(secondsRound, 10).toString();
+      if (parseInt(secondsRound, 10) > 9) {
+        $(timeObj + ' ' + '.timer_second_1').html(getTimeNumber(s.substring(0, 1)));
+        $(timeObj + ' ' + '.timer_second_2').html(getTimeNumber(s.substring(1, 2)));
+      } else {
+        $(timeObj + ' ' + '.timer_second_1').html(getTimeNumber(0));
+        $(timeObj + ' ' + '.timer_second_2').html(getTimeNumber(s));
+      }
+
+      //3자리
+      if (miSecondsRound == 1000) {
+        $(timeObj + ' ' + '.timer_miSecond_1').html('.000');
+      }
+      if (miSecondsRound < 1000) {
+        $(timeObj + ' ' + '.timer_miSecond_1').html('.' + miSecondsRound);
+      }
+      if (miSecondsRound < 100) {
+        $(timeObj + ' ' + '.timer_miSecond_1').html('.0' + miSecondsRound);
+      }
+      if (miSecondsRound < 10) {
+        $(timeObj + ' ' + '.timer_miSecond_1').html('.00' + miSecondsRound);
+      }
+
+      //2자리
+      if (miSecondsRound == 100) {
+        $(timeObj + ' ' + '.timer_miSecond_1').html('.00');
+      }
+      if (miSecondsRound < 100) {
+        $(timeObj + ' ' + '.timer_miSecond_1').html('.' + miSecondsRound);
+      }
+      if (miSecondsRound < 10) {
+        $(timeObj + ' ' + '.timer_miSecond_1').html('.0' + miSecondsRound);
+      }
+
+      newtime = window.setTimeout(function () {
+        getTime(timeObj, endTimeVar);
+      }, 1000);
+    } else {
+      //시간 종료
+      $(timeObj + ' ' + '.timer_day').html('<span>0</span><span>0</span>');
+      $(timeObj + ' ' + '.timer_hour').html('<span>' + getTimeNumber(0) + '</span>' + '<span>' + getTimeNumber(0) + '</span>');
+      $(timeObj + ' ' + '.timer_hour_1').html(getTimeNumber(0));
+      $(timeObj + ' ' + '.timer_hour_2').html(getTimeNumber(0));
+      $(timeObj + ' ' + '.timer_minute_1').html(getTimeNumber(0));
+      $(timeObj + ' ' + '.timer_minute_2').html(getTimeNumber(0));
+      $(timeObj + ' ' + '.timer_second_1').html(getTimeNumber(0));
+      $(timeObj + ' ' + '.timer_second_2').html(getTimeNumber(0));
+      $(timeObj + ' ' + '.timer_miSecond_1').html('.00');
+      $(timeObj + ' ' + '.dday_end_layer').show();
+      //alert('이벤트가 종료되었습니다');
+      //$(timeObj).append("<div class='ev-end-pop'><div class='ev-end-txt'>이벤트가 종료되었습니다</div></div>");
+    }
+  }
+  function convertTime(time, types) {
+    var arrTime = time.split(' ');
+    var a = arrTime[0];
+    var b = arrTime[1];
+
+    var temp = a.split('-');
+    var temp1 = b.split(':');
+    var temp2 = b.split('.');
+
+    var returnTime;
+
+    if (types == 1) {
+      returnTime = new Date(Number(temp[0]), Number(temp[1]) - 1, Number(temp[2]), Number(temp1[0]), Number(temp1[1]), Number(temp1[2]), Number(temp2[1]));
+    } else {
+      returnTime = temp[0] + Number(temp[1]) - 1 + temp[2] + temp1[0] + temp1[1] + temp1[2];
+    }
+    return returnTime;
+  }
+  function chageImage(types, val) {
+    var txt = '';
+    if (val > 9) {
+      var no = val.toString();
+      for (i = 0; i < no.length; i++) {
+        txt += '<span>' + getTimeNumber(parseInt(no.substring(i, i + 1), 10)) + '</span>';
+      }
+    } else {
+      if (types == 'D') {
+        txt = '<span>' + getTimeNumber(parseInt(val, 10)) + '</span>';
+      } else {
+        txt = '<span>' + getTimeNumber(0) + getTimeNumber(parseInt(val, 10)) + '</span>';
+      }
+    }
+    return txt;
+  }
+  function getTimeNumber(no) {
+    var count_num = no;
+    //var img = "<img src='http://image.hanssem.com/hsimg/mall/event/2015/201504/img/ten_deal_num_"+ no +".png' />";
+    return count_num;
+  }
+  function js_yyyy_mm_dd_hh_mm_ss_mi() {
+    now = new Date();
+    year = '' + now.getFullYear();
+    month = '' + (now.getMonth() + 1);
+    if (month.length == 1) {
+      month = '0' + month;
+    }
+    day = '' + now.getDate();
+    if (day.length == 1) {
+      day = '0' + day;
+    }
+    hour = '' + now.getHours();
+    if (hour.length == 1) {
+      hour = '0' + hour;
+    }
+    minute = '' + now.getMinutes();
+    if (minute.length == 1) {
+      minute = '0' + minute;
+    }
+    second = '' + now.getSeconds();
+    if (second.length == 1) {
+      second = '0' + second;
+    }
+    miSecond = '' + now.getMilliseconds();
+    if (miSecond.length == 1) {
+      miSecond = '00' + miSecond;
+    }
+    if (miSecond.length == 2) {
+      miSecond = '0' + miSecond;
+    }
+    return year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + '.' + miSecond;
+  }
+
+  // 날짜 설정
+  // $(function () {
+  //   getTime('#timeObj_1', '2023-11-30 09:59:59.00');
+  // });
+</script>
+
+<script type="text/javascript">
+  const urlParams = new URL(location.href).searchParams; // PC버전에서만 사용
+
+  let planTargetNo = 17089; // 실제 접속될 기획전 번호
+  let utm_source = urlParams.get('utm_source');
+  let utm_campaign = urlParams.get('utm_campaign');
+  let utm_medium = urlParams.get('utm_medium');
+  let utm_content = urlParams.get('utm_content');
+  let utm_term = urlParams.get('utm_term');
+
+  let targetUrl = '';
+  let qrUrl = '';
+
+  $(function () {
+    if (utm_source == undefined || utm_source == '') {
+      utm_source = 'link_official';
+    }
+    if (utm_campaign == undefined || utm_campaign == '') {
+      utm_campaign = 'HF_F_study_newseason';
+    }
+
+    if (utm_medium == undefined || utm_medium == '') {
+      utm_medium = 'referral';
+    }
+
+    if (utm_term == undefined || utm_term == '') {
+      utm_term = '';
+    }
+
+    targetUrl = 'https://hanssem.onelink.me/tm0Q' + '?pid=' + utm_source + '&c=' + utm_campaign + '&af_channel=' + utm_medium + '&af_adset=' + utm_term + '&is_retargeting=true';
+
+    if (utm_content != undefined && utm_content != '') {
+      targetUrl += '&af_ad=' + utm_content;
+    }
+
+    targetUrl += '&af_dp=hss://planlink?deep_link_sub1=' + planTargetNo + '&af_force_deeplink=true&deep_link_value=planlink&deep_link_sub1=' + planTargetNo;
+
+    targetUrl = encodeURIComponent(targetUrl);
+
+    qrUrl = 'https://chart.apis.google.com/chart?chl=' + targetUrl + '&cht=qr&chs=370x334';
+
+    $('.evt_qr_img img').attr('src', qrUrl);
+
+    $('.evt_qr_img').on('click', function () {
+      $(this).fadeOut();
+    });
+    $('.evt_qr_img .btn_close a').on('click', function (e) {
+      e.preventDefault();
+
+      $('.evt_qr_img').fadeOut();
+    });
+  });
+  function appDown() {
+    if (confirm('한샘몰 APP으로 이동하겠습니까?')) {
+      $('.evt_qr_img img').attr('src', qrUrl);
+      $('.evt_qr_img').fadeIn();
+    } else {
+      return false;
+      //$('html,body').stop().animate({scrollTop:$("#goto-01").offset().top - 48 - 70}, 400);
+    }
+  }
+</script>
+
+<script type="text/javascript">
+  function getGoodsInfo() {
+    var gds_num = '';
+    var img_url = 'http://image.hanssem.com/hsimg';
+    var last_order = $('span[gNo]').length;
+
+    $('span[gNo]').each(function (n) {
+      gds_num = gds_num + ',' + parseInt($(this).attr('gNo'));
+
+      if (last_order - 1 <= n) {
+        $.ajax({
+          url: '/goods/prdListForPlanShpAjax.do',
+          cache: true,
+          dataType: 'json',
+          data: { gdsno: $.trim(gds_num) },
+          contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+          error: function (xhr, textStatus, error) {},
+          success: function (json) {
+            for (var i = 0; i < json.data.length; i++) {
+              //가격
+              var couponPrice = parseInt(json.data[i].couponPrc, 10); // 쿠폰가
+              var dcPrice = parseInt(json.data[i].dcPrc, 10); // 할인가
+              var salePrice = parseInt(json.data[i].normalSalePrc, 10); // 판매가
+              var minPrice = 0; // 최저가
+              var rate = 0;
+
+              if (parseInt(json.data[i].dcPrc, 10) < parseInt(json.data[i].couponPrc, 10)) {
+                minPrice = parseInt(json.data[i].dcPrc, 10);
+              } else {
+                minPrice = parseInt(json.data[i].couponPrc, 10);
+              }
+
+              rate = Math.round(100 - (minPrice / salePrice) * 100);
+
+              /* 할인율 없을때 */
+              if (minPrice == salePrice) {
+                noSale = ' noSale';
+              } else {
+                noSale = '';
+              }
+
+              $('span[gNo$=' + json.data[i].gdsNo + ']').html('<a class="prt-link-view' + noSale + '" href="/goods/goodsDetailMall.do?gdsNo=' + json.data[i].gdsNo + '">' + '	<span class="prdts-img"><img src="https://image2.hanssem.com/event/2019/05/1905_prdtsm.jpg" class="js-lazy" data-lazy="' + img_url + '' + json.data[i].imgPath_L + '" alt="' + json.data[i].gdsNm + '"  /></span>' + '	<span class="prdts-infos">' + '		<span class="prdts-brand">' + json.data[i].brandNm + '</span>' + '		<span class="prdts-name">' + json.data[i].gdsNm + '</span>' + '		<span class="prdts-prices">' + '			<span class="prdts-price-sale"><del>' + commify(salePrice) + '</del><label>원</label></span>' + '			<span class="prdts-rate-wrap"><span class="prdts-rate"><span class="prdts-rate-num">' + rate + '</span><span class="pers">%</span></span></span>' + '			<span class="prdts-price-min"><strong>' + commify(minPrice) + '</strong><label>원</label></span>' + '		</span>' + '	</span>' + '	<span class="prdts-link-area">단독<br>특가</span>' + '</a>');
+            }
+          }
+        });
+      }
+    });
+  }
+
+  $(function () {
+    getGoodsInfo();
+  });
+</script>
+
+<script type="text/javascript">
+  function chageDay(days) {
+    $('.sales-days ul li').eq(days).prevAll().hide();
+    $('.sales-days ul li').eq(days).addClass('on');
+    $('.type-001').eq(days).show();
+  }
+
+  $(function () {
+    let nDate = new Date();
+    let nMonth = nDate.getMonth() + 1;
+    let nDay = nDate.getDate().length == 1 ? '0' + nDate.getDate() : nDate.getDate();
+    let nHours = nDate.getHours();
+    let toDay = nMonth + '' + nDay;
+
+    $('.type-001').hide();
+    //323
+    if (toDay < '323') {
+      chageDay(1);
+    }
+
+    if (toDay == '323') {
+      if (nHours > 10) {
+        chageDay(2);
+      } else {
+        chageDay(1);
+      }
+    }
+
+    //327
+    if (toDay > '323' && toDay < '327') {
+      chageDay(2);
+    }
+
+    if (toDay == '327') {
+      if (nHours > 10) {
+        chageDay(3);
+      } else {
+        chageDay(2);
+      }
+    }
+
+    //330
+    if (toDay > '327' && toDay < '330') {
+      chageDay(3);
+    }
+
+    if (toDay == '330') {
+      if (nHours > 10) {
+        chageDay(4);
+      } else {
+        chageDay(3);
+      }
+    }
+
+    //403
+    if (toDay > '330' && toDay < '403') {
+      chageDay(4);
+    }
+
+    if (toDay == '403') {
+      if (nHours > 10) {
+        chageDay(5);
+      } else {
+        chageDay(4);
+      }
+    }
+
+    //406
+    if (toDay > '403' && toDay < '406') {
+      chageDay(5);
+    }
+
+    if (toDay == '406') {
+      if (nHours > 10) {
+        chageDay(6);
+      } else {
+        chageDay(5);
+      }
+    }
+
+    //410
+    if (toDay > '406' && toDay < '410') {
+      chageDay(6);
+    }
+
+    if (toDay == '406') {
+      if (nHours > 10) {
+        chageDay(6);
+      } else {
+        chageDay(6);
+      }
+    }
+
+    $('.sales-days ul li').each(function () {
+      $(this).on('click', function () {
+        $('.sales-days ul li').removeClass('on');
+        $(this).addClass('on');
+        $('.type-001').removeClass('on').hide();
+        $('.type-001').eq($(this).index()).addClass('on').show();
+      });
+    });
+  });
+</script>
+
+<script src="/resources/js/appLaunch.js?20221216140119" type="text/javascript"></script>
+<script type="text/javascript">
+  function onCoupon() {
+    if (fnIsApp()) {
+      addCouponNormal('1260', '', '한샘몰 앱전용 쿠폰');
+    } else {
+      popupConfirm('앱으로 이동하시겠습니까?', function (confirmFlag) {
+        if (confirmFlag) {
+          location.href = 'https://app.adjust.com/dgxp9a4?creative=1010_Fabric&deeplink=hss%3A%2F%2Finfo%3FgdsNo%3D679546';
+        }
+      });
+    }
+  }
+
+  function onCoupons() {
+    const urlParams = new URL(location.href).searchParams; // PC버전에서만 사용
+
+    let planTargetNo = 17089; // 실제 접속될 기획전 번호
+    let utm_source = urlParams.get('utm_source');
+    let utm_campaign = urlParams.get('utm_campaign');
+    let utm_medium = urlParams.get('utm_medium');
+    let utm_content = urlParams.get('utm_content');
+    let utm_term = urlParams.get('utm_term');
+
+    let targetUrl = '';
+    let qrUrl = '';
+
+    $(function () {
+      if (utm_source == undefined || utm_source == '') {
+        utm_source = 'link_official';
+      }
+      if (utm_campaign == undefined || utm_campaign == '') {
+        utm_campaign = 'HF_F_study_newseason';
+      }
+
+      if (utm_medium == undefined || utm_medium == '') {
+        utm_medium = 'referral';
+      }
+
+      if (utm_term == undefined || utm_term == '') {
+        utm_term = '';
+      }
+
+      targetUrl = 'https://hanssem.onelink.me/tm0Q' + '?pid=' + utm_source + '&c=' + utm_campaign + '&af_channel=' + utm_medium + '&af_adset=' + utm_term + '&is_retargeting=true';
+
+      if (utm_content != undefined && utm_content != '') {
+        targetUrl += '&af_ad=' + utm_content;
+      }
+
+      targetUrl += '&af_dp=hss://planlink?deep_link_sub1=' + planTargetNo + '&af_force_deeplink=true&deep_link_value=planlink&deep_link_sub1=' + planTargetNo;
+
+      targetUrl = encodeURIComponent(targetUrl);
+
+      qrUrl = 'https://chart.apis.google.com/chart?chl=' + targetUrl + '&cht=qr&chs=370x334';
+
+      $('.evt_qr_img img').attr('src', qrUrl);
+
+      $('.evt_qr_img').on('click', function () {
+        $(this).fadeOut();
+      });
+      $('.evt_qr_img .btn_close a').on('click', function (e) {
+        e.preventDefault();
+
+        $('.evt_qr_img').fadeOut();
+      });
+    });
+    function appDown() {
+      if (confirm('한샘몰 APP으로 이동하겠습니까?')) {
+        $('.evt_qr_img img').attr('src', qrUrl);
+        $('.evt_qr_img').fadeIn();
+      } else {
+        return false;
+        //$('html,body').stop().animate({scrollTop:$("#goto-01").offset().top - 48 - 70}, 400);
+      }
+    }
+  }
+</script>
+
+<script type="text/javascript">
+  // 초기 메뉴 위치
+  $(document).ready(function () {
+    // 현재 페이지의 URL을 가져오기
+    var currentPageUrl = window.location.href;
+
+    // URL 파싱
+    var urlObj = new URL(currentPageUrl);
+
+    // search 부분을 가져와서 '?'를 제거하고 '&'를 기준으로 파라미터를 분리
+    var params = new URLSearchParams(urlObj.search.slice(1));
+
+    setTimeout(function () {
+      if (params.has('coupon')) {
+        $(window).scrollTop($('#nv-01').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 92));
+      } else if (params.has('time')) {
+        $(window).scrollTop($('#nv-02').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 92));
+      } else if (params.has('interior')) {
+        $(window).scrollTop($('#nv-03').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 92));
+      } else if (params.has('category')) {
+        $(window).scrollTop($('#nv-04').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 92));
+      } else if (params.has('new')) {
+        $(window).scrollTop($('#nv-05').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 92));
+      } else if (params.has('ssemfesta')) {
+        $(window).scrollTop($('#nv-06').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 92));
+      } else if (params.has('event')) {
+        $(window).scrollTop($('#nv-07').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 92));
+      } else if (params.has('counseling')) {
+        $(window).scrollTop($('#nv-08').offset().top - ($('.benefit_event_fixed a.menu').outerHeight() + 92));
+      }
+    }, 1500);
+  });
+
+  /* ===== 시간 관련 스크립트 =====
+	- 시간체크 : getDatesStartToLast
+	- 카운드다운 : getDateCountDown
+	*/
+  $.dateTimerTotal = function (option) {
+    var $obj = new DateTimerTotal(option);
+
+    return $obj;
+  };
+  var DateTimerTotal = function (option) {
+    // Option
+    this.opt = $.extend({}, $.dateTimerTotal.default, option || {});
+    // Date 함수
+    this.timeDate = new Date();
+    // 년도
+    this.timerYear = this.timeDate.getFullYear();
+    // 월별
+    this.timerMonth = this.timeDate.getMonth() + 1;
+    // 일별
+    this.timerDay = this.timeDate.getDate();
+
+    // 시간
+    this.timerHours = this.timeDate.getHours();
+    // 분
+    this.timerMin = this.timeDate.getMinutes();
+    // 초
+    this.timerSeconds = this.timeDate.getSeconds();
+  };
+  DateTimerTotal.prototype = {
+    // 시간 체크(Start and Last)
+    getDatesStartToLast: function (time) {
+      // 오늘날짜
+      var result = {
+        flag: false
+      }; // 결과값
+
+      // 옵션 배열 시간 체크
+      for (var i = 0; i < time.length; i++) {
+        //console.log(new Date(time[i].first) < this.timeDate, new Date(time[i].last) > this.timeDate);
+        if (new Date(time[i].first) < this.timeDate && new Date(time[i].last) > this.timeDate) {
+          result = {
+            flag: true,
+            index: i
+          };
+
+          break;
+        } else {
+          if (new Date(time[i].first) < this.timeDate) {
+            result = {
+              flag: false,
+              index: i
+            };
+          }
+        }
+      }
+
+      return result;
+    },
+    // 카운드다운(Start and Last)
+    getDateCountDown: function (time) {
+      var date = new Date(),
+        timer = null,
+        timePlaying = 0,
+        timerResult = null;
+
+      for (var i = 0; i < time.length; i++) {
+        if (Date.parse(time[i]) > date) {
+          // 카운트다운 갱신
+          timerResult = timerUpdate({ time: time[i], index: i });
+
+          // for문 정지
+          break;
+        } else {
+          // 시간이 지난 배열값 체크
+          timePlaying++;
+
+          // 모든시간이 0이 됐을경우
+          if (timePlaying === time.length) {
+            timerResult = {
+              flag: false,
+              index: time.length - 1,
+              d: '00',
+              h: '00',
+              m: '00',
+              s: '00'
+            };
+          }
+        }
+      }
+
+      // 카운팅 업데이트
+      function timerUpdate(m) {
+        var dateUp = new Date();
+        // 목표날짜와 현재날짜 사이값 추출
+        var diff = Date.parse(m.time) - dateUp,
+          dayValue = Math.floor(diff / (1000 * 60 * 60 * 24)), // 날짜(숫자형)
+          hoursValue = Math.floor(diff / (1000 * 60 * 60)), // 시간(숫자형)
+          minValue = Math.floor(diff / (1000 * 60)), // 분(숫자형)
+          secValue = Math.floor(diff / 1000); // 초(숫자형)
+
+        // 최종값 변수
+        var day = dayValue, // 날짜
+          hours = timerCipher(hoursValue - dayValue * 24), // 시간
+          min = timerCipher(minValue - hoursValue * 60), // 분
+          sec = timerCipher(secValue - minValue * 60); // 초
+
+        // 최종값 반환
+        return {
+          flag: true,
+          index: m.index,
+          d: day,
+          h: hours,
+          m: min,
+          s: sec
+        };
+      }
+
+      // 타이머 자릿수
+      function timerCipher(value) {
+        var result = '';
+
+        if (String(value).length === 1) {
+          result = '0' + value;
+        } else {
+          result = String(value);
+        }
+
+        return result;
+      }
+
+      return timerResult;
+    }
+  };
+  /*
+	===== option =====
+	*/
+  $.dateTimerTotal.default = {};
+  // 타이머 함수
+  var DateTimer = $.dateTimerTotal();
+
+  // Tab
+  $.fn.tab = function (options) {
+    var option = $.extend({}, $.fn.tab.defaults, options);
+
+    return this.each(function () {
+      var $wrap = $(this),
+        $link = $wrap.find('a.tab'),
+        active = option.active - 1 || 0,
+        oldActive,
+        imageShow;
+
+      var linkHash = $.map($link, function (value, i) {
+        return value.hash;
+      }).join(', ');
+
+      // $(linkHash).hide();
+
+      $link.on('click', function () {
+        if (this == oldActive) return false;
+
+        if (oldActive) {
+          $(oldActive.hash).hide();
+          $(oldActive).parent().removeClass('active');
+          if ($(oldActive).find('img').length) $(oldActive).find('img')[0].src = $(oldActive).find('img')[0].src.replace('_on.', '_off.');
+        }
+
+        if (this !== oldActive) {
+          $(this.hash).show();
+          $(this).parent().addClass('active');
+          if ($(this).find('img').length) $(this).find('img')[0].src = $(this).find('img')[0].src.replace('_off.', '_on.');
+        }
+
+        oldActive = this;
+
+        return false;
+      });
+
+      $link.eq(active).trigger('click');
+    });
+  };
+  /*
+	 === options ===
+	 active : 1 === init active 1~
+	 */
+  $.fn.tab.defaults = { active: 1 };
+
+  /* Layer Popup */
+  $.fn.layerPopup = function () {
+    return this.each(function () {
+      var $this = $(this),
+        $target = $($this.attr('href')),
+        $targetBtnClose = $target.find('.layer_btn_close a');
+
+      // 버튼 클릭
+      $this.bind('click', function (e) {
+        // 기본링크 기능삭제
+        e.preventDefault();
+
+        // 레이어 활성화
+        if ($target.css('display') === 'none') {
+          $target.fadeIn();
+        }
+      });
+
+      // 닫기 버튼
+      $targetBtnClose.bind('click', function (e) {
+        // 기본링크 기능삭제
+        e.preventDefault();
+
+        // 레이어 비활성화
+        $target.fadeOut();
+      });
+    });
+  };
+
+  // 탭 상단 고정 및 이동
+  $.fixedMenus = function (eleID) {
+    var $this = $('#' + eleID),
+      $link = $this.find('.menu'),
+      $secProcess = $('.benefit_process'),
+      $topMoveBtn = $('.quick_top_button'),
+      $quickBnnr = $('.layer_bnnr_form'),
+      thisTop = $this.offset().top,
+      thisHeight = $this.outerHeight(),
+      posArr = [],
+      activeFlag = 0;
+
+    setTimeout(function () {
+      // 타겟노드 위치값 저장
+      for (var i = 0; i < $link.length; i++) {
+        var targetTop = Math.round($($link.eq(i).attr('href')).offset().top) - (thisHeight + 92);
+
+        // 벼열값 생성
+        posArr.push(targetTop);
+
+        // 메뉴 활성화 스크롤 이벤트
+        fixedScrollEvt();
+      }
+    }, 500);
+
+    // 메뉴 클릭
+    $link.bind('click', function (e) {
+      // 기본링크 기능삭제
+      e.preventDefault();
+
+      // 타겟 위치값
+      var targetTop = $(this.hash).offset().top;
+      // 스크롤 위치 이동
+      $('html, body')
+        .stop()
+        .animate({ scrollTop: targetTop - (thisHeight + 92 - 1) }, 600);
+    });
+
+    // 상단이동 버튼 클릭
+    $topMoveBtn.bind('click', function (e) {
+      // 기본링크 기능삭제
+      e.preventDefault();
+
+      // 스크롤 위치 이동
+      $('html, body').stop().animate({ scrollTop: 0 }, 600);
+    });
+
+    // 스크롤 이벤트
+    $(window).scroll(function () {
+      fixedScrollEvt();
+    });
+
+    // 메뉴 활성화 스크롤 이벤트
+    function fixedScrollEvt() {
+      // 현재 ScrollTop
+      var top = $(window).scrollTop();
+      $this.removeClass('fixed_top_layer');
+      // 메뉴 고정 위치값
+      if (top > thisTop - 92) {
+        $this.addClass('fixed_top_layer');
+      } else {
+        $this.removeClass('fixed_top_layer');
+      }
+
+      // 배너 고정 위치값
+      if (top > $secProcess.offset().top) {
+        $quickBnnr.addClass('layer_bnnr_form_active');
+      } else {
+        $quickBnnr.removeClass('layer_bnnr_form_active');
+      }
+
+      // 메뉴 활성화
+      for (var j = 0; j < posArr.length; j++) {
+        if (top >= posArr[j] && top <= posArr[j + 1]) {
+          $link.parent().removeClass('on');
+          $link.eq(j).parent().addClass('on');
+
+          // 클리어런스에서 레이어 비활성화
+          if (j === 5) {
+            $this.removeClass('fixed_top_layer');
+          } else {
+            // 그외 다시 활성화
+            $this.addClass('fixed_top_layer');
+          }
+        } else if (top >= posArr[j] && !posArr[j + 1]) {
+          $link.parent().removeClass('on');
+          $link.eq(j).parent().addClass('on');
+        }
+      }
+
+      // 상단이동 버튼
+      if (top > Math.round($secProcess.offset().top)) {
+        $topMoveBtn.fadeIn();
+      } else {
+        $topMoveBtn.fadeOut();
+      }
+    }
+  };
+
+  // 플로팅 배너
+  function floatingBnnr(eleID) {
+    var $this = $(eleID),
+      $bnnrLink = $this.find('a.quick_bnnr_app'),
+      $bnnrLive = $this.find('a.quick_bnnr_live');
+
+    // 기간 정의
+    var periodResult = DateTimer.getDatesStartToLast([
+      // {
+      //   first: '2023/11/06 15:00:00',
+      //   last: '2023/11/23 14:59:59'
+      // }
+      // {
+      //   first: '2023/8/23 15:00:00',
+      //   last: '2023/8/24 14:59:59'
+      // },
+      // {
+      //   first: '2023/8/30 15:00:00',
+      //   last: '2023/8/31 14:59:59'
+      // },
+      // {
+      //   first: '2023/9/6 15:00:00',
+      //   last: '2023/9/7 14:59:59'
+      // }
+    ]);
+
+    // 초기 이미지 활성화
+    if (periodResult.flag) {
+      // 상담신청 버튼 숨김
+      //$bnnrLink.hide();
+      // 라이브 버튼 활성화
+      //$bnnrLive.show();
+    }
+
+    $bnnrLink.show();
+    $bnnrLive.hide();
+
+    // 메뉴 클릭
+    $bnnrLink.bind('click', function (e) {
+      // 기본링크 기능삭제
+      e.preventDefault();
+
+      // 상담신청 컨텐츠 이동
+      $('.tablist a').eq(7).trigger('click');
+    });
+  }
+
+  // 요일별 최저가 배너
+  function weekLowest(eleID) {
+    var $this = $('#' + eleID),
+      $btn = $this.find('.tab');
+
+    // 기간 정의
+    var periodResult = DateTimer.getDatesStartToLast([
+      {
+        first: '2023/11/23 10:00:00',
+        last: '2023/11/27 09:59:00'
+      },
+      {
+        first: '2023/11/30 10:00:00',
+        last: '2023/12/4 09:59:00'
+      },
+      {
+        first: '2023/12/7 10:00:00',
+        last: '2023/12/11 09:59:00'
+      }
+    ]);
+
+    for (var i = 0; i < 7; i++) {
+      $btn.eq(i).parent().addClass('disabled');
+    }
+    $('#js_week_tab').tab({ active: 2 });
+    // 컨텐츠 상품 활성화
+    //$($btn.eq(1).attr("href")).addClass("slide_active");
+
+    /*
+		// 이벤트 종료 요일 체크 비활성화
+		for( var i=0; i<$btn.length; i++ ){
+			if( i < (periodResult.flag ? periodResult.index : periodResult.index + 1) ){
+				// 컨텐츠 상품 비활성화
+				$btn.eq(i).parent().addClass("disabled");
+			}
+		}
+
+		// 모든 지정범위 안에 있을경우
+		if( periodResult.flag ){
+			// 메뉴 활성화
+			$("#js_week_tab").tab({ active : periodResult.index + 1 });
+
+			// 컨텐츠 상품 활성화
+			$($btn.eq(periodResult.index).attr("href")).addClass("slide_active");
+		} else { // 지정범위를 벗어날경우
+			// 마지막 메뉴 활성화
+			$("#js_week_tab").tab({ active : periodResult.index + 2 });
+		}
+		*/
+  }
+
+  // Draw Event
+  function drawCalendar(eleID) {
+    var $this = $('#' + eleID),
+      $item = $this.find('.item_column'),
+      $button = $('#js_draw_application');
+
+    // 기간 정의
+    var periodResult = DateTimer.getDatesStartToLast([
+      // {
+      //   first: '2023/11/1 10:00:00',
+      //   last: '2023/11/16 17:00:00'
+      // },
+      // {
+      //   first: '2023/8/23 10:00:00',
+      //   last: '2023/8/23 17:00:00'
+      // },
+      // {
+      //   first: '2023/8/30 10:00:00',
+      //   last: '2023/8/30 17:00:00'
+      // },
+      // {
+      //   first: '2023/9/6 10:00:00',
+      //   last: '2023/9/6 17:00:00'
+      // }
+    ]);
+
+    for (var i = 0; i < 4; i++) {
+      // 이벤트 활성화
+      $item.eq(i).addClass('close');
+    }
+    // 이벤트 활성화
+    //$item.eq(3).addClass("active");
+    // 버튼 활성화
+    $button.parent().addClass('active');
+    $button.attr({ href: "javascript:addEnterEvent('1373','응모번호');" });
+
+    //4회차
+    //$button.attr({ href: "javascript:addEnterEvent('1371','응모번호');" });
+    //5회차
+    //$button.attr({ href: "javascript:addEnterEvent('1372','응모번호');" });
+
+    /*
+		// 모든 지정범위안에 있을경우
+		if( periodResult.flag ){
+			for( var i= 0; i<$item.length; i++ ){
+				if( i < periodResult.index ){
+					// 이벤트 종료
+					//$item.eq(i).hide();
+				}
+			}
+			// 이벤트 활성화
+			$item.eq(periodResult.index).addClass("active");
+			// 버튼 활성화
+			$button.parent().addClass("active");
+
+			// 실행함수 적용
+			if( periodResult.index == 0 ){
+				$button.attr({ href : "javascript:addEnterEvent('1350','응모번호');" });
+			} else if( periodResult.index == 1 ){
+				$button.attr({ href : "javascript:addEnterEvent('1351','응모번호');" });
+			} else if( periodResult.index == 2 ){
+				$button.attr({ href : "javascript:addEnterEvent('1352','응모번호');" });
+			} else if( periodResult.index == 3 ){
+				$button.attr({ href : "javascript:addEnterEvent('1353','응모번호');" });
+			}
+		} else {
+			for( var j=0; j<=periodResult.index; j++ ){
+				// 이벤트 종료
+				$item.eq(j).addClass("close");
+			}
+
+			$button.attr({ href : "javascript:addEnterEvent('1349','응모번호');" });
+		}
+		*/
+  }
+
+  // 온라인 최저가
+  function onlineGuideForm() {
+    var $item = $('.online_lowest_type');
+
+    // 기간 정의
+    var periodResult = DateTimer.getDatesStartToLast([
+      {
+        first: '2023/10/10 10:00:00',
+        last: '2023/11/24 09:59:00'
+      },
+      {
+        first: '2023/10/24 10:00:00',
+        last: '2023/11/11 09:59:00'
+      }
+    ]);
+
+    // 이벤트 활성화
+    $item.eq(1).show();
+
+    /*
+		// 모든 지정범위안에 있을경우
+		if( periodResult.flag ){
+			// 이벤트 활성화
+			$item.eq(periodResult.index).show();
+		} else {
+			$item.eq(0).show(); // 나중에 지울예정
+		}
+		*/
+  }
+
+  // 이벤트
+  function eventGuideForm() {
+    var $item_active = $('.benefit_counsel .event_form_active'),
+      $item_default = $('.benefit_counsel .event_form_default'),
+      $itemCare = $('.counsel_care_list'),
+      $itemFirst = $itemCare.find('.division_area_first'),
+      $itemLast = $itemCare.find('.division_area_last'),
+      $itemListLine = $itemCare.find('.list_last');
+
+    // 기간 정의
+    var periodResult = DateTimer.getDatesStartToLast([
+      {
+        first: '2023/10/8 10:00:00',
+        last: '2023/10/14 23:59:00'
+      },
+      {
+        first: '2023/8/22 10:00:00',
+        last: '2023/8/26 23:59:00'
+      }
+    ]);
+
+    $item_active.hide();
+    $item_default.show();
+    $itemLast.hide();
+
+    /*
+		// 모든 지정범위안에 있을경우
+		if( periodResult.flag ){
+			// 이벤트 활성화
+			$item_active.show();
+			$item_default.hide();
+			$itemListLine.show();
+
+			if( periodResult.index == 0 ){
+				$itemFirst.show();
+			} else {
+				$itemLast.show();
+			}
+		}
+		*/
+  }
+
+  // 선착순 특가 카운트다운
+  $.fn.specialCountDown = function (option) {
+    var opt = $.extend({}, option || {});
+
+    return this.each(function () {
+      var $this = $(this),
+        $timeDay = $this.find('.time_count .day'),
+        $timeHours = $this.find('.time_count .hours'),
+        $timeMin = $this.find('.time_count .min'),
+        $timeSec = $this.find('.time_count .sec'),
+        $productList = $this.find('.common_product_form');
+
+      // 초기 실행
+      resultPicture();
+
+      // 1초 카운팅
+      var Timer = setInterval(() => {
+        var result = resultPicture();
+
+        // 종료되면 타이머 정지
+        if (!result.flag) {
+          clearInterval(Timer);
+        }
+      }, 1000);
+
+      function resultPicture() {
+        // 카운팅 값 추출
+        var timeValue = DateTimer.getDateCountDown(opt.setupTime);
+
+        // 카운팅 시간
+        $timeDay.text(timeValue.d);
+        $timeHours.text(timeValue.h);
+        $timeMin.text(timeValue.m);
+        $timeSec.text(timeValue.s);
+        // 상품 활성화
+        /*
+				$productList.hide();
+				$productList.eq(timeValue.index).show();
+				*/
+
+        return timeValue;
+      }
+
+      // if ($this.attr('id') === 'js_countdown_first_wrap') {
+      //   // 상품 활성화
+      //   $productList.hide();
+      //   $productList.eq(3).show();
+      // } else if ($this.attr('id') === 'js_countdown_last_wrap') {
+      //   // 상품 활성화
+      //   $productList.hide();
+      //   $productList.eq(7).show();
+      // }
+    });
+  };
+
+  // Coupon Qr
+</script>
+
+<!-- [Event] - Event -->
+<div class="event_wrap">
+  <!-- [Event] - Visual -->
+  <div class="evt_section visual">
+    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_visual.jpg" alt="쌤페스타가 준비한 연말 선물 최대 85% 할인" />
+  </div>
+
+  <!-- [Event] - Benefit -->
+  <div class="evt_section benefit_process">
+    <div class="evt_section_in">
+      <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_benefit.jpg" alt="최대 00" />
+
+      <!-- [Event] - Banner Layer -->
+      <div class="layer_bnnr_form">
+        <!-- [Event] - Quick Banner -->
+        <div id="js_floating_bnnr" class="layer_bnnr">
+          <a href="#js_nv_pos6" class="quick_bnnr_app quick_go quick_advice"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_quick_layer_off.png" alt="쌤패스타 인테리어 상담신청" /></a>
+          <a href="https://mall.hanssem.com/tvMedia/tvMediaMain.do?wlp=37199822" class="quick_bnnr_live quick_live"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_quick_layer_on.png" alt="쌤페스타 라이브 단독혜택" /></a>
+        </div>
+        <!-- //[Event] - Quick Banner -->
+      </div>
+      <!-- //[Event] - Banner Layer -->
+    </div>
+  </div>
+  <!-- //[Event] - Benefit -->
+
+  <!-- [Event] - Tab Menu -->
+  <div id="js_fixed_menu" class="evt_section benefit_event_tab">
+    <div class="benefit_event_fixed fixed-nv-scroll">
+      <div class="evt_section_content">
+        <ul class="tablist fix-nv-list">
+          <li class="on"><a href="#nv-01" class="menu navi_couponpack">쿠폰팩</a></li>
+          <li><a href="#nv-02" class="menu navi_timeprice">타임 특가</a></li>
+          <li><a href="#nv-03" class="menu navi_interior">인테리어 특가</a></li>
+          <li><a href="#nv-04" class="menu navi_category">카테고리 특가</a></li>
+          <li><a href="#nv-05" class="menu navi_new">신상 특가</a></li>
+          <li><a href="#nv-06" class="menu navi_clearance">쌤.페.특가</a></li>
+          <li><a href="#nv-07" class="menu navi_ssemdraw">이벤트</a></li>
+          <li><a href="#nv-08" class="menu navi_counseling">인테리어 상담 신청</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- //[Event] - Tab Menu -->
+
+  <!-- [Event] - Benefit Coupon -->
+  <div id="nv-01" class="evt_section benefit_coupon fixed-nv-conts">
+    <div class="evt_section_in">
+      <p class="evt_section_title"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_couponpack_title.png" alt="쌤페스타가 준비한 연말 선물 최대 85% 할인" /></p>
+      <div class="evt_section_content">
+        <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_coupon.jpg" alt="" usemap="#benefit_coupon" />
+        <map name="benefit_coupon">
+          <area shape="RECT" coords="149,599,447,656" href="#" class="coupon_map ssem_coupon_app" title="쿠폰 다운로드" onClick="appDown(); return false;" />
+          <area shape="RECT" coords="769,599,1068,658" href="javascript:addCouponGrpNormal('1276','', '첫구매', '쿠폰 유효기간을 확인해주세요');" class="ssem_coupon_first" title="첫구매 쿠폰다운받기" />
+        </map>
+      </div>
+      <div class="evt_section_care">
+        <span class="btn"><a href="#js_coupon_care_layer" class="js_care_btn">쿠폰 할인 유의사항</a></span>
+      </div>
+      <div class="evt_qr_img">
+        <h4>[APP 다운로드 받기]</h4>
+        <div><img src="" alt="" /></div>
+        <p class="btn_close"><a href="#">닫기</a></p>
+      </div>
+    </div>
+
+    <!-- 상단으로 이동 -->
+    <div class="layer_btn_top">
+      <a href="#"><img src="https://image2.hanssem.com/event/2023/08/image/semfesta_couponpack_btn_top.png" alt="상단으로 이동" /></a>
+    </div>
+    <!-- //상단으로 이동 -->
+
+    <!-- [Layer] - Common Layer(App 다운로드) -->
+    <div id="js_appdown_layer" class="evt_common_layer" style="top: 513px; width: 880px">
+      <div class="evt_common_layer_in">
+        <p class="msg">해당 쿠폰은 한샘몰 APP에서 로그인 후 다운로드 가능합니다.</p>
+        <div class="app_qr">
+          <p class="txt">APP 다운로드 받기</p>
+          <div class="img"><img src="https://image2.hanssem.com/event/2023/08/image/ssemfesta_layer_qr.jpg" alt="" /></div>
+        </div>
+        <div class="button">
+          <a href="#"><img src="https://image2.hanssem.com/event/2023/08/image/ssemfesta_layer_btn_google.gif" alt="google play" /></a>
+          <a href="#"><img src="https://image2.hanssem.com/event/2023/08/image/ssemfesta_layer_btn_appstore.gif" alt="app store" /></a>
+        </div>
+      </div>
+      <div class="layer_btn_close"><a href="#">닫기</a></div>
+    </div>
+    <!-- //[Layer] - Common Layer(App 다운로드) -->
+
+    <!-- [Layer] - Common Layer(쿠폰 할인 유의사항) -->
+    <div id="js_coupon_care_layer" class="evt_common_layer" style="top: 94%; width: 880px">
+      <div class="evt_common_layer_in">
+        <p class="layer_tit">[첫 구매 쿠폰]</p>
+        <ul class="layer_list">
+          <li>- 발급 기간 : 2023.12.01 AM 10:00 - 2024.01.02 AM 09:59</li>
+          <li>- 사용 기간 : 2024.01.02 AM 10:00</li>
+          <li>- 가입 후 구매 이력이 없는 회원에 한 해 발급 가능합니다.</li>
+          <li>- 가입 후 1년 이내에 재가입한 회원에게는 발급되지 않습니다.</li>
+        </ul>
+
+        <p class="layer_tit">[쌤 쿠폰팩]</p>
+        <ul class="layer_list">
+          <li>- 발급 기간 : 2023.11.23 AM 10:00 - 12.11 PM 23:59</li>
+          <li>- 사용 기간 : 2023.11.23 AM 10:00 - 12.11 PM 23:59</li>
+          <li>- 하루 발급 수량 소진 시 선착순 마감되며, 매일 00시 오픈됩니다.</li>
+          <li>- 소파 전용 쿠폰은 일부 품목에 한하여 적용 가능합니다. (할인 대상 상품에만 각 10/20만원 할인 적용)</li>
+          <li>- 30/60만원 이상 구매 시 할인쿠폰은 전 품목에 적용 가능합니다. <span style="display: block; text-indent: 13px">(상품 구분 없이 최종 결제금액이 30/60만원 이상일 경우 각 1.5만원/2.5만원 할인 적용)</span></li>
+        </ul>
+
+        <p class="layer_tit">[공통 유의사항]</p>
+        <ul class="layer_list">
+          <li>- ID 당 1회 발급 가능합니다.</li>
+          <li>- 결제 쿠폰끼리는 중복 적용되지 않습니다.</li>
+          <li>- 결제 쿠폰은 주문 후 부분 취소가 불가합니다. (전체 취소 후 재주문 가능)</li>
+          <li>- 한샘몰 및 한샘 오프라인 가구 매장에서 사용 가능합니다.</li>
+          <li>- 쿠폰 다운로드 후 오프라인 매장 직원에게 쿠폰을 보여주시면 사용이 가능합니다.</li>
+          <li>- 인테리어 상품 및 일부 상품에는 쿠폰이 적용되지 않습니다.</li>
+          <li>- 발급된 쿠폰은 'My한샘 - 혜택 - 쿠폰' 페이지에서 확인 가능합니다.</li>
+          <li>- 미사용 및 사용기간 만료 시 쿠폰은 재발급되지 않습니다.</li>
+          <li>- 본 이벤트는 당사 사정에 의해 사전 고지 없이 변경 또는 중단 될 수 있습니다.</li>
+        </ul>
+
+        <p class="layer_tit">[소파 전용 쿠폰 품목안내]</p>
+        <ul class="layer_list">
+          <li>
+            - 10만원 할인쿠폰 :
+            <span style="display: block; text-indent: 13px">한샘 유로 601 키안티 소파 (3인, 4인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 키안티 천연가죽 리클라이너 (1인, 3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 포네플러스 패브릭소파 (암리스모듈/코너모듈)</span>
+          </li>
+          <li>
+            - 20만원 할인쿠폰 :
+            <span style="display: block; text-indent: 13px">한샘 바흐 702 인피니 소파 (3인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 뉴인피니 천연가죽 소파 (3인, 4인, 코너형)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 시어터 천연가죽 리클라이너 (3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 고다 천연가죽 리클라이너 (3인, 4인)</span>
+            <span style="display: block; text-indent: 13px">한샘 MVME 고다 슬림 천연가죽 리클라이너 (3.5인용)</span>
+            <span style="display: block; text-indent: 13px">한샘 포네플러스 패브릭소파 (세미라운지형)</span>
+          </li>
+        </ul>
+      </div>
+      <div class="layer_btn_close"><a href="#">닫기</a></div>
+    </div>
+    <!-- //[Layer] - Common Layer(쿠폰 할인 유의사항) -->
+  </div>
+  <!-- //[Event] - Benefit Coupon -->
+  <style>
+    .benefit_time_event .countdown .time_count {
+      padding-top: 0;
+      padding-bottom: 26px;
+    }
+    .benefit_time_event .countdown .time_count .time {
+      color: #000;
+    }
+
+    #nv-02.benefit_time_event .countdown .time_count .time_colon {
+      background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_order_time_icon.png') 0 50% no-repeat;
+    }
+    .benefit_time_event .countdown .time_count .time_colon {
+      margin: 19px 15px 0;
+    }
+    #nv-02 .common_product_form .item_column .sale {
+      color: #341c0b;
+      background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/awards/semfesta_benefit_special_salebg.png') 0 0 no-repeat;
+    }
+    #nv-02 .item_column .explain .price_wrap .price .won {
+      color: #6f2e00;
+    }
+    #nv-02 .item_column .explain .price_wrap .price_black .won {
+      color: #000;
+    }
+    .btn_comm_button a.timeprice_go {
+      color: #000;
+      background: url('https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_timeprice_go_bg.jpg') 0 0 no-repeat;
+    }
+    .btn_comm_button a.timeprice_go span:before,
+    .btn_comm_button a.timeprice_go span:after {
+      background: #000;
+    }
+  </style>
+  <!-- [Event] - 선착순 특가 -->
+  <div id="nv-02" class="evt_section benefit_time_event fixed-nv-conts" style="background-color: #000">
+    <div class="evt_section_in">
+      <p class="evt_section_title" style="margin: 0"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/semfesta_time_event_title.jpg" alt="benefit 02 지금이 기회! 마지막 선착순 특가" /></p>
+      <div class="evt_section_content" style="padding-top: 20px">
+        <!-- Counting Unit -->
+        <div id="js_countdown_first_wrap" class="special_week_counting">
+          <!-- 시간 카운팅 -->
+          <div class="countdown js_week_countdown">
+            <p class="title" style="position: relative; left: -20px"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_order_title_awards.jpg" alt="마지막 특가를 놓치지 마세요" /></p>
+            <div class="time_count">
+              <span class="time">
+                <span class="time_in">
+                  D-<span class="day">00</span>
+                  <span class="time_text"> 디데이 </span>
+                </span>
+              </span>
+              <span class="time_colon"></span>
+              <span class="time">
+                <span class="time_in">
+                  <span class="hours">00</span>
+                  <span class="time_text"> 시간 </span>
+                </span>
+              </span>
+              <span class="time_colon"></span>
+              <span class="time">
+                <span class="time_in">
+                  <span class="min">00</span>
+                  <span class="time_text"> 분 </span>
+                </span>
+              </span>
+              <span class="time_colon"></span>
+              <span class="time">
+                <span class="time_in">
+                  <span class="sec">00</span>
+                  <span class="time_text"> 초 </span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <!-- //시간 카운팅 -->
+
+          <!-- [Common] - Product From List() -->
+          <div class="common_product_form common_product_form_unit4">
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17013">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  37
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/1204/ssemfesta_order_last1_img1.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">슬리핑코드 매트리스 모음전</p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>683,000원</del>
+                    </div>
+                    <div class="price price_black">
+                      <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <p class="won">
+                        <strong>445,000</strong>
+                        원
+                      </p>
+                    </div>
+                    <div class="price price_total">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <p class="won">
+                        <strong>430,000</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=644565">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  30
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1204/ssemfesta_order_last1_img2.jpg" alt="" /></div>
+                <div class="explain" style="padding-right: 0">
+                  <p class="tit">한샘</p>
+                  <p class="txt">
+                    샘베딩 플레인 침대 SS (색상2종)<br />
+                    +노뜨 매트 3종
+                  </p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>522,000</del>
+                    </div>
+                    <div class="price price_black">
+                      <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <p class="won">
+                        <strong>379,000</strong>
+                        원
+                      </p>
+                    </div>
+                    <div class="price price_total">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <p class="won">
+                        <strong>364,000</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17037">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  33
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1204/ssemfesta_order_last1_img3.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">샘베딩 BEST 단품 모음</p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>245,000원</del>
+                    </div>
+                    <div class="price price_black">
+                      <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <p class="won">
+                        <strong>173,950</strong>
+                        원
+                      </p>
+                    </div>
+                    <div class="price price_total">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <p class="won">
+                        <strong>165,260</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=804114">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  31
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1204/ssemfesta_order_last1_img4.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt" style="line-height: 27px">
+                    티오 그로우 전면책상 일반형<br />
+                    5단 120X60cm+링고S <br />
+                    고정중심봉DIY(발받침)
+                  </p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>649,000원</del>
+                    </div>
+                    <div class="price price_black">
+                      <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <p class="won">
+                        <strong>469,000</strong>
+                        원
+                      </p>
+                    </div>
+                    <div class="price price_total">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <p class="won">
+                        <strong>445,550</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=881337">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  29
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1204/ssemfesta_order_last1_img5.jpg" alt="" /></div>
+                <div class="explain" style="padding-right: 0">
+                  <p class="tit">한샘</p>
+                  <p class="txt">
+                    보나 주니어 옷장세트 160cm<br />
+                    SET(서랍형 1단행거+일반형/<br />
+                    긴옷형 2단행거)
+                  </p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>819,000</del>
+                    </div>
+                    <div class="price price_black">
+                      <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <p class="won">
+                        <strong>599,900</strong>
+                        원
+                      </p>
+                    </div>
+                    <div class="price price_total">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <p class="won">
+                        <strong>584,900</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=940022">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  30
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1204/ssemfesta_order_last1_img6.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">
+                    MVME 노마딕 천연가죽<br />
+                    리클라이너 소파 4인
+                  </p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>3,018,000원</del>
+                    </div>
+                    <div class="price price_black">
+                      <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <p class="won">
+                        <strong>2,124,000</strong>
+                        원
+                      </p>
+                    </div>
+                    <div class="price price_total">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <p class="won">
+                        <strong style="letter-spacing: -2.6px">2,099,000</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=865076">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  29
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1204/ssemfesta_order_last1_img7.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">
+                    도노 어반 세라믹 식탁세트 6인용<br />
+                    (슬림의자4 포함)
+                  </p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>1,195,000원</del>
+                    </div>
+                    <div class="price price_black">
+                      <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <p class="won">
+                        <strong>869,000</strong>
+                        원
+                      </p>
+                    </div>
+                    <div class="price price_total">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                      <p class="won">
+                        <strong>844,000</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17025">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  26
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1204/ssemfesta_order_last1_img8.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">쌤페스타 수납 BEST 상품 모음전</p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>3,900원</del>
+                    </div>
+                    <div class="price price_black">
+                      <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price2.jpg" alt="단독특가" /></span>
+                      <p class="won">
+                        <strong style="font-size: 32px">2,900</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+          </div>
+          <!-- //[Common] - Product From List() -->
+        </div>
+        <!-- //Counting Unit -->
+
+        <!-- Counting Unit -->
+        <div id="js_countdown_last_wrap" class="special_week_counting special_week_counting_last" style="margin-top: 150px">
+          <!-- 시간 카운팅 -->
+          <div class="countdown">
+            <p class="title" style="position: relative; left: -20px"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_order_title_awards.jpg" alt="마지막 특가를 놓치지 마세요" /></p>
+            <div class="time_count">
+              <span class="time">
+                <span class="time_in">
+                  D-<span class="day">00</span>
+                  <span class="time_text"> 디데이 </span>
+                </span>
+              </span>
+              <span class="time_colon"></span>
+              <span class="time">
+                <span class="time_in">
+                  <span class="hours">00</span>
+                  <span class="time_text"> 시간 </span>
+                </span>
+              </span>
+              <span class="time_colon"></span>
+              <span class="time">
+                <span class="time_in">
+                  <span class="min">00</span>
+                  <span class="time_text"> 분 </span>
+                </span>
+              </span>
+              <span class="time_colon"></span>
+              <span class="time">
+                <span class="time_in">
+                  <span class="sec">00</span>
+                  <span class="time_text"> 초 </span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <!-- //시간 카운팅 -->
+
+          <!-- [Common] - Product From List() -->
+          <div class="common_product_form common_product_form_unit3">
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=777416">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  24
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/ssemfesta_order_special1_img1.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">밀란100 퓨어 그레이(기본형)</p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>2,600,000</del>
+                    </div>
+                    <div class="price">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <p class="won">
+                        <strong>1,976,000</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=822610">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  26
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/ssemfesta_order_special1_img2.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">유로200 루체 콘크리트&그레이</p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>2,940,000원</del>
+                    </div>
+                    <div class="price">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <p class="won">
+                        <strong>2,175,600</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=822609">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  26
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/ssemfesta_order_special1_img3.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">유로200 루체 오크&화이트</p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>2,940,000원</del>
+                    </div>
+                    <div class="price">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <p class="won">
+                        <strong>2,175,600</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=977677">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  22
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/ssemfesta_order_special1_img4.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">밀란1 마이티</p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>2,550,000원</del>
+                    </div>
+                    <div class="price">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <p class="won">
+                        <strong>1,989,000</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=770061">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  22
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/ssemfesta_order_special1_img5.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">밀란5 오블리크화이트</p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>2,920,000원</del>
+                    </div>
+                    <div class="price">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <p class="won">
+                        <strong>2,277,600</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+
+            <!-- Item -->
+            <div class="item_column">
+              <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1018692">
+                <div class="sale sale_max">
+                  <span class="max">최대</span>
+                  22
+                  <img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_text_percent.png" alt="%" />
+                </div>
+                <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/ssemfesta_order_special1_img6.jpg" alt="" /></div>
+                <div class="explain">
+                  <p class="tit">한샘</p>
+                  <p class="txt">
+                    밀란1 마이티 실속패키지<br />
+                    (1+1 욕실패키지)
+                  </p>
+                  <div class="price_wrap">
+                    <div class="del">
+                      <del>3,490,000원</del>
+                    </div>
+                    <div class="price">
+                      <span class="icon"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/awards/ssemfesta_icon_time_price1.jpg" alt="타임특가" /></span>
+                      <p class="won">
+                        <strong>2,722,200</strong>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- //Item -->
+          </div>
+          <!-- //[Common] - Product From List() -->
+
+          <div class="special_button">
+            <!-- [Common] - Button -->
+            <div class="btn_comm_button">
+              <a href="https://mall.hanssem.com/mall_ssem.html?snb=timedeal" class="timeprice_go">
+                <span><strong>타임특가</strong> 상품 전체 보기</span>
+              </a>
+            </div>
+            <!-- //[Common] - Button -->
+          </div>
+        </div>
+        <!-- //Counting Unit -->
+      </div>
+    </div>
+  </div>
+  <!-- //[Event] - 선착순 특가 -->
+
+  <!-- [Event] - 인테리어 특가 -->
+  <div id="nv-03" class="evt_section benefit_online fixed-nv-conts">
+    <div class="evt_section_in">
+      <p class="evt_section_title" style="margin-bottom: 0"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_online_title.jpg" alt="benefit 03 지금바로구매시 한샘대표 인테리어 상품 온라인 최저가 보장" /></p>
+      <div class="evt_section_content">
+        <div class="online_lowest_type">
+          <!-- 부엌 -->
+          <div class="online_form">
+            <p class="online_form_tit"><span>부엌</span></p>
+            <!-- [Common] - Product From List -->
+            <div class="common_product_form common_product_form_unit2">
+              <!-- Item -->
+              <div class="item_column">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=777202">
+                  <div class="sale sale_max">
+                    <span class="max">최대</span>
+                    22
+                    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                  </div>
+                  <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/semfesta_online_kitchen1_img1.jpg" alt="" /></div>
+                  <div class="explain">
+                    <p class="tit">한샘</p>
+                    <p class="txt">밀란100 퓨어 화이트 (기본형)</p>
+                    <div class="price_wrap">
+                      <div class="del">
+                        <del>2,510,000원</del>
+                      </div>
+                      <div class="price price_time">
+                        <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <p class="won">
+                          <strong>1,957,800</strong>
+                          원
+                        </p>
+                      </div>
+                    </div>
+                    <div class="price_option">
+                      <div class="detail_price">
+                        <dl>
+                          <dt>총 할인 금액</dt>
+                          <dd><strong>552,200</strong>원</dd>
+                        </dl>
+                      </div>
+                      <div class="plus"></div>
+                      <div class="detail_price">
+                        <dl>
+                          <dt>무이자 3개월</dt>
+                          <dd>월 <strong>652,600</strong>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- //Item -->
+
+              <!-- Item -->
+              <div class="item_column item_column_last">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=762233">
+                  <div class="sale">
+                    <span class="max">최대</span>
+                    24
+                    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                  </div>
+                  <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/semfesta_online_kitchen1_img2.jpg" alt="" /></div>
+                  <div class="explain">
+                    <p class="tit">한샘</p>
+                    <p class="txt">유로300 터치</p>
+                    <div class="price_wrap">
+                      <div class="del">
+                        <del>3,510,000원</del>
+                      </div>
+                      <div class="price price_total">
+                        <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <p class="won">
+                          <strong>2,667,600</strong>
+                          원
+                        </p>
+                      </div>
+                    </div>
+                    <div class="price_option">
+                      <div class="detail_price">
+                        <dl>
+                          <dt>총 할인 금액</dt>
+                          <dd><strong>842,400</strong>원</dd>
+                        </dl>
+                      </div>
+                      <div class="plus"></div>
+                      <div class="detail_price">
+                        <dl>
+                          <dt>무이자 3개월</dt>
+                          <dd>월 <strong>889,200</strong>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- //Item -->
+            </div>
+            <!-- //[Common] - Product From List -->
+          </div>
+          <!-- //부엌 -->
+
+          <!-- 욕실 -->
+          <div class="online_form">
+            <p class="online_form_tit"><span>욕실</span></p>
+            <!-- [Common] - Product From List -->
+            <div class="common_product_form common_product_form_unit2">
+              <!-- Item -->
+              <div class="item_column">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=760460">
+                  <div class="sale">
+                    <span class="max">최대</span>
+                    20
+                    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                  </div>
+                  <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_online_bath1_img1.jpg" alt="" /></div>
+                  <div class="explain">
+                    <p class="tit">한샘</p>
+                    <p class="txt">밀란3 리버화이트</p>
+                    <div class="price_wrap">
+                      <div class="del">
+                        <del>2,690,000원</del>
+                      </div>
+                      <div class="price price_time">
+                        <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <p class="won">
+                          <strong>2,152,000</strong>
+                          원
+                        </p>
+                      </div>
+                    </div>
+                    <div class="price_option">
+                      <div class="detail_price">
+                        <dl>
+                          <dt>총 할인 금액</dt>
+                          <dd><strong>538,000</strong>원</dd>
+                        </dl>
+                      </div>
+                      <div class="plus"></div>
+                      <div class="detail_price">
+                        <dl>
+                          <dt>무이자 3개월</dt>
+                          <dd>월 <strong>717,333</strong>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- //Item -->
+
+              <!-- Item -->
+              <div class="item_column item_column_last">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=770064">
+                  <div class="sale">
+                    <span class="max">최대</span>
+                    20
+                    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                  </div>
+                  <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/semfesta_online_bath1_img2.jpg" alt="" /></div>
+                  <div class="explain">
+                    <p class="tit">한샘</p>
+                    <p class="txt">밀란5 모노시티</p>
+                    <div class="price_wrap">
+                      <div class="del">
+                        <del>3,070,000원</del>
+                      </div>
+                      <div class="price price_total">
+                        <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <p class="won">
+                          <strong>2,456,000</strong>
+                          원
+                        </p>
+                      </div>
+                    </div>
+                    <div class="price_option">
+                      <div class="detail_price">
+                        <dl>
+                          <dt>총 할인 금액</dt>
+                          <dd><strong>614,000</strong>원</dd>
+                        </dl>
+                      </div>
+                      <div class="plus"></div>
+                      <div class="detail_price">
+                        <dl>
+                          <dt>무이자 3개월</dt>
+                          <dd>월 <strong>818,667</strong>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- //Item -->
+            </div>
+            <!-- //[Common] - Product From List -->
+          </div>
+          <!-- //욕실 -->
+
+          <!-- 패키지 -->
+          <div class="online_form">
+            <p class="online_form_tit"><span>패키지</span></p>
+            <!-- [Common] - Product From List -->
+            <div class="common_product_form common_product_form_unit2">
+              <!-- Item -->
+              <div class="item_column">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=806221">
+                  <div class="sale">
+                    <span class="max">최대</span>
+                    21
+                    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                  </div>
+                  <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/semfesta_online_package1_img1.jpg" alt="" /></div>
+                  <div class="explain">
+                    <p class="tit">한샘</p>
+                    <p class="txt">퓨어&리버화이트 키친바스PKG</p>
+                    <div class="price_wrap">
+                      <div class="del">
+                        <del>5,200,000원</del>
+                      </div>
+                      <div class="price price_time">
+                        <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <p class="won">
+                          <strong>4,108,000</strong>
+                          원
+                        </p>
+                      </div>
+                    </div>
+                    <div class="price_option">
+                      <div class="detail_price">
+                        <dl>
+                          <dt>총 할인 금액</dt>
+                          <dd><strong>1,092,000</strong>원</dd>
+                        </dl>
+                      </div>
+                      <div class="plus"></div>
+                      <div class="detail_price">
+                        <dl>
+                          <dt>무이자 3개월</dt>
+                          <dd>월 <strong>1,369,333</strong>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- //Item -->
+
+              <!-- Item -->
+              <div class="item_column item_column_last">
+                <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=822721">
+                  <div class="sale">
+                    <span class="max">최대</span>
+                    21
+                    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                  </div>
+                  <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/semfesta_online_package1_img2.jpg" alt="" /></div>
+                  <div class="explain">
+                    <p class="tit">한샘</p>
+                    <p class="txt">퓨어그레이&오슬로 키친바스PKG</p>
+                    <div class="price_wrap">
+                      <div class="del">
+                        <del>5,280,000원</del>
+                      </div>
+                      <div class="price price_total">
+                        <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <p class="won">
+                          <strong>4,171,200</strong>
+                          원
+                        </p>
+                      </div>
+                    </div>
+                    <div class="price_option">
+                      <div class="detail_price">
+                        <dl>
+                          <dt>총 할인 금액</dt>
+                          <dd><strong>1,108,800</strong>원</dd>
+                        </dl>
+                      </div>
+                      <div class="plus"></div>
+                      <div class="detail_price">
+                        <dl>
+                          <dt>무이자 3개월</dt>
+                          <dd>월 <strong>1,390,400</strong>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- //Item -->
+            </div>
+            <!-- //[Common] - Product From List -->
+          </div>
+          <!-- //패키지 -->
+
+          <!-- 중문 -->
+          <div class="online_form">
+            <p class="online_form_tit"><span>중문</span></p>
+            <!-- [Common] - Product From List -->
+            <div class="common_product_form common_product_form_unit2">
+              <!-- Item -->
+              <div class="item_column">
+                <a href="https://m.store.hanssem.com/goods/997379">
+                  <div class="sale">
+                    <span class="max">최대</span>
+                    14
+                    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                  </div>
+                  <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/semfesta_online_door1_img1.jpg" alt="" /></div>
+                  <div class="explain">
+                    <p class="tit">한샘</p>
+                    <p class="txt">수퍼 갤러리 3연동 중문</p>
+                    <div class="price_wrap">
+                      <div class="del">
+                        <del>1,065,000원</del>
+                      </div>
+                      <div class="price price_time">
+                        <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <p class="won">
+                          <strong>915,000</strong>
+                          원
+                        </p>
+                      </div>
+                    </div>
+                    <div class="price_option">
+                      <div class="detail_price">
+                        <dl>
+                          <dt>총 할인 금액</dt>
+                          <dd><strong>150,000</strong>원</dd>
+                        </dl>
+                      </div>
+                      <div class="plus"></div>
+                      <div class="detail_price">
+                        <dl>
+                          <dt>무이자 3개월</dt>
+                          <dd>월 <strong>305,000</strong>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- //Item -->
+
+              <!-- Item -->
+              <div class="item_column item_column_last">
+                <a href="https://m.store.hanssem.com/goods/997377">
+                  <div class="sale">
+                    <span class="max">최대</span>
+                    15
+                    <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+                  </div>
+                  <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/1130/semfesta_online_door1_img2.jpg" alt="" /></div>
+                  <div class="explain">
+                    <p class="tit">한샘</p>
+                    <p class="txt">밀란 슬림소프트 3연동 중문</p>
+                    <div class="price_wrap">
+                      <div class="del">
+                        <del>1,296,000원</del>
+                      </div>
+                      <div class="price price_total">
+                        <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price4.jpg" alt="단독특가" /></span>
+                        <p class="won">
+                          <strong>1,096,000</strong>
+                          원
+                        </p>
+                      </div>
+                    </div>
+                    <div class="price_option">
+                      <div class="detail_price">
+                        <dl>
+                          <dt>총 할인 금액</dt>
+                          <dd><strong>200,000</strong>원</dd>
+                        </dl>
+                      </div>
+                      <div class="plus"></div>
+                      <div class="detail_price">
+                        <dl>
+                          <dt>무이자 3개월</dt>
+                          <dd>월 <strong>365,333</strong>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <!-- //Item -->
+            </div>
+            <!-- //[Common] - Product From List -->
+          </div>
+          <!-- //중문 -->
+        </div>
+
+        <!-- [Common] - Button -->
+        <div class="btn_comm_button">
+          <a href="https://mall.hanssem.com/mall_ssem.html?snb=interiordeal" class="interior_go">
+            <span>상품 더 보러 가기</span>
+          </a>
+        </div>
+        <!-- //[Common] - Button -->
+
+        <!-- 안내 메세지 -->
+        <p class="online_guide">※ 제품 유효기간은 결제 완료 월 포함 3개월 이내 설치 완료되어야 합니다.</p>
+        <!-- //안내 메세지 -->
+      </div>
+      <!-- 쿠폰 배너 -->
+      <div class="special_bnnr">
+        <a href="#none" class="js_special_conpon couponpack_go"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_coupon_bnnr.jpg" alt="20만원 할인 쿠폰팩 다운로드" /></a>
+      </div>
+      <!-- //쿠폰 배너 -->
+    </div>
+  </div>
+  <!-- //[Event] - 인테리어 특가  -->
+
+  <!-- [Event] - 카테고리 특가 -->
+  <div id="nv-04" class="evt_section benefit_category fixed-nv-conts">
+    <div class="evt_section_in">
+      <p class="evt_section_title"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_category_title.jpg" alt="2023년 인기 신상들을 모아 놓치면 후회할 신상 특가" /></p>
+      <div class="evt_section_content">
+        <div class="common_product_form common_product_form_unit4">
+          <!-- Item -->
+          <div class="item_column">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=819867">
+              <div class="sale sale_max">
+                <span class="max">최대</span>
+                19
+                <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+              </div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/1204/ssemfesta_cate_last1_img5.jpg" alt="" /></div>
+              <div class="explain">
+                <p class="tit">한샘</p>
+                <p class="txt">
+                  포레 컴포트 4인 라운지세트<br />
+                  (벤치1, 코너벤치1, 원목의자2 포함)
+                </p>
+                <div class="price_wrap">
+                  <div class="del">
+                    <del>1,416,000원</del>
+                  </div>
+                  <div class="price price_black">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <p class="won">
+                      <strong>1,169,000</strong>
+                      원
+                    </p>
+                  </div>
+                  <div class="price price_total">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
+                    <p class="won">
+                      <strong>1,144,000</strong>
+                      원
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //Item -->
+
+          <!-- Item -->
+          <div class="item_column">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=909273">
+              <div class="sale sale_max">
+                <span class="max">최대</span>
+                21
+                <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+              </div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/1204/ssemfesta_cate_last1_img6.jpg" alt="" /></div>
+              <div class="explain">
+                <p class="tit">한샘</p>
+                <p class="txt">
+                  도노 엣지 세라믹 식탁세트<br />
+                  6인용(슬림의자4 포함)
+                </p>
+                <div class="price_wrap">
+                  <div class="del">
+                    <del>1,241,000원</del>
+                  </div>
+                  <div class="price price_black">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <p class="won">
+                      <strong>1,009,000</strong>
+                      원
+                    </p>
+                  </div>
+                  <div class="price price_total">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
+                    <p class="won">
+                      <strong>984,000</strong>
+                      원
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //Item -->
+
+          <!-- Item -->
+          <div class="item_column">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=246232">
+              <div class="sale sale_max">
+                <span class="max">최대</span>
+                19
+                <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+              </div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/1204/ssemfesta_cate_last1_img7.jpg" alt="" /></div>
+              <div class="explain">
+                <p class="tit">한샘</p>
+                <p class="txt">
+                  프레임 스틸 대리석 4인 식탁세트<br />
+                  (의자4 포함, 4종/택1)
+                </p>
+                <div class="price_wrap">
+                  <div class="del">
+                    <del>698,000</del>
+                  </div>
+                  <div class="price price_black">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <p class="won">
+                      <strong>579,000</strong>
+                      원
+                    </p>
+                  </div>
+                  <div class="price price_total">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
+                    <p class="won">
+                      <strong>564,000</strong>
+                      원
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //Item -->
+
+          <!-- Item -->
+          <div class="item_column">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=883118">
+              <div class="sale sale_max">
+                <span class="max">최대</span>
+                66
+                <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent_red.png" alt="%" />
+              </div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/1204/ssemfesta_cate_last1_img8.jpg" alt="" /></div>
+              <div class="explain">
+                <p class="tit">헤닝</p>
+                <p class="txt">
+                  마이홈 4인 낮은 원목 통세라믹<br />
+                  식탁세트 1400,1600 2Colors
+                </p>
+                <div class="price_wrap">
+                  <div class="del">
+                    <del>980,000원</del>
+                  </div>
+                  <div class="price price_black">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <p class="won">
+                      <strong>349,000</strong>
+                      원
+                    </p>
+                  </div>
+                  <div class="price price_total">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_coupon_max2.jpg" alt="최대혜택가" /></span>
+                    <p class="won">
+                      <strong>334,000</strong>
+                      원
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //Item -->
+        </div>
+
+        <div class="btn_comm_button wht">
+          <a href="https://mall.hanssem.com/mall_ssem.html?snb=categorydeal" class="cagegory_go">
+            <span>상품 더 보러 가기</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- [Event] - 카테고리 특가 -->
+
+  <!-- [Event] - 신상 특가 -->
+  <div id="nv-05" class="evt_section benefit_newPrd fixed-nv-conts">
+    <div class="evt_section_in">
+      <p class="evt_section_title"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_newPrd_title.jpg" alt="2023년 인기 신상들을 모아 놓치면 후회할 신상 특가" /></p>
+      <div class="evt_section_content">
+        <div class="common_product_form common_product_form_unit4">
+          <!-- Item -->
+          <div class="item_column">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1018219">
+              <div class="sale sale_max">
+                <span class="max">최대</span>
+                23
+                <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+              </div>
+              <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_newPrd_last1_img1.jpg" alt="" /></div>
+              <div class="explain">
+                <p class="tit">한샘</p>
+                <p class="txt">
+                  노뜨 일체형침대 포켓스프링<br />
+                  라텍스폼탑 SS
+                </p>
+                <div class="price_wrap">
+                  <div class="del">
+                    <del>448,000원</del>
+                  </div>
+                  <div class="price price_black">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <p class="won">
+                      <strong>360,000</strong>
+                      원
+                    </p>
+                  </div>
+                  <div class="price price_total">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                    <p class="won">
+                      <strong>345,000</strong>
+                      원
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //Item -->
+
+          <!-- Item -->
+          <div class="item_column">
+            <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17016">
+              <div class="sale sale_max">
+                <span class="max">최대</span>
+                34
+                <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+              </div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/1204/ssemfesta_newPrd_last1_img5.jpg" alt="" /></div>
+              <div class="explain">
+                <p class="tit">한샘</p>
+                <p class="txt">한샘 윌링&다이브 책상의자</p>
+                <div class="price_wrap">
+                  <div class="del">
+                    <del>213,000원</del>
+                  </div>
+                  <div class="price price_black">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <p class="won">
+                      <strong>149,000</strong>
+                      원
+                    </p>
+                  </div>
+                  <div class="price price_total">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                    <p class="won">
+                      <strong>141,550</strong>
+                      원
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //Item -->
+
+          <!-- Item -->
+          <div class="item_column">
+            <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=17020">
+              <div class="sale sale_max">
+                <span class="max">최대</span>
+                26
+                <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+              </div>
+              <div class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/1204/ssemfesta_newPrd_last1_img6.jpg" alt="" /></div>
+              <div class="explain">
+                <p class="tit">한샘</p>
+                <p class="txt">한샘 티오 벙커&수납 침대</p>
+                <div class="price_wrap">
+                  <div class="del">
+                    <del>745,000원</del>
+                  </div>
+                  <div class="price price_black">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <p class="won">
+                      <strong>569,000</strong>
+                      원
+                    </p>
+                  </div>
+                  <div class="price price_total">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                    <p class="won">
+                      <strong>554,000</strong>
+                      원
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //Item -->
+
+          <!-- Item -->
+          <div class="item_column">
+            <a href="https://mall.hanssem.com/goods/goodsDetailMall.do?gdsNo=1031908">
+              <div class="sale sale_max">
+                <span class="max">최대</span>
+                19
+                <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_text_percent.png" alt="%" />
+              </div>
+              <div class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_newPrd_last1_img4.jpg" alt="" /></div>
+              <div class="explain">
+                <p class="tit">한샘</p>
+                <p class="txt">스노어 패브릭 소파 4인</p>
+                <div class="price_wrap">
+                  <div class="del">
+                    <del>1,189,000원</del>
+                  </div>
+                  <div class="price price_black">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_time_price3.jpg" alt="단독특가" /></span>
+                    <p class="won">
+                      <strong>989,000</strong>
+                      원
+                    </p>
+                  </div>
+                  <div class="price price_total">
+                    <span class="icon"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_icon_coupon_max.jpg" alt="최대혜택가" /></span>
+                    <p class="won">
+                      <strong>964,000</strong>
+                      원
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- //Item -->
+        </div>
+        <div class="btn_comm_button">
+          <a href="https://mall.hanssem.com/mall_ssem.html?snb=newdeal" class="new_go">
+            <span>상품 더 보러 가기</span>
+          </a>
+        </div>
+        <!-- 망한 수납 경연 배너 -->
+        <div class="special_bnnr">
+          <a href="https://mall.hanssem.com/plan/planDetail.do?shpNo=16937" class="contest_go"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_newPrd_bnnr.jpg" alt="20만원 할인 쿠폰팩 다운로드" /></a>
+        </div>
+        <!-- //망한 수납 경연 배너 -->
+      </div>
+    </div>
+  </div>
+  <!-- [Event] - 신상 특가 -->
+
+  <!-- [Event] - 클리어런스 -->
+  <div id="nv-06" class="evt_section benefit_clearance">
+    <div class="evt_section_in">
+      <p class="evt_section_title"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_clearance_title.jpg" alt="베스트 리빙 상품부터 ~85% 클리어런스까지 놓치면 품절! 샘페특가" /></p>
+    </div>
+  </div>
+  <!-- //[Event] - 클리어런스 -->
+
+  <!-- ==================== 싱단 끝 ==================== -->
+  <!-- ==================== 하단 시작 ==================== -->
+  <input style="display: none" id="clip" />
+
+  <!-- [Event] - 클리어런스 -->
+  <div class="evt_section benefit_clearance_bottom">
+    <div class="evt_section_in">
+      <div class="evt_section_content">
+        <!-- [Common] - Button -->
+        <div class="btn_comm_button">
+          <a href="https://mall.hanssem.com/mall_ssem.html?snb=ssemfedeal" class="clearance_go">
+            <span>상품 더 보러 가기</span>
+          </a>
+        </div>
+        <!-- //[Common] - Button -->
+      </div>
+    </div>
+  </div>
+  <!-- //[Event] - 클리어런스 -->
+
+  <!-- [Event] - 인테리어 특가 -->
+  <div id="nv-07" class="evt_section benefit_draw fixed-nv-conts">
+    <p class="evt_section_title"><img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_draw_title.jpg" alt="수요일/금요일 10시, 점점 커지는 리빙 혜택 쌤DRAW가 최대 200만원을 쏩니다!" /></p>
+    <div class="evt_section_content">
+      <!-- Draw List -->
+      <div id="" class="draw-list swiper">
+        <!-- Item -->
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <p><span class="red">4회차</span> 12/6(수)</p>
+            <div class="img">
+              <img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_draw_4_coming.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p><span class="blue">5회차</span> 12/8(금)</p>
+            <div class="img">
+              <img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_draw_5_coming.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p><span class="blue">1회차</span> 11/24(금)</p>
+            <div class="img">
+              <img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_draw_1_close.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p><span class="red">2회차</span> 11/29(수)</p>
+            <div class="img">
+              <img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_draw_2_close.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <p><span class="blue">3회차</span> 12/1(금)</p>
+            <div class="img">
+              <img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_draw_3_close.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <!-- //Item -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+      <button type="button" class="swiper-button-prev"></button>
+      <button type="button" class="swiper-button-next"></button>
+      <!-- //Draw List -->
+
+      <!-- 드로우 안내문구 -->
+      <div class="draw-info">
+        <img src="https://image2.hanssem.com/event/2023/11/pc_image/ssemfesta_draw_txt.jpg" alt="인테리어 상품부터 가구, 생활용품까지! 현금처럼 사용하는 한샘몰 포인트" />
+      </div>
+      <!-- //드로우 결과 -->
+
+      <!-- 사용자 정보 입력폼 -->
+      <div class="user_info_form">
+        <!-- [Common] - Button -->
+        <div class="btn_comm_button wht">
+          <a href="#" id="js_draw_application" class="ssamdraw_go">
+            <span><strong>쌤DRAW 응모하기</strong></span>
+          </a>
+        </div>
+        <!-- //[Common] - Button -->
+      </div>
+      <!-- //사용자 정보 입력폼 -->
+
+      <div class="evt_section_care">
+        <span class="btn wht_txt"><a href="#js_draw_care_layer" class="js_care_btn">유의사항</a></span>
+      </div>
+    </div>
+
+    <!-- [Layer] - Common Layer(SSEM DRAW 유의사항) -->
+    <div id="js_draw_care_layer" class="evt_common_layer" style="top: 95%">
+      <div class="evt_common_layer_in">
+        <!-- <p class="layer_tit">[가구 구매권]</p> -->
+        <ul class="layer_list">
+          <li>※ 포인트 지급일 : 1~3회차 12/8(금) <span style="text-indent: 118px; display: block">4~5회차 12/15(금)</span></li>
+          <li>※ 포인트 사용 기한 : 지급일로부터 1주일, 기한 내 미사용 시 소멸</li>
+          <li>※ 포인트 사용처 : 한샘몰, 오프라인 매장 내 생활용품관</li>
+          <li>※ 응모된 회원정보로 포인트 지급되며, 양도 불가합니다.</li>
+        </ul>
+
+        <!-- <p class="layer_tit">[시공 할인권]</p>
+        <ul class="layer_list">
+          <li>※ 쿠폰 지급일로부터 2주 내인 9/28일까지 제품 결제 완료해 주셔야 하며,<br />기간 내 쿠폰 미사용 시 당첨 취소될 수 있는 점 안내 드립니다.</li>
+          <li>※ 결제 완료 후, 3일 이내 고객님께 담당 디자이너가 연락드릴 예정입니다.</li>
+          <li>※ 해당 시공권 적용 혜택은 한샘 제품과 서비스에 대한 소비자 가격 기준(시공비, 철거비 포함)입니다.</li>
+          <li>※ 현장 상황 및 제품 설계에 따라 금액이 변동될 수 있습니다. (디자이너 방문 / 상담 시 확인)</li>
+          <li>※ 상품 특성 및 배송지역(제주 및 도서산간지역)에 따라 추가 물류비/시공비가 발생할 수 있습니다.</li>
+          <li>※ 시공 300만원 할인권을 초과하여 공사하는 경우, 추가 금액을 부담하여 원하시는 형태로 공사가 가능합니다.</li>
+          <li>※ 온라인/홈쇼핑 포함 타 이벤트와 중복 적용이 불가합니다</li>
+          <li>※ 시공권 지급 이후, 최대 3개월 내까지 설치 시 적용 가능합니다.</li>
+        </ul> -->
+      </div>
+      <div class="layer_btn_close"><a href="#">닫기</a></div>
+    </div>
+    <!-- //[Layer] - Common Layer(SSEM DRAW 유의사항) -->
+  </div>
+  <!-- //[Event] - SSEM DRAW -->
+
+  <!-- [Event] - 인테리어 문의 -->
+  <div id="nv-08" class="evt_section benefit_counsel fixed-nv-conts">
+    <div class="evt_section_in">
+      <p class="evt_section_title"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_counsel_title.jpg" alt="평생 한 번 뿐인 우리집 인테리어! 오직 쌤페스타 기간에만 만날 수 있는 혜택으로 상담하세요!" /></p>
+      <div class="evt_section_content">
+        <div class="event_form event_form_default">
+          <p class="img"><img src="https://realaecreative.cafe24.com/test/20231113/pc_image/semfesta_counsel_img4.jpg" alt="EVENT 02" /></p>
+        </div>
+        <!-- <div class="event_form">
+          <p class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_counsel_img1.jpg" alt="EVENT 01" /></p>
+          <p class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_counsel_img2.jpg" alt="EVENT 02" /></p>
+          <p class="img"><img src="https://image2.hanssem.com/event/2023/11/pc_image/semfesta_counsel_img3.jpg" alt="EVENT 03" /></p>
+        </div> -->
+      </div>
+
+      <!-- [Common] - Button -->
+      <div class="btn_comm_button">
+        <a href="https://remodeling.hanssem.com/quick-consult/request?channelType=OP04_01&channelId=3379" class="counseling_go">
+          <span><strong>빠른 상담 신청</strong></span>
+        </a>
+      </div>
+      <!-- //[Common] - Button -->
+    </div>
+  </div>
+  <!-- //[Event] - 인테리어 문의 -->
+
+  <!-- [Event] - 유의사항 -->
+  <div class="evt_section benefit_counsel_care">
+    <div class="evt_section_in">
+      <div class="evt_section_content">
+        <div class="counsel_care_list">
+          <p class="title">상담 이벤트 유의사항</p>
+          <div class="division_area">
+            <!-- <p class="tit">[경품 이벤트]</p>
+            <div class="division_area_in">
+              <div class="area">
+                <ul class="list">
+                  <li>이벤트 기간 : 2023.11.23 - 11.30</li>
+                  <li>상담 기간 : 2023.11.23 - 12.7 <span style="text-indent:0;display: block;">한샘몰 상담 신청 후 12월 7일까지 상담 완료 고객에 한함</span></li>
+                  <li>이벤트 대상 : 상담 기간 내 공식 대리점 상담 완료 고객 전체</li>
+                </ul>
+              </div>
+              <div class="area">
+                <ul class="list">
+                  <li>당첨자 발표 : 2023.12.08</li>
+                  <li>유효기간이 있는 경품의 경우, 만료 시 재발급 되지 않습니다.</li>
+                  <li>경품은 현금 할인 등 대체 지급이 불가능합니다.</li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+
+            <p class="tit">[이달의 구매 혜택]</p>
+            <ul class="list">
+              <li>계약 금액 구간 별 중복 혜택 적용이 불가능합니다.</li>
+              <li>기타 할인 이벤트와 중복 적용이 불가능합니다.</li>
+              <li>한샘 제품과 서비스에 대한 소비자가격(시공비, 철거비 포함)을 기준으로 이벤트가 적용됩니다.</li>
+              <li class="list_last" style="display: block">500만원 미만 계약 금액에 대한 10만원(신세계 상품권)은 설치 완료 후 익월 20일 이내에 발송됩니다.</li>
+            </ul>
+
+            <div class="division_area">
+              <div class="division_area_in">
+                <div class="area">
+                  <p class="tit">※ 카드 무이자 할부</p>
+                  <ul class="list">
+                    <li>모든 신용카드 가능 (법인, 체크카드 제외)</li>
+                    <li>5만원 이상 결제 시 무이자 혜택</li>
+                    <li>현대카드, 신한카드 : 2~3개월</li>
+                    <li>무이자는 시공비를 제외한 제품 가격에 한합니다.</li>
+                  </ul>
+                </div>
+                <div class="area">
+                  <p class="tit">※ 장기 할부 대출</p>
+                  <ul class="list">
+                    <li>12 / 24 / 36 / 48 / 60개월</li>
+                    <li>고객 금리 고객 신용도별 차등</li>
+                    <li>신한카드 대출한도 : 최대 5,000만원</li>
+                    <li>하나은행 대출한도 : 최대 300~3,000만원</li>
+                    <li>카드사 정책 및 기타 사유로 인해 일부 혜택 변경될 수 있음</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //[Event] - 유의사항 -->
+
+    <!-- 하단 주의사항 -->
+    <div class="evt_section evt_section-bottom">※ 본 페이지에서 진행되는 상품 혜택과 이벤트는 당사 사정에 따라 내용 변경 및 조기 종료될 수 있습니다.</div>
+    <!-- //하단 주의사항 -->
+    <div class="fixed-nv-end"></div>
+    <!-- 상단이동 버튼 -->
+    <!-- <div class="quick_top_button"><a href="#">버튼</a></div> -->
+    <!-- //상단이동 버튼 -->
+  </div>
+  <!-- //[Event] - Event -->
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // App 다운로드
+      //$(".coupon_map").layerPopup();
+
+      // 쿠폰 배너 클릭
+      $('.js_special_conpon').on('click', function (e) {
+        // 기본링크 기능삭제
+        e.preventDefault();
+
+        $(window).scrollTop($('.benefit_coupon').offset().top - 173);
+      });
+
+      // 유의사항 버튼
+      $('.js_care_btn').layerPopup();
+
+      // 탭 메뉴
+      $.fixedMenus('js_fixed_menu');
+
+      // 플로팅 배너
+      floatingBnnr('#js_floating_bnnr');
+
+      // 선착순특가 매주월, 목요일 10시
+      $('#js_countdown_last_wrap').specialCountDown({
+        setupTime: ['2023/12/7 10:00:00', '2023/12/11 10:00:00']
+      });
+      // 선착순특가 매주목요일 10시
+      $('#js_countdown_first_wrap').specialCountDown({
+        setupTime: ['2023/12/7 10:00:00']
+      });
+
+      // 선착순특가 요일별 롤링 배너
+      weekLowest('js_week_tab');
+
+      // Draw 일정
+      drawCalendar('js_product_draw');
+
+      // Draw 신청 버튼 클릭
+      $('#js_draw_button').bind('click', function (e) {
+        // 기본링크 기능삭제
+        e.preventDefault();
+
+        // 활성화 버튼 숨김
+        $(this).hide();
+
+        // 입력폼 활성화
+        //$('#js_user_input').parent().addClass('user_info_form_active');
+      });
+
+      // 온라인 최저가
+      onlineGuideForm();
+
+      // 이벤트
+      eventGuideForm();
+    });
+  </script>
+
+  <!-- ==================== 하단 끝 ==================== -->
+</div>
