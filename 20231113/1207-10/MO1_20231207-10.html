@@ -2,7 +2,57 @@
 <input style="display: none" id="clip" />
 
 <link rel="stylesheet" href="https://image2.hanssem.com/event/2023/11/mo_image/m_test.css" />
+<style>
+  .cont-wraps .countdown .time_count .time_in {
+    color: #000;
+  }
+  .cont-wraps .countdown .time_count {
+    top: 12vw;
+  }
+  .cont-wraps .countdown2 .time_count {
+    top: 31vw;
+  }
+  .cont-wraps .countdown .time_count .time_colon {
+    background: url('https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_order_icon_time.png') 0 50% no-repeat;
+    background-size: 1.2vw auto;
+  }
 
+  #js_countdown_first_wrap .prctype-2 .prt-link-view .prdts-rate-wrap,
+  #js_countdown_last_wrap .prctype-2 .prt-link-view .prdts-rate-wrap {
+    top: 5vw;
+    background-image: url('https://image2.hanssem.com/event/2023/11/mo_image/awards/semfesta_mo_discount_bg.png');
+  }
+  #js_countdown_first_wrap .prctype-2 .prt-link-view .prdts-rate,
+  #js_countdown_last_wrap .prctype-2 .prt-link-view .prdts-rate {
+    color: #341c0b;
+    top: 1.4vw;
+    left: 0.5vw;
+  }
+  #js_countdown_first_wrap .prctype-2 .prt-link-view .prdts-rate::before,
+  #js_countdown_last_wrap .prctype-2 .prt-link-view .prdts-rate::before {
+    font-size: 2.5vw;
+  }
+  #js_countdown_first_wrap .prctype-2 .prt-link-view .prdts-rate .prdts-rate-num,
+  #js_countdown_last_wrap .prctype-2 .prt-link-view .prdts-rate .prdts-rate-num {
+    font-size: 4.6vw;
+  }
+  #js_countdown_first_wrap .prctype-2 .prt-link-view .prdts-rate .pers,
+  #js_countdown_last_wrap .prctype-2 .prt-link-view .prdts-rate .pers {
+    font-size: 2.5vw;
+    left: -0.5vw;
+  }
+
+  #js_countdown_first_wrap .prctype-2 .prt-link-view .prdts-prices .prdts-price-min strong,
+  #js_countdown_last_wrap .prctype-2 .prt-link-view .prdts-prices .prdts-price-min strong,
+  #js_countdown_first_wrap .prctype-2 .prt-link-view .prdts-prices .prdts-price-min .won,
+  #js_countdown_last_wrap .prctype-2 .prt-link-view .prdts-prices .prdts-price-min .won {
+    color: #6f2e00;
+  }
+  #js_countdown_first_wrap .prctype-2 .prt-link-view .prdts-prices .prdts-price-min-black strong,
+  #js_countdown_last_wrap .prctype-2 .prt-link-view .prdts-prices .prdts-price-min-black strong {
+    color: #000;
+  }
+</style>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -902,9 +952,9 @@
 	*/
 
     // 상담신청 버튼 숨김
-    $bnnrLink.show();
+    $bnnrLink.hide();
     // 라이브 버튼 활성화
-    $bnnrLive.hide();
+    $bnnrLive.show();
 
     // 메뉴 클릭
     $bnnrLink.bind('click', function (e) {
@@ -1296,7 +1346,7 @@
 
 <div class="cont-wraps"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_visual.jpg" style="width: 100%; position: relative; top: 1px" /></div>
 <div class="cont-wraps benefit_content">
-  <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_benefit.jpg" style="width: 100%" />
+  <img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_benefit.jpg" style="width: 100%" />
 
   <!-- [Event] - Banner Layer -->
   <div class="layer_bnnr_form">
@@ -1438,11 +1488,11 @@
   <a class="evtpop-close" href="javascript:;" onclick="$(this).closest('.evtpop').css('height',0).removeClass('openPop');"><img src="http://image2.hanssem.com/event/2022/07/220701_pop_close.png" /></a>
 </div>
 
-<div class="cont-wraps fixed-nv-conts" id="nv-02"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_special_title.jpg" style="width: 100%" /></div>
+<div class="cont-wraps fixed-nv-conts" id="nv-02"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_special_title.jpg" style="width: 100%" /></div>
 <div class="cont-wraps relti" id="js_countdown_first_wrap">
   <!-- 시간 카운팅 -->
   <div class="countdown">
-    <p class="title"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_time_event_time1.jpg" alt="매 주 월요일 | 목요일 10시 오픈" width="100%" /></p>
+    <p class="title"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_time_event_time1.jpg" alt="마지막 특가를 놓치지 마세요!" width="100%" /></p>
     <div class="time_count">
       <span class="time">
         <span class="time_in"> D-<span class="day">00</span> </span>
@@ -1473,51 +1523,20 @@
   </div>
   <!-- //시간 카운팅 -->
 
-  <div class="prt-panel" style="margin-top: -1px; padding: 0 3vw 2vw; background: #fc6d6e">
+  <div class="prt-panel" style="margin-top: -1px; padding: 0 3vw 2vw; background: #000">
     <!-- Product From List -->
     <div class="prt-sect product_sect_item">
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
-        <div class="prt-data gSet" gno="17014">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mplan/planDetail.do?shpNo=17014">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_time_special1_img1.jpg" /></span>
-            <span class="prdts-infos">
-              <span class="prdts-brand">한샘</span>
-              <span class="prdts-name">슬리핑코드 매트리스 모음전 </span>
-              <span class="prdts-prices">
-                <span class="prdts-rate-wrap">
-                  <span class="prdts-rate">
-                    <span class="prdts-rate-num">37</span>
-                    <span class="pers">%</span>
-                  </span>
-                </span>
-                <span class="prdts-price-sale"><del>683,000원</del></span>
-                <span class="prdts-price-min prdts-price-min-black">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>445,000</strong><label>원</label></span>
-                </span>
-                <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
-                  <span class="prdts-price-total"><strong>430,000</strong><span class="won">원</span></span>
-                </span>
-              </span>
-            </span>
-          </a>
-        </div>
-        <div class="outs"><img src="https://image2.hanssem.com/event/2023/03/230313_ssemfesta_m_out.png" alt="" /></div>
-      </div>
-      <!-- //Item List -->
-
-      <!-- Item List -->
-      <div class="prt-data-wrap prctype-2">
-        <div class="prt-data gSet" gno="644565">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=644565">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_time_special1_img2.jpg" /></span>
+        <div class="prt-data gSet" gno="644540">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=644540">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special1_img1.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name">
-                샘베딩 플레인 침대 SS<br />
-                (색상2종) + 노뜨 매트 3종
+                아임빅 수납침대SS<br />
+                일반헤드형(컬러8종)<br />
+                + 노뜨 매트 3종
               </span>
               <span class="prdts-prices">
                 <span class="prdts-rate-wrap">
@@ -1526,14 +1545,14 @@
                     <span class="pers">%</span>
                   </span>
                 </span>
-                <span class="prdts-price-sale"><del>522,000원</del></span>
+                <span class="prdts-price-sale"><del>712,000원</del></span>
                 <span class="prdts-price-min prdts-price-min-black">
                   <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>379,000</strong><label>원</label></span>
+                  <span class="prdts-price-total"><strong>514,000</strong><label>원</label></span>
                 </span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
-                  <span class="prdts-price-total"><strong>364,000</strong><span class="won">원</span></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
+                  <span class="prdts-price-total"><strong>499,000</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1545,12 +1564,50 @@
 
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
-        <div class="prt-data gSet" gno="17038">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mplan/planDetail.do?shpNo=17038">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_time_special1_img3.jpg" /></span>
+        <div class="prt-data gSet" gno="641215">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=641215">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special1_img2.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
-              <span class="prdts-name">샘베딩 BEST 단품 모음</span>
+              <span class="prdts-name">
+                노뜨컴포트 포켓스프링<br />
+                매트리스 SS 슈퍼싱글
+              </span>
+              <span class="prdts-prices">
+                <span class="prdts-rate-wrap">
+                  <span class="prdts-rate">
+                    <span class="prdts-rate-num">32</span>
+                    <span class="pers">%</span>
+                  </span>
+                </span>
+                <span class="prdts-price-sale"><del>221,000원</del></span>
+                <span class="prdts-price-min prdts-price-min-black">
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
+                  <span class="prdts-price-total"><strong>159,000</strong><label>원</label></span>
+                </span>
+                <span class="prdts-price-min">
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
+                  <span class="prdts-price-total"><strong>151,050</strong><span class="won">원</span></span>
+                </span>
+              </span>
+            </span>
+          </a>
+        </div>
+        <div class="outs"><img src="https://image2.hanssem.com/event/2023/03/230313_ssemfesta_m_out.png" alt="" /></div>
+      </div>
+      <!-- //Item List -->
+
+      <!-- Item List -->
+      <div class="prt-data-wrap prctype-2">
+        <div class="prt-data gSet" gno="743207">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=743207">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special1_img3.jpg" /></span>
+            <span class="prdts-infos">
+              <span class="prdts-brand">한샘</span>
+              <span class="prdts-name">
+                스테이 드레스룸 84cm<br />
+                단독형 10종
+              </span>
               <span class="prdts-prices">
                 <span class="prdts-rate-wrap">
                   <span class="prdts-rate">
@@ -1558,14 +1615,14 @@
                     <span class="pers">%</span>
                   </span>
                 </span>
-                <span class="prdts-price-sale"><del>245,000원</del></span>
+                <span class="prdts-price-sale"><del>192,000원</del></span>
                 <span class="prdts-price-min prdts-price-min-black">
                   <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>173,950</strong><label>원</label></span>
+                  <span class="prdts-price-total"><strong>136,320</strong><label>원</label></span>
                 </span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
-                  <span class="prdts-price-total"><strong>165,260</strong><span class="won">원</span></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
+                  <span class="prdts-price-total"><strong>129,510</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1577,15 +1634,14 @@
 
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
-        <div class="prt-data gSet" gno="804114">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=804114">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_time_special1_img4.jpg" /></span>
+        <div class="prt-data gSet" gno="37964">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=37964">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/new/ssemfesta_mo_time_special1_img4.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
-              <span class="prdts-name" style="margin-right: -2.5vw">
-                티오 그로우 전면책상 일반형<br />
-                5단 120X60cm+링고S <br />
-                고정중심봉DIY(발받침)
+              <span class="prdts-name">
+                샘 책장 5단 120cm 시공<br />
+                (컬러 택1)
               </span>
               <span class="prdts-prices">
                 <span class="prdts-rate-wrap">
@@ -1594,14 +1650,14 @@
                     <span class="pers">%</span>
                   </span>
                 </span>
-                <span class="prdts-price-sale"><del>649,000원</del></span>
+                <span class="prdts-price-sale"><del>144,000원</del></span>
                 <span class="prdts-price-min prdts-price-min-black">
                   <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>469,000</strong><label>원</label></span>
+                  <span class="prdts-price-total"><strong>104,000</strong><label>원</label></span>
                 </span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
-                  <span class="prdts-price-total"><strong>445,550</strong><span class="won">원</span></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
+                  <span class="prdts-price-total"><strong>98,800</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1613,31 +1669,30 @@
 
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
-        <div class="prt-data gSet" gno="881337">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=881337">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_time_special1_img5.jpg" /></span>
+        <div class="prt-data gSet" gno="803701">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=803701">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special1_img5.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
-              <span class="prdts-name" style="letter-spacing: -0.2vw; margin-right: -2.5vw">
-                보나 주니어 옷장세트 160cm<br />
-                SET(서랍형 1단행거+일반형/<br />
-                긴옷형 2단행거)
+              <span class="prdts-name">
+                샘키즈 수납장 1305<br />
+                뉴트럴베이지
               </span>
               <span class="prdts-prices">
                 <span class="prdts-rate-wrap">
                   <span class="prdts-rate">
-                    <span class="prdts-rate-num">29</span>
+                    <span class="prdts-rate-num">33</span>
                     <span class="pers">%</span>
                   </span>
                 </span>
-                <span class="prdts-price-sale"><del>819,000원</del></span>
+                <span class="prdts-price-sale"><del>227,000원</del></span>
                 <span class="prdts-price-min prdts-price-min-black">
                   <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>599,900</strong><label>원</label></span>
+                  <span class="prdts-price-total"><strong>159,900</strong><label>원</label></span>
                 </span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
-                  <span class="prdts-price-total"><strong>584,900</strong><span class="won">원</span></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
+                  <span class="prdts-price-total"><strong>151,910</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1649,14 +1704,14 @@
 
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
-        <div class="prt-data gSet" gno="940022">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=940022">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_time_special1_img6.jpg" /></span>
+        <div class="prt-data gSet" gno="799220">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=799220">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special1_img6.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name">
-                MVME 노마딕 천연가죽<br />
-                리클라이너 소파 4인
+                엠마 컴포트 천연가죽 소파<br />
+                4인(3종/택1)
               </span>
               <span class="prdts-prices">
                 <span class="prdts-rate-wrap">
@@ -1665,14 +1720,14 @@
                     <span class="pers">%</span>
                   </span>
                 </span>
-                <span class="prdts-price-sale"><del>3,018,000원</del></span>
+                <span class="prdts-price-sale"><del>1,367,000원</del></span>
                 <span class="prdts-price-min prdts-price-min-black">
                   <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>2,124,000</strong><label>원</label></span>
+                  <span class="prdts-price-total"><strong>981,000</strong><label>원</label></span>
                 </span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
-                  <span class="prdts-price-total"><strong style="letter-spacing: -0.2vw">2,099,000</strong><span class="won">원</span></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
+                  <span class="prdts-price-total"><strong>956,000</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1684,30 +1739,31 @@
 
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
-        <div class="prt-data gSet" gno="865076">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=865076">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_time_special1_img7.jpg" /></span>
+        <div class="prt-data gSet" gno="823609">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=823609">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special1_img7.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
-              <span class="prdts-name">
-                도노 어반 세라믹 식탁세트<br />
-                6인용 (슬림의자4 포함)
+              <span class="prdts-name" style="letter-spacing: -0.2vw; margin-right: -2.5vw">
+                포레 컴포트 6인 라운지세트<br />
+                (벤치1, 코너벤치1, PP의자2<br />
+                포함)
               </span>
               <span class="prdts-prices">
                 <span class="prdts-rate-wrap">
                   <span class="prdts-rate">
-                    <span class="prdts-rate-num">29</span>
+                    <span class="prdts-rate-num">30</span>
                     <span class="pers">%</span>
                   </span>
                 </span>
-                <span class="prdts-price-sale"><del>1,195,000원</del></span>
+                <span class="prdts-price-sale"><del>1,542,000원</del></span>
                 <span class="prdts-price-min prdts-price-min-black">
                   <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>869,000</strong><label>원</label></span>
+                  <span class="prdts-price-total"><strong>1,109,000</strong><label>원</label></span>
                 </span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
-                  <span class="prdts-price-total"><strong>844,000</strong><span class="won">원</span></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
+                  <span class="prdts-price-total"><strong>1,084,000</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1719,23 +1775,23 @@
 
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
-        <div class="prt-data gSet" gno="17028">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mplan/planDetail.do?shpNo=17028">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1130/ssemfesta_mo_time_special1_img8.jpg" /></span>
+        <div class="prt-data gSet" gno="17027">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mplan/planDetail.do?shpNo=17027">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special1_img8.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
-              <span class="prdts-name">쌤페스타 수납 BEST 상품 모음전</span>
+              <span class="prdts-name"> 리빙용품 쌤페스타 특가 모음전 </span>
               <span class="prdts-prices" style="padding-top: 6vw">
                 <span class="prdts-rate-wrap">
                   <span class="prdts-rate">
-                    <span class="prdts-rate-num">26</span>
+                    <span class="prdts-rate-num">40</span>
                     <span class="pers">%</span>
                   </span>
                 </span>
-                <span class="prdts-price-sale"><del>3,900원</del></span>
+                <span class="prdts-price-sale"><del>9,900원</del></span>
                 <span class="prdts-price-min prdts-price-min-black">
                   <span class="prdts-link-area" style="top: 0"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price3.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong style="font-size: 4.4vw">2,900</strong><label>원</label></span>
+                  <span class="prdts-price-total"><strong style="font-size: 4.4vw">5,900</strong><label>원</label></span>
                 </span>
                 <!-- <span class="prdts-price-min">
                   <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_coupon_price2.jpg" alt="최대혜택가" /></span>
@@ -1756,7 +1812,7 @@
 <div class="cont-wraps relti" id="js_countdown_last_wrap">
   <!-- 시간 카운팅 -->
   <div class="countdown countdown2">
-    <p class="title"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_time_event_time2.jpg" alt="매 주 목요일 10시" width="100%" /></p>
+    <p class="title"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_time_event_time2.jpg" alt="마지막 특가를 놓치지 마세요!" width="100%" /></p>
     <div class="time_count">
       <span class="time">
         <span class="time_in"> D-<span class="day">00</span> </span>
@@ -1787,18 +1843,47 @@
   </div>
   <!-- //시간 카운팅 -->
 
-  <div class="prt-panel" style="margin-top: -1px; padding: 0 3vw 2vw; background: #fc6d6e">
+  <div class="prt-panel" style="margin-top: -1px; padding: 0 3vw 2vw; background: #000">
     <!-- Product From List(8/10~8/14) -->
     <div class="prt-sect product_sect_item noTimePrice">
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
         <!-- sold-out 기입하면 dim 생김  -->
-        <div class="prt-data gSet" gno="777416">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=777416">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1130/ssemfesta_mo_time_special_last_img1.jpg" /></span>
+        <div class="prt-data gSet" gno="777202">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=777202">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special_last_img1.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
-              <span class="prdts-name">밀란100 퓨어 그레이(기본형)</span>
+              <span class="prdts-name">밀란100 퓨어 화이트 (기본형)</span>
+              <span class="prdts-prices">
+                <span class="prdts-rate-wrap">
+                  <span class="prdts-rate">
+                    <span class="prdts-rate-num">24</span>
+                    <span class="pers">%</span>
+                  </span>
+                </span>
+                <span class="prdts-price-sale"><del>2,510,000원</del></span>
+                <span class="prdts-price-min">
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
+                  <span class="prdts-price-total"><strong>1,907,600</strong><span class="won">원</span></span>
+                </span>
+              </span>
+            </span>
+          </a>
+        </div>
+        <div class="outs"><img src="https://image2.hanssem.com/event/2023/03/230313_ssemfesta_m_out.png" alt="" /></div>
+      </div>
+      <!-- //Item List -->
+
+      <!-- Item List -->
+      <div class="prt-data-wrap prctype-2">
+        <!-- sold-out 기입하면 dim 생김  -->
+        <div class="prt-data gSet" gno="777416">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=777416">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special_last_img2.jpg" /></span>
+            <span class="prdts-infos">
+              <span class="prdts-brand">한샘</span>
+              <span class="prdts-name">밀란100 퓨어 그레이 (기본형)</span>
               <span class="prdts-prices">
                 <span class="prdts-rate-wrap">
                   <span class="prdts-rate">
@@ -1808,7 +1893,7 @@
                 </span>
                 <span class="prdts-price-sale"><del>2,600,000원</del></span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
                   <span class="prdts-price-total"><strong>1,976,000</strong><span class="won">원</span></span>
                 </span>
               </span>
@@ -1822,12 +1907,12 @@
       <!-- Item List -->
       <div class="prt-data-wrap prctype-2">
         <!-- sold-out 기입하면 dim 생김  -->
-        <div class="prt-data gSet" gno="822610">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=822610">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1130/ssemfesta_mo_time_special_last_img2.jpg" /></span>
+        <div class="prt-data gSet" gno="762233">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=762233">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special_last_img3.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
-              <span class="prdts-name">유로200 루체 콘크리트&그레이</span>
+              <span class="prdts-name">유로300 터치</span>
               <span class="prdts-prices">
                 <span class="prdts-rate-wrap">
                   <span class="prdts-rate">
@@ -1835,39 +1920,10 @@
                     <span class="pers">%</span>
                   </span>
                 </span>
-                <span class="prdts-price-sale"><del>2,940,000원</del></span>
+                <span class="prdts-price-sale"><del>3,510,000원</del></span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>2,175,600</strong><span class="won">원</span></span>
-                </span>
-              </span>
-            </span>
-          </a>
-        </div>
-        <div class="outs"><img src="https://image2.hanssem.com/event/2023/03/230313_ssemfesta_m_out.png" alt="" /></div>
-      </div>
-      <!-- //Item List -->
-
-      <!-- Item List -->
-      <div class="prt-data-wrap prctype-2">
-        <!-- sold-out 기입하면 dim 생김  -->
-        <div class="prt-data gSet" gno="822609">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=822609">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1130/ssemfesta_mo_time_special_last_img3.jpg" /></span>
-            <span class="prdts-infos">
-              <span class="prdts-brand">한샘</span>
-              <span class="prdts-name">유로200 루체 오크&화이트</span>
-              <span class="prdts-prices">
-                <span class="prdts-rate-wrap">
-                  <span class="prdts-rate">
-                    <span class="prdts-rate-num">26</span>
-                    <span class="pers">%</span>
-                  </span>
-                </span>
-                <span class="prdts-price-sale"><del>2,940,000원</del></span>
-                <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>2,175,600</strong><span class="won">원</span></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
+                  <span class="prdts-price-total"><strong>2,597,400</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1882,7 +1938,7 @@
         <!-- sold-out 기입하면 dim 생김  -->
         <div class="prt-data gSet" gno="977677">
           <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=977677">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1130/ssemfesta_mo_time_special_last_img4.jpg" /></span>
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special_last_img4.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name">밀란1 마이티</span>
@@ -1895,8 +1951,37 @@
                 </span>
                 <span class="prdts-price-sale"><del>2,550,000원</del></span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
                   <span class="prdts-price-total"><strong>1,989,000</strong><span class="won">원</span></span>
+                </span>
+              </span>
+            </span>
+          </a>
+        </div>
+        <div class="outs"><img src="https://image2.hanssem.com/event/2023/03/230313_ssemfesta_m_out.png" alt="" /></div>
+      </div>
+      <!-- //Item List -->
+
+      <!-- Item List -->
+      <div class="prt-data-wrap prctype-2">
+        <!-- sold-out 기입하면 dim 생김  -->
+        <div class="prt-data gSet" gno="760460">
+          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=760460">
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special_last_img5.jpg" /></span>
+            <span class="prdts-infos">
+              <span class="prdts-brand">한샘</span>
+              <span class="prdts-name">밀란3 리버화이트</span>
+              <span class="prdts-prices">
+                <span class="prdts-rate-wrap">
+                  <span class="prdts-rate">
+                    <span class="prdts-rate-num">22</span>
+                    <span class="pers">%</span>
+                  </span>
+                </span>
+                <span class="prdts-price-sale"><del>2,690,000원</del></span>
+                <span class="prdts-price-min">
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
+                  <span class="prdts-price-total"><strong>2,098,200</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1911,7 +1996,7 @@
         <!-- sold-out 기입하면 dim 생김  -->
         <div class="prt-data gSet" gno="770061">
           <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=770061">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1130/ssemfesta_mo_time_special_last_img5.jpg" /></span>
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1207/ssemfesta_mo_time_special_last_img6.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name">밀란5 오블리크화이트</span>
@@ -1924,40 +2009,8 @@
                 </span>
                 <span class="prdts-price-sale"><del>2,920,000원</del></span>
                 <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
+                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
                   <span class="prdts-price-total"><strong>2,277,600</strong><span class="won">원</span></span>
-                </span>
-              </span>
-            </span>
-          </a>
-        </div>
-        <div class="outs"><img src="https://image2.hanssem.com/event/2023/03/230313_ssemfesta_m_out.png" alt="" /></div>
-      </div>
-      <!-- //Item List -->
-
-      <!-- Item List -->
-      <div class="prt-data-wrap prctype-2">
-        <!-- sold-out 기입하면 dim 생김  -->
-        <div class="prt-data gSet" gno="1018692">
-          <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=1018692">
-            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1130/ssemfesta_mo_time_special_last_img6.jpg" /></span>
-            <span class="prdts-infos">
-              <span class="prdts-brand">한샘</span>
-              <span class="prdts-name">
-                밀란1 마이티 실속패키지<br />
-                (1+1 욕실패키지)
-              </span>
-              <span class="prdts-prices">
-                <span class="prdts-rate-wrap">
-                  <span class="prdts-rate">
-                    <span class="prdts-rate-num">22</span>
-                    <span class="pers">%</span>
-                  </span>
-                </span>
-                <span class="prdts-price-sale"><del>3,490,000원</del></span>
-                <span class="prdts-price-min">
-                  <span class="prdts-link-area"><img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_icon_time_price2.jpg" alt="타임특가" /></span>
-                  <span class="prdts-price-total"><strong>2,722,200</strong><span class="won">원</span></span>
                 </span>
               </span>
             </span>
@@ -1972,279 +2025,10 @@
 </div>
 
 <div class="cont-wraps">
-  <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_special_img1.jpg" style="width: 100%" usemap="#ssemfesta_m_06" />
+  <img src="https://image2.hanssem.com/event/2023/11/mo_image/awards/ssemfesta_mo_special_img1.jpg" style="width: 100%" usemap="#ssemfesta_m_06" />
   <map name="ssemfesta_m_06">
     <area shape="RECT" coords="120,69,632,171" href="javascript:;" class="timeprice_go" title="타임특가 상품 전체보기" onclick="openAppLinkV5('MALL','GNB','https://mall.hanssem.com/mall_ssem.html?snb=timedeal','298','401','N');" />
   </map>
-</div>
-
-<div class="cont-wraps date_menu">
-  <div class="date_menu_tit">다음 타임특가 상품을 기대하세요!</div>
-  <!-- Tab Menu -->
-  <script>
-    function tab(val) {
-      $('.tab_cont').hide();
-      $('.tab_cont')
-        .eq(val - 1)
-        .show();
-      $('.tab').removeClass('active');
-      $('.tab')
-        .eq(val - 1)
-        .addClass('active');
-      var rolling_swiper = document.querySelector('.js_date_week_list').swiper;
-      rolling_swiper.destroy(true, true);
-      rolling_swiper = new Swiper('.js_date_week_list', {
-        slidesPerView: 'auto',
-        scrollbar: {
-          el: '.swiper-scrollbar'
-        },
-        observer: true,
-        observeParents: true
-      });
-      $('.swiper-button-prev').addClass('swiper-button-disabled');
-    }
-  </script>
-  <div class="date_menu" style="height: 13vw">
-    <!-- Swiper -->
-    <div id="" class="swiper mySwiper js_date_week">
-      <div class="swiper-wrapper" style="align-items: center">
-        <div class="swiper-slide" style="width: 100%">
-          <p class="tab active">
-            <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_orders_date_tab4_off.png" alt="12.7 목" />
-            <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_orders_date_tab4_on.png" alt="12.7 목" />
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 요일별 제품(12.7) -->
-  <div id="tab1" class="date_menu_product tab_cont" style="display: ">
-    <!-- Swiper -->
-    <div class="date_week_product swiper js_date_week_list">
-      <div class="swiper-wrapper week_product_lsit">
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img1.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                아임빅 수납침대SS<br />
-                일반헤드형(컬러8종)<br />
-                +노뜨 매트 3
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img2.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                노뜨컴포트<br />
-                포켓스프링 매트리스<br />
-                SS 슈퍼싱글
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img3.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                스테이 드레스룸<br />
-                84cm 단독형 10종
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img4.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                샘 책장 5단<br />
-                120cm 시공<br />
-                (컬러 택1)
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img5.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                샘키즈 수납장 1305<br />
-                뉴트럴베이지
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img6.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                엠마 컴포트<br />
-                천연가죽 소파 4인<br />
-                (3종/택1)
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img7.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                포레 컴포트 6인<br />
-                라운지세트(벤치1, 코너<br />
-                벤치1, PP의자2 포함)
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img8.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                리빙용품 쌤페스타<br />
-                특가 모음전
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img9.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                밀란100 퓨어 화이트<br />
-                (기본형)
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img10.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">
-                밀란100 퓨어 그레이<br />
-                (기본형)
-              </p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img11.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">유로300 터치</p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img12.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">밀란1 마이티</p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img13.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">밀란3 리버화이트</p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-        <!-- Unit -->
-        <div class="swiper-slide">
-          <a href="javascript:;">
-            <div class="img">
-              <img src="https://image2.hanssem.com/event/2023/11/mo_image/ssemfesta_mo_day4_img14.jpg" alt="" />
-            </div>
-            <div class="explain">
-              <p class="title">한샘</p>
-              <p class="txt">밀란5 오블리크화이트</p>
-            </div>
-          </a>
-        </div>
-        <!-- //Unit -->
-      </div>
-      <div class="swiper-scrollbar"></div>
-    </div>
-  </div>
-  <!-- //요일별 제품(12.7) -->
 </div>
 
 <!-- 온라인 최저가 보상 -->
@@ -2264,11 +2048,11 @@
   <div id="js_online_tab_content1" class="type_product_list">
     <!-- 부엌 상품(2023/11/23) -->
     <div class="type_product_wrap" style="display: block">
-      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=777202">
-        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1130/semfesta_mo_online_kitchen1_img1.jpg" alt="" />
+      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=822475">
+        <img src="https://image2.hanssem.com/event/2023/11/mo_image/new/semfesta_mo_online_kitchen1_img1.jpg" alt="" />
       </a>
-      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=762233">
-        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1130/semfesta_mo_online_kitchen1_img2.jpg" alt="" />
+      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=822609">
+        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1207/semfesta_mo_online_kitchen1_img2.jpg" alt="" />
       </a>
     </div>
     <!-- //부엌 상품(2023/11/23) -->
@@ -2279,11 +2063,11 @@
   <div id="js_online_tab_content2" class="type_product_list">
     <!-- 욕실  상품(2023/11/23) -->
     <div class="type_product_wrap">
-      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=760460">
-        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1130/semfesta_mo_online_bath1_img1.jpg" alt="" />
-      </a>
       <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=770064">
-        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1130/semfesta_mo_online_bath1_img2.jpg" alt="" />
+        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1207/semfesta_mo_online_bath1_img1.jpg" alt="" />
+      </a>
+      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=1018608">
+        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1207/semfesta_mo_online_bath1_img2.jpg" alt="" />
       </a>
     </div>
     <!-- //욕실 상품(2023/11/23) -->
@@ -2294,11 +2078,11 @@
   <div id="js_online_tab_content3" class="type_product_list">
     <!-- 패키지 상품(2023/11/23) -->
     <div class="type_product_wrap">
-      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=806221">
-        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1130/semfesta_mo_online_package_img1.jpg" alt="" />
+      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=813271">
+        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1207/semfesta_mo_online_package_img1.jpg" alt="" />
       </a>
-      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=822721">
-        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1130/semfesta_mo_online_package_img2.jpg" alt="" />
+      <a href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=776129">
+        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1207/semfesta_mo_online_package_img2.jpg" alt="" />
       </a>
     </div>
     <!-- //패키지 상품(2023/11/23) -->
@@ -2309,18 +2093,18 @@
   <div id="js_online_tab_content4" class="type_product_list">
     <!-- 중문 상품(2023/11/23) -->
     <div class="type_product_wrap">
-      <a href="https://store.hanssem.com/goods/997379">
-        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1130/semfesta_mo_online_door_img1.jpg" alt="" />
+      <a href="https://m.store.hanssem.com/goods/997378">
+        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1207/semfesta_mo_online_door_img1.jpg" alt="" />
       </a>
-      <a href="https://store.hanssem.com/goods/997377">
-        <img src="https://realaecreative.cafe24.com/test/20231113/mo_image/new/semfesta_mo_online_door_img2.jpg" alt="" />
+      <a href="https://m.store.hanssem.com/goods/997380">
+        <img src="https://image2.hanssem.com/event/2023/11/mo_image/1207/semfesta_mo_online_door_img2.jpg" alt="" />
       </a>
     </div>
     <!-- //중문 상품(2023/11/23) -->
   </div>
   <!-- //중문 상품 -->
 
-  <img src="https://realaecreative.cafe24.com/test/20231113/mo_image/new/semfesta_mo_online_text1.jpg" alt="" style="width: 100%" usemap="#ssemfesta_m_13" />
+  <img src="https://image2.hanssem.com/event/2023/11/mo_image/new/semfesta_mo_online_text1.jpg" alt="" style="width: 100%" usemap="#ssemfesta_m_13" />
   <map name="ssemfesta_m_13">
     <area shape="RECT" coords="119,81,631,180" href="javascript:;" title="상품 더 보러가기" class="interior_go" onclick="openAppLinkV5('MALL','GNB','https://mall.hanssem.com/m/mall.html?module=ssem&snb=interiordeal','298','402','N');" />
   </map>
@@ -2344,7 +2128,7 @@
       <div class="prt-data-wrap prctype-2">
         <div class="prt-data gSet" gno="819867">
           <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=819867">
-            <span class="prdts-img"><img title="" alt="" src="https://realaecreative.cafe24.com/test/20231113/mo_image/1204/ssemfesta_mo_catePrd_img5.jpg" /></span>
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_catePrd_img5.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name">
@@ -2380,7 +2164,7 @@
       <div class="prt-data-wrap prctype-2">
         <div class="prt-data gSet" gno="909273">
           <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=909273">
-            <span class="prdts-img"><img title="" alt="" src="https://realaecreative.cafe24.com/test/20231113/mo_image/1204/ssemfesta_mo_catePrd_img6.jpg" /></span>
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_catePrd_img6.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name">
@@ -2415,7 +2199,7 @@
       <div class="prt-data-wrap prctype-2">
         <div class="prt-data gSet" gno="246232">
           <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=246232">
-            <span class="prdts-img"><img title="" alt="" src="https://realaecreative.cafe24.com/test/20231113/mo_image/1204/ssemfesta_mo_catePrd_img7.jpg" /></span>
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_catePrd_img7.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name" style="margin-right: -2.5vw">
@@ -2450,7 +2234,7 @@
       <div class="prt-data-wrap prctype-2">
         <div class="prt-data gSet" gno="883118">
           <a class="prt-link-view" href="https://mall.hanssem.com/m/mgoods/goodsDetailMall.do?gdsNo=883118">
-            <span class="prdts-img"><img title="" alt="" src="https://realaecreative.cafe24.com/test/20231113/mo_image/1204/ssemfesta_mo_catePrd_img8.jpg" /></span>
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_catePrd_img8.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">헤닝</span>
               <span class="prdts-name">
@@ -2535,7 +2319,7 @@
       <div class="prt-data-wrap prctype-2">
         <div class="prt-data gSet" gno="17018">
           <a class="prt-link-view" href="https://mall.hanssem.com/m/mplan/planDetail.do?shpNo=17018">
-            <span class="prdts-img"><img title="" alt="" src="https://realaecreative.cafe24.com/test/20231113/mo_image/1204/ssemfesta_mo_newPrd_img5.jpg" /></span>
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_newPrd_img5.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name"> 한샘 윌링&다이브 책상의자 </span>
@@ -2567,7 +2351,7 @@
       <div class="prt-data-wrap prctype-2">
         <div class="prt-data gSet" gno="17019">
           <a class="prt-link-view" href="https://mall.hanssem.com/m/mplan/planDetail.do?shpNo=17019">
-            <span class="prdts-img"><img title="" alt="" src="https://realaecreative.cafe24.com/test/20231113/mo_image/1204/ssemfesta_mo_newPrd_img6.jpg" /></span>
+            <span class="prdts-img"><img title="" alt="" src="https://image2.hanssem.com/event/2023/11/mo_image/1204/ssemfesta_mo_newPrd_img6.jpg" /></span>
             <span class="prdts-infos">
               <span class="prdts-brand">한샘</span>
               <span class="prdts-name"> 한샘 티오 벙커&수납 침대 </span>
